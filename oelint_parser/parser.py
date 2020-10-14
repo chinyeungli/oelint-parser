@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 import collections
 import os
 import re
+import sys
 
 try:
     FileNotFoundError  # NOQA
@@ -20,6 +21,11 @@ from oelint_parser.cls_item import TaskAssignment
 from oelint_parser.cls_item import Variable
 from oelint_parser.helper_files import find_local_or_in_layer, expand_term
 from oelint_parser.inlinerep import inlinerep
+
+_sys_v0 = sys.version_info[0]
+py2 = _sys_v0 == 2
+py3 = _sys_v0 == 3
+
 
 INLINE_BLOCK = "!!!inlineblock!!!"
 
@@ -65,13 +71,13 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
     __func_start_regexp__ = r".*(((?P<py>python)|(?P<fr>fakeroot))\s*)*(?P<func>[\w\.\-\+\{\}\$]+)?\s*\(\s*\)\s*\{"
     res = []
     raw_line = raw_line or line
-    if re.search(r"\\\s*\n", raw_line):
+    if re.search(r"\\\s*\n", raw_line, re.UNICODE):
         _, line = next(_iter)
-        while re.search(r"\\\s*\n", line):
+        while re.search(r"\\\s*\n", line, re.UNICODE):
             raw_line += line
             _, line = next(_iter)
         raw_line += line
-    elif re.match(__func_start_regexp__, raw_line):
+    elif re.match(__func_start_regexp__, raw_line, re.UNICODE):
         _, line = next(_iter)
         stopiter = False
         scope_level = 0
@@ -89,14 +95,14 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
                 stopiter = True
         if line.strip() == "}":
             raw_line += line
-    elif raw_line.strip().startswith("def "):
+    elif raw_line.strip().startswith("def "if py3 else b"def "):
         stopiter = False
         while not stopiter:
             try:
                 _, line = next(_iter)
             except StopIteration:
                 stopiter = True
-            if re.match("^[A-Za-z0-9#]+", line) or stopiter:
+            if re.match("^[A-Za-z0-9#]+", line, re.UNICODE) or stopiter:
                 if not stopiter:
                     res += prepare_lines_subparser(_iter,
                                                 lineOffset, num, line)
@@ -108,13 +114,14 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
                 break
             raw_line += line
 
-    while raw_line.find("${@") != -1:
-        _inline_block = raw_line.find("${@")
+    while raw_line.find("${@" if py3 else b"${@" ) != -1:
+        _inline_block = raw_line.find("${@" if py3 else b"${@" )
         repl = get_full_scope(raw_line[_inline_block:], len("${@"), "{", "}")
         _repl = inlinerep(repl) or INLINE_BLOCK
         raw_line = raw_line.replace(repl, _repl)
     res.append({"line": num + 1 + lineOffset, "raw": raw_line,
-                "cnt": raw_line.replace("\n", "").replace("\\", chr(0x1b))})
+                "cnt": raw_line.replace("\n" if py3 else b"\n", "" if py3 else b"")
+                .replace("\\" if py3 else b"\\", chr(0x1b))})
     return res
 
 
@@ -177,7 +184,7 @@ def get_items(stash, _file, lineOffset=0):
     for line in prepare_lines(_file, lineOffset):
         good = False
         for k, v in _order.items():
-            m = re.match(v, line["cnt"], re.MULTILINE)
+            m = re.match(v, line["cnt"], re.MULTILINE|re.UNICODE)
             if m:
                 if k == "python":
                     res.append(PythonBlock(

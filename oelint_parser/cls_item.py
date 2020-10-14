@@ -1,11 +1,15 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-
-import textwrap
 import re
+import sys
+import textwrap
 
 from oelint_parser.const_func import KNOWN_FUNCS
+
+_sys_v0 = sys.version_info[0]
+py2 = _sys_v0 == 2
+py3 = _sys_v0 == 3
 
 
 class Item(object):
@@ -46,7 +50,7 @@ class Item(object):
         return Item(None, None, None, None)._safe_linesplit(string)
 
     def _safe_linesplit(self, string):
-        return [x for x in re.split(r"\s|\t|\x1b", string) if x]
+        return [x for x in re.split(r"\s|\t|\x1b", string, re.UNICODE) if x]
 
     def get_items(self):
         """Return single items
@@ -76,7 +80,7 @@ class Item(object):
                 # that addresses things like FILES_${PN}-dev
                 tmp = "-" + "-".join(i.split("-")[1:])
                 i = i.split("-")[0]
-            if re.match("^[a-z0-9{}$]+$", i):
+            if re.match("^[a-z0-9{}$]+$", i, re.UNICODE):
                 _suffix.append(i + tmp)
             else:
                 _var.append(i + tmp)
@@ -165,7 +169,7 @@ class Variable(Item):
             operator {str} -- Operation performed to the variable
             flag {str} -- Optional variable flag
         """
-        
+
         super(Variable, self).__init__(origin, line, infileline, rawtext)
         if "inherit" != name:
             self.VarName, self.SubItem, self.PkgSpec = self.extract_sub(name)
@@ -180,7 +184,7 @@ class Variable(Item):
         self.VarOp = operator
         self.Flag = flag or ""
         self.RawVarName = "{}[{}]".format(self.VarName, self.Flag) if self.Flag else self.VarName
-        self.VarValueStripped = self.VarValue.strip().lstrip('"').rstrip('"')
+        self.VarValueStripped = self.VarValue.strip().strip('"' if py3 else b'"')
 
     def IsAppend(self):
         """Check if operation is an append

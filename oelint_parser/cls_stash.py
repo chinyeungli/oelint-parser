@@ -49,7 +49,7 @@ class Stash(object):
             bn_this = os.path.basename(_file).replace(
                 ".bbappend", "").replace("%", ".*")
             for item in self.__list:
-                if re.match(bn_this, os.path.basename(item.Origin).replace(".bb", "")):
+                if re.match(bn_this, os.path.basename(item.Origin).replace(".bb", ""), re.UNICODE):
                     if _file not in self.__map:
                         self.__map[_file] = []
                     self.__map[_file].append(item.Origin)

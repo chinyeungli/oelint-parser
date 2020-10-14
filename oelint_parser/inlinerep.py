@@ -5,25 +5,25 @@ from __future__ import unicode_literals
 import re
 
 def bb_utils_contains(_in):
-    m = re.match(r"(.*)bb\.utils\.contains\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in)
+    m = re.match(r"(.*)bb\.utils\.contains\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in, re.UNICODE)
     if m:
         return m.group(1) + m.group(2).strip("\"'")
     return None
 
 def bb_utils_contains_any(_in):
-    m = re.match(r"(.*)bb\.utils\.contains_any\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in)
+    m = re.match(r"(.*)bb\.utils\.contains_any\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in, re.UNICODE)
     if m:
         return m.group(1) + m.group(2).strip("\"'")
     return None
 
 def oe_utils_conditional(_in):
-    m = re.match(r"(.*)oe\.utils\.conditional\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in)
+    m = re.match(r"(.*)oe\.utils\.conditional\(.*?,\s*.*?,\s*(.*?),\s*.*?,\s*.\)", _in, re.UNICODE)
     if m:
         return m.group(1) + m.group(2).strip("\"'")
     return None
 
 def oe_utils_ifelse(_in):
-    m = re.match(r"(.*)oe\.utils\.ifelse\(.*?,\s*(.*?),\s*.*?\)", _in)
+    m = re.match(r"(.*)oe\.utils\.ifelse\(.*?,\s*(.*?),\s*.*?\)", _in, re.UNICODE)
     if m:
         return m.group(1) + m.group(2).strip("\"'")
     return None
