@@ -1,3 +1,8 @@
+try:
+    FileNotFoundError
+except NameError:
+    FileNotFoundError = IOError
+
 import collections
 import os
 import re

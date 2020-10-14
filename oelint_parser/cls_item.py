@@ -143,6 +143,7 @@ class Variable(Item):
     """
     ATTR_VAR = "VarName"
     ATTR_VARVAL = "VarValue"
+    ATTR_VARRAW = "RawVarName"
     ATTR_VARVALSTRIPPED = "VarValueStripped"
     CLASSIFIER = "Variable"
     VAR_VALID_OPERATOR = [" = ", " += ",
@@ -174,6 +175,7 @@ class Variable(Item):
         self.VarValue = value
         self.VarOp = operator
         self.Flag = flag or ""
+        self.RawVarName = "{}[{}]".format(self.VarName, self.Flag) if self.Flag else self.VarName
         self.VarValueStripped = self.VarValue.strip().lstrip('"').rstrip('"')
 
     def IsAppend(self):

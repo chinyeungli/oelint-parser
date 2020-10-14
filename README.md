@@ -14,9 +14,8 @@ from oelint_parser.cls_stash import Stash
 # create an stash object
 _stash = Stash()
 
-with open("/some/file") as f:
-    # add any bitbake like file
-    _stash.AddFile(f)
+# add any bitbake like file
+_stash.AddFile("/some/file")
 
 # Resolves proper cross file dependencies
 _stash.Finalize()
@@ -32,7 +31,7 @@ To get variables from the stash object do
 from oelint_parser.cls_item import Variable
 
 # get all variables of the name PV from all files
-for x in _stash.GetItemsFor(attribute=Variable.VarName, attributeValue="PV"):
+for x in _stash.GetItemsFor(attribute=Variable.ATTR_VAR, attributeValue="PV"):
     print(x)
 ```
 
@@ -45,7 +44,7 @@ from oelint_parser.cls_item import Variable
 from oelint_parser.helper_files import expand_term
 
 # get all variables of the name PV from all files
-for x in _stash.GetItemsFor(attribute=Variable.VarName, attributeValue="PV"):
+for x in _stash.GetItemsFor(attribute=Variable.ATTR_VAR, attributeValue="PV"):
     # raw unexpanded variable
     print(x.VarValue)
     # raw unexpanded variable without quotes

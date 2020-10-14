@@ -720,7 +720,7 @@ Adds a file to the stash
 
 **Returns**:
 
-- `list` - List of {oelint_adv.cls_item.Item}
+- `list` - List of {oelint_parser.cls_item.Item}
 
 <a name="oelint_parser.cls_stash.Stash.GetRecipes"></a>
 #### GetRecipes
@@ -1019,8 +1019,6 @@ Get list of valid SRCREV resource names
 
 <a name="oelint_parser.const_func"></a>
 # oelint\_parser.const\_func
-
-function constants
 
 <a name="oelint_parser.parser"></a>
 # oelint\_parser.parser

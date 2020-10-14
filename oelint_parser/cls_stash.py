@@ -1,10 +1,10 @@
 import os
 import re
 
-from oelint_adv.parser import get_items
-from oelint_adv.cls_item import Variable, Item
-from oelint_adv.helper_files import expand_term, guess_recipe_name, guess_recipe_version, guess_base_recipe_name
-from oelint_adv.const_vars import get_base_varset
+from oelint_parser.parser import get_items
+from oelint_parser.cls_item import Variable, Item
+from oelint_parser.helper_files import expand_term, guess_recipe_name, guess_recipe_version, guess_base_recipe_name
+from oelint_parser.const_vars import get_base_varset
 
 
 class Stash():
@@ -27,7 +27,7 @@ class Stash():
             forcedLink {[type]} -- Force link against a file (default: {None})
 
         Returns:
-            list -- List of {oelint_adv.cls_item.Item}
+            list -- List of {oelint_parser.cls_item.Item}
         """
         if not self.__quiet:
             print("Parsing {}".format(_file))
@@ -176,7 +176,8 @@ class Stash():
             "PV": guess_recipe_version(filename),
             "BPN": guess_base_recipe_name(filename)
         }
-        _exp = {**_exp, **get_base_varset()}
+        #_exp = {**_exp, **get_base_varset()}
+        _exp.update(get_base_varset())
         for item in sorted(_res, key=lambda x: x.Line):
             varop = item.VarOp
             name = item.VarName

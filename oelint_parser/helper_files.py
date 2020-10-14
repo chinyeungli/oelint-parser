@@ -1,7 +1,11 @@
 import glob
 import os
 import re
-from urllib.parse import urlparse
+#from urllib.parse import urlparse
+try:
+    from urlparse import urlparse  # Python 2
+except ImportError:
+    from urllib.parse import urlparse  # Python 3
 
 from oelint_parser.cls_item import Variable
 from oelint_parser.const_vars import get_known_mirrors
