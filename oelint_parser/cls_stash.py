@@ -10,7 +10,7 @@ from oelint_parser.helper_files import expand_term, guess_recipe_name, guess_rec
 from oelint_parser.const_vars import get_base_varset
 
 
-class Stash():
+class Stash(object):
 
     def __init__(self, quiet=False):
         """constructor

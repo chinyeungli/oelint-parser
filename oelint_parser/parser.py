@@ -1,11 +1,14 @@
-try:
-    FileNotFoundError
-except NameError:
-    FileNotFoundError = IOError
+from __future__ import absolute_import
+from __future__ import unicode_literals
 
 import collections
 import os
 import re
+
+try:
+    FileNotFoundError  # NOQA
+except NameError:
+    FileNotFoundError = IOError
 
 from oelint_parser.cls_item import Comment
 from oelint_parser.cls_item import Function
@@ -19,6 +22,7 @@ from oelint_parser.helper_files import find_local_or_in_layer, expand_term
 from oelint_parser.inlinerep import inlinerep
 
 INLINE_BLOCK = "!!!inlineblock!!!"
+
 
 def get_full_scope(_string, offset, _sstart, _send):
     """get full block of an inline statement
@@ -42,7 +46,7 @@ def get_full_scope(_string, offset, _sstart, _send):
         pos += 1
         if scopelevel < 0:
             break
-    return _string[:pos+offset]
+    return _string[:pos + offset]
 
 
 def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
@@ -62,13 +66,13 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
     res = []
     raw_line = raw_line or line
     if re.search(r"\\\s*\n", raw_line):
-        _, line = _iter.__next__()
+        _, line = next(_iter)
         while re.search(r"\\\s*\n", line):
             raw_line += line
-            _, line = _iter.__next__()
+            _, line = next(_iter)
         raw_line += line
     elif re.match(__func_start_regexp__, raw_line):
-        _, line = _iter.__next__()
+        _, line = next(_iter)
         stopiter = False
         scope_level = 0
         while not stopiter:
@@ -78,7 +82,7 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
             if "}" in line:
                 scope_level -= 1
             try:
-                _, line = _iter.__next__()
+                _, line = next(_iter)
             except StopIteration:
                 stopiter = True
             if line.strip() == "}" and not scope_level:
@@ -89,7 +93,7 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
         stopiter = False
         while not stopiter:
             try:
-                _, line = _iter.__next__()
+                _, line = next(_iter)
             except StopIteration:
                 stopiter = True
             if re.match("^[A-Za-z0-9#]+", line) or stopiter:
@@ -115,7 +119,7 @@ def prepare_lines_subparser(_iter, lineOffset, num, line, raw_line=None):
 
 
 def prepare_lines(_file, lineOffset=0):
-    """break raw file input into preprocessed chunks 
+    """break raw file input into preprocessed chunks
 
     Args:
         _file (string): Full path to file

@@ -1,11 +1,14 @@
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
+
 import textwrap
 import re
 
 from oelint_parser.const_func import KNOWN_FUNCS
-from oelint_parser.const_vars import get_known_machines
 
 
-class Item():
+class Item(object):
     """Base class for all Stash items
     """
     ATTR_LINE = "Line"
@@ -162,7 +165,8 @@ class Variable(Item):
             operator {str} -- Operation performed to the variable
             flag {str} -- Optional variable flag
         """
-        super().__init__(origin, line, infileline, rawtext)
+        
+        super(Variable, self).__init__(origin, line, infileline, rawtext)
         if "inherit" != name:
             self.VarName, self.SubItem, self.PkgSpec = self.extract_sub(name)
             self.SubItem += " ".join(self.PkgSpec)
@@ -243,7 +247,7 @@ class Comment(Item):
             infileline {int} -- Line counter in the particular file
             rawtext {str} -- Raw string
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(Comment, self).__init__(origin, line, infileline, rawtext)
 
     def get_items(self):
         """Get single lines of block
@@ -270,7 +274,7 @@ class Include(Item):
             incname {str} -- raw name of the include file
             statement {str} -- either include or require
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(Include, self).__init__(origin, line, infileline, rawtext)
         self.IncName = incname
         self.Statement = statement
 
@@ -303,7 +307,7 @@ class Function(Item):
             python {bool} -- python function according to parser (default: {False})
             fakeroot {bool} -- uses fakeroot (default: {False})
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(Function, self).__init__(origin, line, infileline, rawtext)
         self.IsPython = python is not None
         self.IsFakeroot = fakeroot is not None
         name = name or ""
@@ -357,7 +361,7 @@ class PythonBlock(Item):
             rawtext {str} -- Raw string
             name {str} -- Function name
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(PythonBlock, self).__init__(origin, line, infileline, rawtext)
         self.FuncName = name
 
     def get_items(self):
@@ -387,7 +391,7 @@ class TaskAssignment(Item):
             ident {str} -- task flag
             value {str} -- value of modification
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(TaskAssignment, self).__init__(origin, line, infileline, rawtext)
         self.FuncName = name
         self.VarName = ident
         self.VarValue = value
@@ -421,7 +425,7 @@ class TaskAdd(Item):
             before {str} -- before statement (default: {""})
             after {str} -- after statement (default: {""})
         """
-        super().__init__(origin, line, infileline, rawtext)
+        super(TaskAdd, self).__init__(origin, line, infileline, rawtext)
         self.FuncName = name
         self.Before = [x for x in (before or "").split(" ") if x]
         self.After = [x for x in (after or "").split(" ") if x]
@@ -450,7 +454,7 @@ class MissingFile(Item):
             filename {str} -- filename of the file that can't be found
             statement {str} -- either include or require
         """
-        super().__init__(origin, line, infileline, "")
+        super(MissingFile, self).__init__(origin, line, infileline, "")
         self.Filename = filename
         self.Statement = statement
 
