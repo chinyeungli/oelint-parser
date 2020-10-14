@@ -1,3 +1,7 @@
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
+
 import re
 
 def bb_utils_contains(_in):
