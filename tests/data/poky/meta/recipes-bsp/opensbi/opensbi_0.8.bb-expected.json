@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "RISC-V Open Source Supervisor Binary Interface (OpenSBI)",
+  "DESCRIPTION": "OpenSBI aims to provide an open-source and extensible implementation of the RISC-V SBI specification for a platform specific firmware (M-mode) and a general purpose OS, hypervisor or bootloader (S-mode or HS-mode). OpenSBI implementation can be easily extended by RISC-V platform or System-on-Chip vendors to fit a particular hadware configuration.",
+  "LICENSE": "BSD-2-Clause",
+  "LIC_FILES_CHKSUM": "file://COPYING.BSD;md5=42dd9555eb177f35150cf9aa240b61e5",
+  "inherit": "autotools-brokensep deploy",
+  "SRCREV": "a98258d0b537a295f517bbc8d813007336731fa9",
+  "SRC_URI": "git://github.com/riscv/opensbi.git;branch=master \u001b           file://0001-Makefile-Don-t-specify-mabi-or-march.patch \u001b          ",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OEMAKE": "PLATFORM=${RISCV_SBI_PLAT} I=${D}\n !!!inlineblock!!!",
+  "do_compile[depends]": "!!!inlineblock!!!",
+  "FILES_${PN}": "/share/opensbi/*/${RISCV_SBI_PLAT}/firmware/fw_jump.*\n/share/opensbi/*/${RISCV_SBI_PLAT}/firmware/fw_payload.*\n/share/opensbi/*/${RISCV_SBI_PLAT}/firmware/fw_dynamic.*",
+  "COMPATIBLE_HOST": "(riscv64|riscv32).*",
+  "INHIBIT_PACKAGE_STRIP": "1",
+  "SECURITY_CFLAGS": ""
+}

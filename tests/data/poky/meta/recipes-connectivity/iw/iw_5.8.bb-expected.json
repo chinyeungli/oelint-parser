@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "nl80211 based CLI configuration utility for wireless devices",
+  "DESCRIPTION": "iw is a new nl80211 based CLI configuration utility for \u001bwireless devices. It supports almost all new drivers that have been added \u001bto the kernel recently. ",
+  "HOMEPAGE": "http://wireless.kernel.org/en/users/Documentation/iw",
+  "SECTION": "base",
+  "LICENSE": "BSD-2-Clause",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=878618a5c4af25e9b93ef0be1a93f774",
+  "DEPENDS": "libnl",
+  "SRC_URI": "http://www.kernel.org/pub/software/network/iw/${BP}.tar.gz \u001b           file://0001-iw-version.sh-don-t-use-git-describe-for-versioning.patch \u001b           file://separate-objdir.patch \u001b",
+  "SRC_URI[md5sum]": "98129d64212bdbb408f009c56ed5c62a",
+  "SRC_URI[sha256sum]": "cd9125c7e560926d66b09977fe0f75e5365ffd05a15df67d86a421dc76f96a96",
+  "inherit": "pkgconfig",
+  "EXTRA_OEMAKE": "\u001b    -f '${S}/Makefile' \u001b    \u001b    'PREFIX=${prefix}' \u001b    'SBINDIR=${sbindir}' \u001b    'MANDIR=${mandir}' \u001b"
+}

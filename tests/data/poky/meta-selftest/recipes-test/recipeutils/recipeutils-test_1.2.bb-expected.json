@@ -1,0 +1,10 @@
+{
+  "SUMMARY": "Test recipe for recipeutils.patch_recipe()",
+  "SRC_URI": "http://xorg.freedesktop.org/releases/individual/lib/libxshmfence-${PV}.tar.bz2\nfile://somefile\n file://anotherfile",
+  "SRC_URI[md5sum]": "66662e76899112c0f99e22f2fc775a7e",
+  "SRC_URI[sha256sum]": "d21b2d1fd78c1efbe1f2c16dae1cb23f8fd231dcf891465b8debe636a9054b0c",
+  "LICENSE": "Proprietary",
+  "LIC_FILES_CHKSUM": "file://${WORKDIR}/somefile;md5=d41d8cd98f00b204e9800998ecf8427e",
+  "DEPENDS": "zlib",
+  "BBCLASSEXTEND": "native nativesdk"
+}

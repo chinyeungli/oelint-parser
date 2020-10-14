@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Common CA certificates",
+  "DESCRIPTION": "This package includes PEM files of CA certificates to allow \u001bSSL-based applications to check for the authenticity of SSL connections. \u001bThis derived from Debian's CA Certificates.",
+  "HOMEPAGE": "http://packages.debian.org/sid/ca-certificates",
+  "SECTION": "misc",
+  "LICENSE": "GPL-2.0+ & MPL-2.0",
+  "LIC_FILES_CHKSUM": "file://debian/copyright;md5=ae5b36b514e3f12ce1aa8e2ee67f3d7e",
+  "DEPENDS": "\nopenssl-native\nopenssl-native",
+  "PACKAGE_WRITE_DEPS": "openssl-native debianutils-native",
+  "SRCREV": "b3a8980b781bc9a370e42714a605cd4191bb6c0b",
+  "SRC_URI": "git://salsa.debian.org/debian/ca-certificates.git;protocol=https \u001b           file://0002-update-ca-certificates-use-SYSROOT.patch \u001b           file://0001-update-ca-certificates-don-t-use-Debianisms-in-run-p.patch \u001b           file://update-ca-certificates-support-Toybox.patch \u001b           file://default-sysroot.patch \u001b           file://sbindir.patch \u001b           file://0003-update-ca-certificates-use-relative-symlinks-from-ET.patch \u001b           file://0001-certdata2pem.py-use-python3.patch \u001b           ",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>\u001bd+)",
+  "S": "${WORKDIR}/git",
+  "inherit": "allarch",
+  "EXTRA_OEMAKE": "\u001b    'CERTSDIR=${datadir}/ca-certificates' \u001b    'SBINDIR=${sbindir}' \u001b",
+  "CONFFILES_${PN}": "${sysconfdir}/ca-certificates.conf\n ${sysconfdir}/ssl/certs/ca-certificates.crt",
+  "RDEPENDS_${PN}": "openssl-bin\nopenssl-native\nnativesdk-openssl-bin",
+  "BBCLASSEXTEND": "native nativesdk"
+}

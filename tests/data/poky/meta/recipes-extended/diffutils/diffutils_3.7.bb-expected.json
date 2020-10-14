@@ -1,0 +1,18 @@
+{
+  "LICENSE": "GPLv3+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504",
+  "SUMMARY": "Diffutils contains tools used for finding differences between files",
+  "HOMEPAGE": "https://www.gnu.org/software/diffutils/diffutils.html",
+  "DESCRIPTION": "Diffutils contains the GNU diff, diff3, \u001bsdiff, and cmp utilities. These programs are usually \u001bused for creating patch files.",
+  "SECTION": "base",
+  "inherit": "autotools texinfo update-alternatives gettext\nptest",
+  "ALTERNATIVE_${PN}": "diff cmp",
+  "ALTERNATIVE_PRIORITY": "100",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SRC_URI": "${GNU_MIRROR}/diffutils/diffutils-${PV}.tar.xz \u001b           file://run-ptest \u001b           file://0001-Skip-strip-trailing-cr-test-case.patch \u001b",
+  "SRC_URI[md5sum]": "4824adc0e95dbbf11dfbdfaad6a1e461",
+  "SRC_URI[sha256sum]": "b3a7a6221c3dc916085f0d205abf6b8e1ba443d4dd965118da364a1dc1cb3a26",
+  "EXTRA_OECONF": "ac_cv_path_PR_PROGRAM=${bindir}/pr --without-libsigsegv-prefix",
+  "acpaths": "-I ./m4",
+  "RDEPENDS_${PN}-ptest": "make perl"
+}

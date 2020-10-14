@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- mouse input driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "DESCRIPTION": "mouse is an Xorg input driver for mice. The driver \u001bsupports most available mouse types and interfaces.  The mouse driver \u001bfunctions as a pointer input device, and may be used as the X server's \u001bcore pointer. Multiple mice are supported by multiple instances of this \u001bdriver.",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so\n ${libdir}/xorg/modules/input/*.so \u001b                 ${datadir}/X11/xorg.conf.d \u001b                 ",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=90ea9f90d72b6d9327dede5ffdb2a510",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI[md5sum]": "a2104693bbcfe1413397f7905eecd3dc",
+  "SRC_URI[sha256sum]": "93ecb350604d05be98b7d4e5db3b8155a44890069a7d8d6b800c0bea79c85cc5",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

@@ -1,0 +1,5 @@
+{
+  "SUMMARY": "Remote debugging tools for Eclipse integration",
+  "inherit": "packagegroup",
+  "RDEPENDS_${PN}": "\u001b    gdbserver \u001b    tcf-agent \u001b    openssh-sftp-server \u001b    "
+}

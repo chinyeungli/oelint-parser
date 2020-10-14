@@ -1,0 +1,11 @@
+{
+  "PR": "r40",
+  "inherit": "packagegroup features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "PACKAGES": "${PN} ${PN}-utils",
+  "VIRTUAL-RUNTIME": "\nxserver-nodm-init",
+  "SUMMARY": "X11 display server and basic utilities",
+  "RDEPENDS_${PN}": "\u001b    ${PN}-xserver \u001b    ${PN}-utils \u001b    ",
+  "SUMMARY_${PN}-utils": "X11 basic utilities and init",
+  "RDEPENDS_${PN}-utils": "\u001b    ${VIRTUAL-RUNTIME_xserver_common} \u001b    ${VIRTUAL-RUNTIME_graphical_init_manager} \u001b    xauth \u001b    xhost \u001b    xset \u001b    xrandr \u001b    xmodmap \u001b    xdpyinfo \u001b    xinput-calibrator\u00a0\u001b    dbus-x11 \u001b    "
+}

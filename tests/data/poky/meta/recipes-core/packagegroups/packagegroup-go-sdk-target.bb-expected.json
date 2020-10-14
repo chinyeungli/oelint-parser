@@ -1,0 +1,6 @@
+{
+  "SUMMARY": "Target packages for the Go SDK",
+  "inherit": "packagegroup goarch",
+  "RDEPENDS_${PN}": " \u001b    go \u001b    go-runtime \u001b    go-runtime-dev \u001b    go-runtime-staticdev \u001b",
+  "COMPATIBLE_HOST": "^(?!riscv32).*"
+}

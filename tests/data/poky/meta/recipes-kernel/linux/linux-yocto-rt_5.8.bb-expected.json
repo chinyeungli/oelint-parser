@@ -1,0 +1,16 @@
+{
+  "KBRANCH": "v5.8/standard/preempt-rt/base",
+  "SRCREV": "31fafe701e2adec65d2b2a74a3e592a358915c67\nffbfe61a194537689c782b20da185e7e4daa9ef9",
+  "SRC_URI": "git://git.yoctoproject.org/linux-yocto.git;branch=${KBRANCH};name=machine \u001b           git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.8;destsuffix=${KMETA}",
+  "LINUX_VERSION": "5.8.9",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46",
+  "DEPENDS": "elfutils-native\nopenssl-native util-linux-native",
+  "PV": "${LINUX_VERSION}+git${SRCPV}",
+  "KMETA": "kernel-meta",
+  "KCONF_BSP_AUDIT_LEVEL": "2",
+  "LINUX_KERNEL_TYPE": "preempt-rt",
+  "COMPATIBLE_MACHINE": "(qemux86|qemux86-64|qemuarm|qemuarmv5|qemuarm64|qemuppc|qemumips)",
+  "KERNEL_DEVICETREE": "versatile-pb.dtb",
+  "KERNEL_EXTRA_FEATURES": "features/netfilter/netfilter.scc features/taskstats/taskstats.scc",
+  "KERNEL_FEATURES": " ${KERNEL_EXTRA_FEATURES}\n cfg/virtio.scc features/drm-bochs/drm-bochs.scc\n cfg/sound.scc cfg/paravirt_kvm.scc\n cfg/sound.scc cfg/paravirt_kvm.scc\n features/scsi/scsi-debug.scc"
+}

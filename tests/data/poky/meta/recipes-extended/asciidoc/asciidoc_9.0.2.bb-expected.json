@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Tool for creating HTML, PDF, EPUB, man pages",
+  "DESCRIPTION": "AsciiDoc is a text document format for writing short documents, \u001barticles, books and UNIX man pages.",
+  "HOMEPAGE": "http://asciidoc.org/",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYRIGHT;md5=4e5d1baf6f20559e3bec172226a47e4e \u001b                    file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263 ",
+  "SRC_URI": "git://github.com/asciidoc/asciidoc-py3;protocol=https \u001b           file://auto-catalogs.patch",
+  "SRCREV": "9a407dc9a497364c91421fd961954eddb565baf1",
+  "DEPENDS": "libxml2-native libxslt-native docbook-xml-dtd4-native docbook-xsl-stylesheets-native",
+  "S": "${WORKDIR}/git",
+  "inherit": "autotools-brokensep",
+  "CLEANBROKEN": "1",
+  "RDEPENDS_${PN}": "python3",
+  "RDEPENDS": "python3",
+  "BBCLASSEXTEND": "native nativesdk"
+}

@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Real-Time preemption testcases",
+  "HOMEPAGE": "https://rt.wiki.kernel.org/index.php/Cyclictest",
+  "SECTION": "tests",
+  "DEPENDS": "linux-libc-headers virtual/libc",
+  "LICENSE": "GPLv2 & GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=751419260aa954499f7abaabaa882bbe \u001b                    file://src/cyclictest/cyclictest.c;beginline=7;endline=9;md5=e768b8da44555fe63f65e5c497844cb5 \u001b                    file://src/pi_tests/pi_stress.c;beginline=6;endline=19;md5=bd426a634a43ec612e9fbf125dfcc949",
+  "SRCREV": "dff174f994f547a5785d32454865f140daacb0f5",
+  "PE": "1",
+  "SRC_URI": "git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git\n \u001b            file://run-ptest \u001b            file://rt_bmark.py \u001b            file://0001-gzip-with-n-for-build-reproducibilty.patch \u001b           ",
+  "UPSTREAM_CHECK_GITTAGREGEX": "v(?P<pver>(?!1\u001b.[2-8])(\u001bd+(\u001b.\u001bd+)+))",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OEMAKE": "NUMA=0\nPYLIB=''",
+  "inherit": "ptest",
+  "COMPATIBLE_HOST": "'null'",
+  "RDEPENDS_${PN}-ptest": " stress-ng python3 python3-multiprocessing python3-datetime python3-misc",
+  "FILES_${PN}": "${prefix}/src/backfire"
+}

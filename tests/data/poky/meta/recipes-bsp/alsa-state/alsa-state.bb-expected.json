@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "Alsa scenario files to enable alsa state restoration",
+  "HOMEPAGE": "http://www.alsa-project.org/",
+  "DESCRIPTION": "Alsa Scenario Files - an init script and state files to restore \u001bsound state at system boot and save it at system shut down.",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "PV": "0.2.0",
+  "PR": "r5",
+  "SRC_URI": "\u001b  file://asound.conf \u001b  file://asound.state \u001b  file://alsa-state-init \u001b",
+  "S": "${WORKDIR}",
+  "inherit": "update-rc.d",
+  "INITSCRIPT_NAME": "alsa-state",
+  "INITSCRIPT_PARAMS": "start 39 S . stop 31 0 6 .",
+  "PACKAGES": "alsa-states",
+  "RRECOMMENDS": "alsa-states",
+  "RDEPENDS_${PN}": "alsa-utils-alsactl",
+  "FILES_${PN}": "${sysconfdir}/init.d ${sysconfdir}/asound.conf",
+  "CONFFILES_${PN}": "${sysconfdir}/asound.conf",
+  "FILES": "${localstatedir}/lib/alsa/*.state"
+}

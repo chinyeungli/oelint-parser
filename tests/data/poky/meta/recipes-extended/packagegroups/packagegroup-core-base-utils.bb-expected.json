@@ -1,0 +1,8 @@
+{
+  "SUMMARY": "Full-featured set of base utils",
+  "DESCRIPTION": "Package group bringing in packages needed to provide much of the base utils type functionality found in busybox",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}\n${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "VIRTUAL-RUNTIME": "vim-tiny",
+  "RDEPENDS_${PN}": "\u001b    base-passwd \u001b    bash \u001b    bind-utils \u001b    bzip2 \u001b    coreutils \u001b    cpio \u001b    !!!inlineblock!!! \u001b    dhcpcd \u001b    !!!inlineblock!!! \u001b    diffutils \u001b    !!!inlineblock!!! \u001b    e2fsprogs \u001b    ed \u001b    file \u001b    findutils \u001b    gawk \u001b    grep \u001b    gzip \u001b    !!!inlineblock!!! \u001b    inetutils \u001b    inetutils-ping \u001b    inetutils-telnet \u001b    inetutils-tftp \u001b    inetutils-traceroute \u001b    iproute2 \u001b    kbd \u001b    kmod \u001b    less \u001b    ncurses-tools \u001b    net-tools \u001b    parted \u001b    patch \u001b    procps \u001b    psmisc \u001b    sed \u001b    shadow-base \u001b    tar \u001b    time \u001b    unzip \u001b    util-linux \u001b    ${VIRTUAL-RUNTIME_vim} \u001b    wget \u001b    which \u001b    xz \u001b    "
+}

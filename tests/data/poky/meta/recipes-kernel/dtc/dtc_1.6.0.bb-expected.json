@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Device Tree Compiler",
+  "HOMEPAGE": "https://devicetree.org/",
+  "DESCRIPTION": "The Device Tree Compiler is a tool used to manipulate the Open-Firmware-like device tree used by PowerPC kernels.",
+  "SECTION": "bootloader",
+  "LICENSE": "GPLv2 | BSD",
+  "DEPENDS": "flex-native bison-native",
+  "SRC_URI": "git://git.kernel.org/pub/scm/utils/dtc/dtc.git \u001b           file://make_install.patch \u001b           ",
+  "UPSTREAM_CHECK_GITTAGREGEX": "v(?P<pver>\u001bd+(\u001b.\u001bd+)+)",
+  "EXTRA_OEMAKE": "'NO_PYTHON=1 PREFIX=\"${prefix}\" LIBDIR=\"${libdir}\" DESTDIR=\"${D}\"'",
+  "inherit": "pkgconfig",
+  "S": "${WORKDIR}/git\n${WORKDIR}/git",
+  "PACKAGES": "${PN}-misc",
+  "FILES_${PN}-misc": "${bindir}/convert-dtsv0 ${bindir}/ftdump ${bindir}/dtdiff",
+  "RDEPENDS_${PN}-misc": "bash diffutils",
+  "LIC_FILES_CHKSUM": "file://GPL;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b\t\t    file://libfdt/libfdt.h;beginline=4;endline=7;md5=05bb357cfb75cae7d2b01d2ee8d76407",
+  "SRCREV": "2525da3dba9beceb96651dc2986581871dbeca30",
+  "BBCLASSEXTEND": "native nativesdk"
+}

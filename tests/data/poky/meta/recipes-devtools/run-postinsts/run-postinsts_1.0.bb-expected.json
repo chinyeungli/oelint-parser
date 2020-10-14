@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "Runs postinstall scripts on first boot of the target device",
+  "SECTION": "devel",
+  "PR": "r10",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "SRC_URI": "file://run-postinsts \u001b           file://run-postinsts.init \u001b           file://run-postinsts.service",
+  "S": "${WORKDIR}",
+  "inherit": "allarch systemd update-rc.d",
+  "INITSCRIPT_NAME": "run-postinsts",
+  "INITSCRIPT_PARAMS": "start 99 S .",
+  "SYSTEMD_SERVICE_${PN}": "run-postinsts.service"
+}

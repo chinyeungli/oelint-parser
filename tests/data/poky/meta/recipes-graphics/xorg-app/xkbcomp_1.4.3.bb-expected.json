@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "X application\nA program to compile XKB keyboard description",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxkbfile",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "The xkbcomp keymap compiler converts a description of an \u001bXKB keymap into one of several output formats. The most common use for \u001bxkbcomp is to create a compiled keymap file (.xkm extension) which can \u001bbe read directly by XKB-capable X servers or utilities.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=08436e4f4476964e2e2dd7e7e41e076a",
+  "BBCLASSEXTEND": "native",
+  "EXTRA_OECONF": "--disable-selective-werror",
+  "SRC_URI[md5sum]": "6e4751d99373f85d459ab4dff28893f5",
+  "SRC_URI[sha256sum]": "06242c169fc11caf601cac46d781d467748c6a330e15b36dce46520b8ac8d435"
+}

@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "X application\nUtility to display window and font properties of an X server",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxmu",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "The xprop utility is for displaying window and font \u001bproperties in an X server. One window or font is selected using the \u001bcommand line arguments or possibly in the case of a window, by clicking \u001bon the desired window. A list of properties is then given, possibly with \u001bformatting information.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=e226ab8db88ac0bc0391673be40c9f91",
+  "PE": "1",
+  "SRC_URI[md5sum]": "cc369c28383a5d7144e7197ee7d30bfa",
+  "SRC_URI[sha256sum]": "8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753"
+}

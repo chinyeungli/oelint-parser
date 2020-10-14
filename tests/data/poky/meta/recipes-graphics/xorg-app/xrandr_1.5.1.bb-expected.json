@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "X application\nXRandR: X Resize, Rotate and Reflect extension command",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X\nMIT",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxrandr libxrender",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2\n${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.xz",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "Xrandr is used to set the size, orientation and/or \u001breflection of the outputs for a screen. It can also set the screen \u001bsize.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=fe1608bdb33cf8c62a4438f7d34679b3",
+  "PE": "1",
+  "SRC_URI[md5sum]": "fe40f7a4fd39dd3a02248d3e0b1972e4",
+  "SRC_URI[sha256sum]": "7bc76daf9d72f8aff885efad04ce06b90488a1a169d118dea8a2b661832e8762",
+  "BBCLASSEXTEND": "native nativesdk"
+}

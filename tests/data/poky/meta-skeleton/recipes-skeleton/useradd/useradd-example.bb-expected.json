@@ -1,0 +1,20 @@
+{
+  "inherit": "useradd\nuseradd",
+  "DESCRIPTION": "This recipe serves as an example for using features from useradd.bbclass",
+  "SECTION": "examples",
+  "PR": "r1",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "SRC_URI": "file://file1 \u001b           file://file2 \u001b           file://file3 \u001b           file://file4",
+  "S": "${WORKDIR}",
+  "PACKAGES": "${PN}-user3",
+  "EXCLUDE_FROM_WORLD": "1",
+  "USERADD_PACKAGES": "${PN} ${PN}-user3",
+  "USERADD_PARAM_${PN}": "-u 1200 -d /home/user1 -r -s /bin/bash user1; -u 1201 -d /home/user2 -r -s /bin/bash user2",
+  "USERADD_PARAM_${PN}-user3": "-u 1202 -d /home/user3 -r -s /bin/bash -P 'user3' user3",
+  "GROUPADD_PARAM_${PN}": "-g 880 group1; -g 890 group2",
+  "GROUPADD_PARAM_${PN}-user3": "-g 900 group3",
+  "FILES_${PN}": "${datadir}/user1/* ${datadir}/user2/*",
+  "FILES_${PN}-user3": "${datadir}/user3/*",
+  "INHIBIT_PACKAGE_DEBUG_SPLIT": "1"
+}

@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Test recipe for recipetool appendfile",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "SRC_URI": "file://installscript.sh \u001b           file://selftest-replaceme-orig \u001b           file://selftest-replaceme-todir \u001b           file://file1 \u001b           file://add-file.patch \u001b           file://subdir \u001b           file://selftest-replaceme-inst-globfile \u001b           file://selftest-replaceme-inst-todir-globfile \u001b           file://selftest-replaceme-inst-func",
+  "EXCLUDE_FROM_WORLD": "1",
+  "FILES_${PN}": "${datadir}"
+}

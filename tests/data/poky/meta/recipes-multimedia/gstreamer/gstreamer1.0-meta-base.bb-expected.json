@@ -1,0 +1,11 @@
+{
+  "SUMMARY": "Gstreamer1.0 package groups",
+  "LICENSE": "MIT",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "COMMERCIAL_PLUGINS": "${COMMERCIAL_AUDIO_PLUGINS} ${COMMERCIAL_VIDEO_PLUGINS}",
+  "DEPENDS_UGLY": "!!!inlineblock!!!",
+  "DEPENDS_BAD": "!!!inlineblock!!!",
+  "DEPENDS": "gstreamer1.0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good ${DEPENDS_UGLY} ${DEPENDS_BAD}",
+  "PACKAGES": "\u001b    gstreamer1.0-meta-base \u001b    gstreamer1.0-meta-x11-base \u001b    gstreamer1.0-meta-audio \u001b    gstreamer1.0-meta-debug \u001b    gstreamer1.0-meta-video"
+}

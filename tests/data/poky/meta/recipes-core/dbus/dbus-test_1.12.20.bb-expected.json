@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "D-Bus test package (for D-bus functionality testing only)",
+  "HOMEPAGE": "http://dbus.freedesktop.org",
+  "SECTION": "base",
+  "inherit": "autotools pkgconfig gettext upstream-version-is-even\nptest",
+  "LICENSE": "AFL-2.1 | GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=10dded3b58148f3f1fd804b26354af3e \u001b                    file://dbus/dbus.h;beginline=6;endline=20;md5=7755c9d7abccd5dbd25a6a974538bb3c",
+  "SRC_URI": "https://dbus.freedesktop.org/releases/dbus/dbus-${PV}.tar.gz \u001b           file://tmpdir.patch \u001b           file://dbus-1.init \u001b           file://clear-guid_from_server-if-send_negotiate_unix_f.patch \u001b\nfile://run-ptest \u001b            file://python-config.patch \u001b\t    ",
+  "SRC_URI[md5sum]": "dfe8a71f412e0b53be26ed4fbfdc91c4",
+  "SRC_URI[sha256sum]": "f77620140ecb4cdc67f37fb444f8a6bea70b5b6461f12f1cbe2cec60fa7de5fe",
+  "EXTRA_OECONF": "--disable-xml-docs \u001b                --disable-doxygen-docs \u001b                --disable-libaudit \u001b                --enable-largefile \u001b                --with-system-socket=/run/dbus/system_bus_socket \u001b                \n SYSTEMCTL=${base_bindir}/systemctl\n --disable-selinux\n--enable-tests \u001b                --enable-modular-tests \u001b                --enable-installed-tests \u001b                --enable-checks \u001b                --enable-asserts \u001b                --with-dbus-test-dir=${PTEST_PATH} \u001b                --enable-embedded-tests \u001b             ",
+  "PACKAGECONFIG": "!!!inlineblock!!! \u001b                   user-session \u001b                  \n\n",
+  "PACKAGECONFIG[systemd]": "--enable-systemd --with-systemdsystemunitdir=${systemd_system_unitdir},--disable-systemd --without-systemdsystemunitdir,systemd",
+  "PACKAGECONFIG[x11]": "--with-x --enable-x11-autolaunch,--without-x --disable-x11-autolaunch, virtual/libx11 libsm",
+  "PACKAGECONFIG[user-session]": "--enable-user-session --with-systemduserunitdir=${systemd_user_unitdir},--disable-user-session",
+  "PACKAGECONFIG[verbose-mode]": "--enable-verbose-mode,,,",
+  "DEPENDS": "dbus glib-2.0",
+  "RDEPENDS_${PN}-dev": "",
+  "S": "${WORKDIR}/dbus-${PV}",
+  "FILESEXTRAPATHS": "${FILE_DIRNAME}/dbus:",
+  "RDEPENDS_${PN}-ptest": "bash make dbus\n${PN}",
+  "PRIVATE_LIBS_${PN}-ptest": "libdbus-1.so.3"
+}

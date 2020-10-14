@@ -1,0 +1,18 @@
+{
+  "inherit": "allarch",
+  "SUMMARY": "Operating system identification",
+  "DESCRIPTION": "The /usr/lib/os-release file contains operating system identification data.",
+  "LICENSE": "MIT",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "OS_RELEASE_FIELDS": "ID ID_LIKE NAME VERSION VERSION_ID PRETTY_NAME",
+  "OS_RELEASE_UNQUOTED_FIELDS": "ID VERSION_ID VARIANT_ID",
+  "ID": "${DISTRO}",
+  "NAME": "${DISTRO_NAME}",
+  "VERSION": "${DISTRO_VERSION}!!!inlineblock!!!",
+  "VERSION_ID": "${DISTRO_VERSION}",
+  "PRETTY_NAME": "${DISTRO_NAME} ${VERSION}",
+  "BUILD_ID": "${DATETIME}",
+  "BUILD_ID[vardepsexclude]": "DATETIME",
+  "do_compile[vardeps]": "${OS_RELEASE_FIELDS}",
+  "FILES_${PN}": "${nonarch_libdir}/os-release"
+}

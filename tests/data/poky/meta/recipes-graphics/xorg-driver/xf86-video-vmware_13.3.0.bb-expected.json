@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- VMware SVGA display driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nvirtual/libx11 xorgproto libpciaccess\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2\nfile://0002-add-option-for-vmwgfx.patch",
+  "DESCRIPTION": "vmware is an Xorg driver for VMware virtual video cards.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=5fcd7d437a959a15fbee8707747c6b53",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI[md5sum]": "08d66d062055080ff699ab4869726ea2",
+  "SRC_URI[sha256sum]": "47971924659e51666a757269ad941a059ef5afe7a47b5101c174a6022ac4066c",
+  "COMPATIBLE_HOST": "'(i.86.*-linux|x86_64.*-linux)'",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[vmwgfx]": "--enable-vmwgfx, --disable-vmwgfx, libdrm virtual/mesa",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

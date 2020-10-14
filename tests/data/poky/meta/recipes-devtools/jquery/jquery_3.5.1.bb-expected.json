@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "jQuery is a fast, small, and feature-rich JavaScript library",
+  "HOMEPAGE": "https://jquery.com/",
+  "LICENSE": "MIT",
+  "SECTION": "devel",
+  "LIC_FILES_CHKSUM": "file://${S}/${BP}.js;beginline=8;endline=10;md5=ebd7bc5d23ab165188e526a0c65d24bb",
+  "SRC_URI": "\u001b    https://code.jquery.com/${BP}.js;name=js;subdir=${BP} \u001b    https://code.jquery.com/${BP}.min.js;name=min;subdir=${BP} \u001b    https://code.jquery.com/${BP}.min.map;name=map;subdir=${BP} \u001b    ",
+  "UPSTREAM_CHECK_REGEX": "jquery-(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.js",
+  "inherit": "allarch",
+  "PACKAGES": "${PN}",
+  "FILES_${PN}": "${datadir}",
+  "BBCLASSEXTEND": "native nativesdk"
+}

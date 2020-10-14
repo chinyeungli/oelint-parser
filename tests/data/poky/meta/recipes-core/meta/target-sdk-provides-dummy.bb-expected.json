@@ -1,0 +1,13 @@
+{
+  "DUMMYARCH": "sdk-provides-dummy-target",
+  "DUMMYPROVIDES_PACKAGES": "\u001b    busybox \u001b    busybox-dev \u001b    busybox-src \u001b    coreutils \u001b    coreutils-dev \u001b    coreutils-src \u001b    bash \u001b    bash-dev \u001b    bash-src \u001b    perl \u001b    perl-dev \u001b    perl-src \u001b    perl-module-re \u001b    perl-module-strict \u001b    perl-module-vars \u001b    perl-module-text-wrap \u001b    libxml-parser-perl \u001b    perl-module-bytes \u001b    perl-module-carp \u001b    perl-module-config \u001b    perl-module-constant \u001b    perl-module-data-dumper \u001b    perl-module-errno \u001b    perl-module-exporter \u001b    perl-module-file-basename \u001b    perl-module-file-compare \u001b    perl-module-file-copy \u001b    perl-module-file-find \u001b    perl-module-file-glob \u001b    perl-module-file-path \u001b    perl-module-file-stat \u001b    perl-module-file-temp \u001b    perl-module-getopt-long \u001b    perl-module-io-file \u001b    perl-module-overload \u001b    perl-module-overloading \u001b    perl-module-posix \u001b    perl-module-thread-queue \u001b    perl-module-threads \u001b    perl-module-warnings \u001b    perl-module-warnings-register \u001b    pkgconfig \u001b    pkgconfig-dev \u001b    pkgconfig-src \u001b\n",
+  "DUMMYPROVIDES": "\u001b    /bin/sh \u001b    /bin/bash \u001b    /usr/bin/env \u001b    /usr/bin/perl \u001b    libperl.so.5 \u001b    libperl.so.5()(64bit) \u001b\n${DUMMYPROVIDES_PACKAGES_MULTILIB}",
+  "SUMMARY": "Dummy packages which handle excluding packages from the sdk, e.g. ensuring perl is excluded from buildtools",
+  "LICENSE": "MIT",
+  "PACKAGE_ARCH": "all",
+  "inherit": "allarch",
+  "ALLOW_EMPTY_${PN}": "1",
+  "PR[vardeps]": "DUMMYPROVIDES\nDUMMYPROVIDES_PACKAGES",
+  "DUMMYPROVIDES_PACKAGES_MULTILIB": "!!!inlineblock!!!",
+  "SSTATE_DUPWHITELIST": "${PKGDATA_DIR}/${PN} ${PKGDATA_DIR}/runtime/${PN}"
+}

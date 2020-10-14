@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "X application\nServer access control program for X",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxmu libxau",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "The xhost program is used to add and delete host names or \u001buser names to the list allowed to make connections to the X server. In \u001bthe case of hosts, this provides a rudimentary form of privacy control \u001band security. Environments which require more sophisticated measures \u001bshould implement the user-based mechanism or use the hooks in the \u001bprotocol for passing other authentication data to the server.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=8fbed71dddf48541818cef8079124199",
+  "PE": "1",
+  "SRC_URI[md5sum]": "a48c72954ae6665e0616f6653636da8c",
+  "SRC_URI[sha256sum]": "a2dc3c579e13674947395ef8ccc1b3763f89012a216c2cc6277096489aadc396",
+  "PACKAGECONFIG": "!!!inlineblock!!!",
+  "PACKAGECONFIG[ipv6]": "--enable-ipv6,--disable-ipv6,"
+}

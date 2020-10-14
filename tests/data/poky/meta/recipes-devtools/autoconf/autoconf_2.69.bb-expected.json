@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "A GNU tool that produce shell scripts to automatically configure software",
+  "DESCRIPTION": "Autoconf is an extensible package of M4 macros that produce shell scripts to automatically \u001b configure software source code packages. Autoconf creates a configuration script for a package from a template \u001bfile that lists the operating system features that the package can use, in the form of M4 macro calls.",
+  "LICENSE": "GPLv3\nGPLv2 & GPLv3",
+  "HOMEPAGE": "http://www.gnu.org/software/autoconf/",
+  "SECTION": "devel",
+  "DEPENDS": "m4-native gnu-config-native",
+  "RDEPENDS_${PN}": "m4 gnu-config \u001b\t\t  perl \u001b\t\t  perl-module-bytes \u001b\t\t  perl-module-carp \u001b\t\t  perl-module-constant \u001b\t\t  perl-module-data-dumper \u001b\t\t  perl-module-errno \u001b\t\t  perl-module-exporter \u001b\t\t  perl-module-file-basename \u001b\t\t  perl-module-file-compare \u001b\t\t  perl-module-file-copy \u001b\t\t  perl-module-file-find \u001b\t\t  perl-module-file-glob \u001b\t\t  perl-module-file-path \u001b\t\t  perl-module-file-spec \u001b\t\t  perl-module-file-spec-unix \u001b\t\t  perl-module-file-stat \u001b\t\t  perl-module-getopt-long \u001b\t\t  perl-module-io-file \u001b\t\t  perl-module-overloading \u001b\t\t  perl-module-posix \u001b\t\t  perl-module-symbol \u001b\t\t  perl-module-thread-queue \u001b\t\t  perl-module-threads \u001b\t\t \nm4-native gnu-config-native\n\u001b\t\t  nativesdk-gnu-config \u001b\t\t  nativesdk-m4 \u001b\t\t  nativesdk-perl \u001b\t\t  nativesdk-perl-module-bytes \u001b\t\t  nativesdk-perl-module-carp \u001b\t\t  nativesdk-perl-module-constant \u001b\t\t  nativesdk-perl-module-data-dumper \u001b\t\t  nativesdk-perl-module-errno \u001b\t\t  nativesdk-perl-module-exporter \u001b\t\t  nativesdk-perl-module-file-basename \u001b\t\t  nativesdk-perl-module-file-compare \u001b\t\t  nativesdk-perl-module-file-copy \u001b\t\t  nativesdk-perl-module-file-find \u001b\t\t  nativesdk-perl-module-file-glob \u001b\t\t  nativesdk-perl-module-file-path \u001b\t\t  nativesdk-perl-module-file-spec \u001b\t\t  nativesdk-perl-module-file-spec-unix \u001b\t\t  nativesdk-perl-module-file-stat \u001b\t\t  nativesdk-perl-module-getopt-long \u001b\t\t  nativesdk-perl-module-io-file \u001b\t\t  nativesdk-perl-module-overloading \u001b\t\t  nativesdk-perl-module-posix \u001b\t\t  nativesdk-perl-module-symbol \u001b\t\t  nativesdk-perl-module-thread-queue \u001b\t\t  nativesdk-perl-module-threads \u001b                  ",
+  "inherit": "autotools texinfo",
+  "PERL": "${USRBINPATH}/perl\n/usr/bin/env perl\n/usr/bin/env perl",
+  "CACHED_CONFIGUREVARS": "ac_cv_path_PERL='${PERL}'",
+  "PR": "r11",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=751419260aa954499f7abaabaa882bbe \u001b\t\t    file://COPYINGv3;md5=d32239bcb673463ab874e80d47fae504",
+  "SRC_URI": "${GNU_MIRROR}/autoconf/autoconf-${PV}.tar.gz \u001b           file://program_prefix.patch \u001b           file://check-automake-cross-warning.patch \u001b           file://autoreconf-exclude.patch \u001b           file://autoreconf-gnuconfigize.patch \u001b           file://config_site.patch \u001b           file://remove-usr-local-lib-from-m4.patch \u001b           file://preferbash.patch \u001b           file://autotest-automake-result-format.patch \u001b           file://add_musl_config.patch \u001b           file://performance.patch \u001b           file://AC_HEADER_MAJOR-port-to-glibc-2.25.patch \u001b           file://autoconf-replace-w-option-in-shebangs-with-modern-use-warnings.patch \u001b           \n file://fix_path_xtra.patch",
+  "SRC_URI[md5sum]": "82d05e03b93e45f5a39b828dc9c6c29b",
+  "SRC_URI[sha256sum]": "954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969",
+  "EXTRA_OECONF": "ac_cv_path_M4=m4 ac_cv_prog_TEST_EMACS=no",
+  "BBCLASSEXTEND": "native nativesdk"
+}

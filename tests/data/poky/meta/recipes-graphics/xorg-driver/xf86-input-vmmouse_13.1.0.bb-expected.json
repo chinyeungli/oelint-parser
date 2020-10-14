@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- VMWare mouse input driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "DESCRIPTION": "The vmmouse driver enables support for the special VMMouse \u001bprotocol that is provided by VMware virtual machines to give absolute \u001bpointer positioning. The vmmouse driver is capable of falling back to the \u001bstandard 'mouse' driver if a VMware virtual machine is not detected.",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so\n${datadir}/X11/xorg.conf.d\n ${libdir}/xorg/modules/input/*.so \u001b                 ${datadir}/X11/xorg.conf.d \u001b                 ",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "SRC_URI[md5sum]": "85e2e464b7219c495ad3a16465c226ed",
+  "SRC_URI[sha256sum]": "0af558957ac1be1b2863712c2475de8f4d7f14921fd01ded2e2fde4921b19319",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "RDEPENDS_${PN}": "xf86-input-mouse",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=622841c068a9d7625fbfe7acffb1a8fc",
+  "COMPATIBLE_HOST": "'(i.86|x86_64).*-linux'",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "EXTRA_OECONF": "--with-udev-rules-dir=${nonarch_base_libdir}/udev/rules.d",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

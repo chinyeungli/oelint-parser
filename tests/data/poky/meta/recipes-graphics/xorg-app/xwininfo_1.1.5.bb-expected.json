@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "X application\nWindow information utility for X",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxext libxmu gettext-native",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "Xwininfo is a utility for displaying information about \u001bwindows.  Information may include window position, size, color depth, \u001band a number of other items.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=78976cd3115f6faf615accc4e094d90e",
+  "PE": "0",
+  "SRC_URI[md5sum]": "26d46f7ef0588d3392da3ad5802be420",
+  "SRC_URI[sha256sum]": "7a405441dfc476666c744f5fcd1bc8a75abf8b5b1d85db7b88b370982365080e"
+}

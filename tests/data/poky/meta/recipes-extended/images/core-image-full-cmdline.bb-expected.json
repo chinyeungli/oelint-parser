@@ -1,0 +1,6 @@
+{
+  "DESCRIPTION": "A console-only image with more full-featured Linux system \u001bfunctionality installed.",
+  "IMAGE_FEATURES": "splash ssh-server-openssh",
+  "IMAGE_INSTALL": "\u001b    packagegroup-core-boot \u001b    packagegroup-core-full-cmdline \u001b    ${CORE_IMAGE_EXTRA_INSTALL} \u001b    ",
+  "inherit": "core-image"
+}

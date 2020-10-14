@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "A GNU tool for automatically generating Makefiles",
+  "DESCRIPTION": "Automake is a tool for automatically generating `Makefile.in' files compliant with the GNU Coding \u001bStandards. Automake requires the use of Autoconf.",
+  "LICENSE": "GPLv2\nGPLv2",
+  "HOMEPAGE": "http://www.gnu.org/software/automake/",
+  "SECTION": "devel",
+  "SRC_URI": "${GNU_MIRROR}/automake/automake-${PV}.tar.gz\nfile://python-libdir.patch \u001b            file://buildtest.patch \u001b            file://performance.patch \u001b            file://new_rt_path_for_test-driver.patch \u001b            file://automake-replace-w-option-in-shebangs-with-modern-use-warnings.patch \u001b            file://0001-automake-Add-default-libtool_tag-to-cppasm.patch \u001b            file://0001-build-fix-race-in-parallel-builds.patch \u001b            ",
+  "inherit": "autotools texinfo",
+  "FILES_${PN}": "${datadir}/automake* ${datadir}/aclocal*",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=751419260aa954499f7abaabaa882bbe",
+  "DEPENDS": "autoconf-native",
+  "NAMEVER": "!!!inlineblock!!!",
+  "RDEPENDS_${PN}": "\u001b    autoconf \u001b    perl \u001b    perl-module-bytes \u001b    perl-module-data-dumper \u001b    perl-module-strict \u001b    perl-module-text-parsewords \u001b    perl-module-thread-queue \u001b    perl-module-threads \u001b    perl-module-vars \nautoconf-native hostperl-runtime-native\nnativesdk-autoconf",
+  "SRC_URI[md5sum]": "f1a14f2ab2b0fb861a011e1d94e589e0",
+  "SRC_URI[sha256sum]": "b2f361094b410b4acbf4efba7337bdb786335ca09eb2518635a09fb7319ca5c1",
+  "PERL": "${USRBINPATH}/perl\n${USRBINPATH}/env perl\n${USRBINPATH}/env perl",
+  "CACHED_CONFIGUREVARS": "ac_cv_path_PERL='${PERL}'",
+  "BBCLASSEXTEND": "native nativesdk"
+}

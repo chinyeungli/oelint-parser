@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Download, build, install, upgrade, and uninstall Python packages",
+  "HOMEPAGE": "https://pypi.org/project/setuptools",
+  "SECTION": "devel/python",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://LICENSE;beginline=1;endline=19;md5=9a33897f1bca1160d7aad3835152e158",
+  "PYPI_PACKAGE_EXT": "zip",
+  "inherit": "pypi setuptools3",
+  "SRC_URI": " file://0001-conditionally-do-not-fetch-code-by-easy_install.patch\nfile://0001-change-shebang-to-python3.patch",
+  "SRC_URI[sha256sum]": "46bd862894ed22c2edff033c758c2dc026324788d758e96788e8f7c11f4e9707",
+  "DEPENDS": "${PYTHON_PN}",
+  "RDEPENDS_${PN}": "\u001b  ${PYTHON_PN}-2to3 \u001b  ${PYTHON_PN}-compile \u001b  ${PYTHON_PN}-compression \u001b  ${PYTHON_PN}-ctypes \u001b  ${PYTHON_PN}-distutils \u001b  ${PYTHON_PN}-email \u001b  ${PYTHON_PN}-html \u001b  ${PYTHON_PN}-json \u001b  ${PYTHON_PN}-netserver \u001b  ${PYTHON_PN}-numbers \u001b  ${PYTHON_PN}-pickle \u001b  ${PYTHON_PN}-pkgutil \u001b  ${PYTHON_PN}-plistlib \u001b  ${PYTHON_PN}-shell \u001b  ${PYTHON_PN}-stringold \u001b  ${PYTHON_PN}-threading \u001b  ${PYTHON_PN}-unittest \u001b  ${PYTHON_PN}-xml \u001b\n ${PYTHON_PN}-pkg-resources",
+  "BBCLASSEXTEND": "native nativesdk",
+  "PACKAGES": "${PYTHON_PN}-pkg-resources ",
+  "FILES_${PYTHON_PN}-pkg-resources": "${PYTHON_SITEPACKAGES_DIR}/pkg_resources/*",
+  "RDEPENDS_${PYTHON_PN}-pkg-resources": "\u001b  ${PYTHON_PN}-compression \u001b  ${PYTHON_PN}-email \u001b  ${PYTHON_PN}-plistlib \u001b  ${PYTHON_PN}-pprint \u001b",
+  "RPROVIDES": " ${PYTHON_PN}-pkg-resources-native"
+}

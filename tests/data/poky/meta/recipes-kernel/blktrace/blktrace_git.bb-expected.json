@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "Generates traces of I/O traffic on block devices",
+  "HOMEPAGE": "http://brick.kernel.dk/snaps/",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=393a5ca445f6965873eca0259a17f833",
+  "DEPENDS": "libaio",
+  "SRCREV": "cca113f2fe0759b91fd6a0e10fdcda2c28f18a7e",
+  "PV": "1.2.0+git${SRCPV}",
+  "SRC_URI": "git://git.kernel.dk/blktrace.git \u001b           file://ldflags.patch \u001b           file://CVE-2018-10689.patch \u001b           file://make-btt-scripts-python3-ready.patch \u001b",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OEMAKE": "\u001b    'CC=${CC}' \u001b    'CFLAGS=${CFLAGS}' \u001b    'LDFLAGS=${LDFLAGS}' \u001b",
+  "PARALLEL_MAKE": ""
+}

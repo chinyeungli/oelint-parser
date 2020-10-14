@@ -1,0 +1,11 @@
+{
+  "SUMMARY": "Host SDK package for cross canadian toolchain",
+  "PN": "packagegroup-cross-canadian-${MACHINE}",
+  "inherit": "cross-canadian packagegroup",
+  "PACKAGEGROUP_DISABLE_COMPLEMENTARY": "1",
+  "BINUTILS": "binutils-cross-canadian-${TRANSLATED_TARGET_ARCH}",
+  "GCC": "gcc-cross-canadian-${TRANSLATED_TARGET_ARCH}",
+  "GDB": "gdb-cross-canadian-${TRANSLATED_TARGET_ARCH}",
+  "RDEPENDS_${PN}": "\u001b    !!!inlineblock!!! \u001b    !!!inlineblock!!! \u001b    !!!inlineblock!!! \u001b    meta-environment-${MACHINE} \u001b    ",
+  "do_package[vardeps]": "TUNE_ARCH"
+}

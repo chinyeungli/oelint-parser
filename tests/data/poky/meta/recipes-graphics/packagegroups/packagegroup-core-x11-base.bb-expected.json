@@ -1,0 +1,8 @@
+{
+  "SUMMARY": "Basic X11 session",
+  "DESCRIPTION": "Packages required to set up a basic working X11 session",
+  "PR": "r1",
+  "inherit": "packagegroup features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "RDEPENDS_${PN}": "\u001b    packagegroup-core-x11-xserver \u001b    packagegroup-core-x11-utils \u001b    dbus \u001b    matchbox-terminal \u001b    matchbox-wm \u001b    mini-x-session \u001b    liberation-fonts \u001b    "
+}

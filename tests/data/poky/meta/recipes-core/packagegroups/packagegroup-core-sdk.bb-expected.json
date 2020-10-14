@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Software development tools",
+  "PR": "r9",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "RDEPENDS": "\u001b    packagegroup-core-buildessential \u001b    coreutils \u001b    ccache \u001b    diffutils \u001b    perl-module-re \u001b    perl-module-text-wrap \u001b    findutils \u001b    quilt \u001b    less \u001b    ldd \u001b    file \u001b    tcl",
+  "SANITIZERS": "libasan-dev libubsan-dev\n\n\n\n\n\n\n",
+  "RRECOMMENDS": "\u001b    libgomp \u001b    libgomp-dev \u001b    ${SANITIZERS}"
+}

@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Volatile bind mount setup and configuration for read-only-rootfs",
+  "DESCRIPTION": "${SUMMARY}",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://COPYING.MIT;md5=5750f3aa4ea2b00c2bf21b2b2a7b714d",
+  "SRC_URI": "\u001b    file://mount-copybind \u001b    file://COPYING.MIT \u001b    file://volatile-binds.service.in \u001b",
+  "S": "${WORKDIR}",
+  "inherit": "allarch systemd features_check",
+  "REQUIRED_DISTRO_FEATURES": "systemd",
+  "VOLATILE_BINDS": "\u001b    /var/volatile/lib /var/lib\u001bn\u001b    /var/volatile/cache /var/cache\u001bn\u001b    /var/volatile/spool /var/spool\u001bn\u001b    /var/volatile/srv /srv\u001bn\u001b",
+  "VOLATILE_BINDS[type]": "list",
+  "VOLATILE_BINDS[separator]": "\u001bn",
+  "SYSTEMD_SERVICE_${PN}": "!!!inlineblock!!!",
+  "FILES_${PN}": "${systemd_unitdir}/system/*.service"
+}

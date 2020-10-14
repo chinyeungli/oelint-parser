@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "Pseudo gives fake root capabilities to a normal user",
+  "HOMEPAGE": "http://git.yoctoproject.org/cgit/cgit.cgi/pseudo",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=a1d8023a6f953ac6ea4af765ff62d574",
+  "SECTION": "base",
+  "LICENSE": "LGPL2.1",
+  "DEPENDS": "sqlite3 attr",
+  "FILES_${PN}": "${prefix}/lib/pseudo/lib*/libpseudo.so ${bindir}/* ${localstatedir}/pseudo ${prefix}/var/pseudo",
+  "INSANE_SKIP_${PN}": "libdir",
+  "INSANE_SKIP_${PN}-dbg": "libdir",
+  "PROVIDES": "virtual/fakeroot",
+  "MAKEOPTS": "\n'RPATH=-Wl,--rpath=XORIGIN/../../../sqlite3-native/usr/lib/'",
+  "inherit": "siteinfo pkgconfig",
+  "NO32LIBS": "1\n1",
+  "PSEUDO_EXTRA_OPTS": "--enable-force-async --without-passwd-fallback --enable-epoll --enable-xattr",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SRC_URI": "git://git.yoctoproject.org/pseudo;branch=oe-core \u001b           file://0001-configure-Prune-PIE-flags.patch \u001b           file://fallback-passwd \u001b           file://fallback-group \u001b           ",
+  "SRCREV": "d6b1b13c268d7246f0288d32d6b5eccc658cff4e",
+  "S": "${WORKDIR}/git",
+  "PV": "1.9.0+git${SRCPV}",
+  "COMPATIBLE_HOST": "'null'"
+}

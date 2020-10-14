@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Compressor/archiver for creating and modifying .zip files",
+  "HOMEPAGE": "http://www.info-zip.org",
+  "SECTION": "console/utils",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=04d43c5d70b496c032308106e26ae17d",
+  "PR": "r2",
+  "S": "${WORKDIR}/zip30",
+  "SRC_URI": "${SOURCEFORGE_MIRROR}/infozip/Zip%203.x%20%28latest%29/3.0/zip30.tar.gz \u001b           file://fix-security-format.patch \u001b           file://10-remove-build-date.patch \u001b           file://zipnote-crashes-with-segfault.patch \u001b           ",
+  "UPSTREAM_VERSION_UNKNOWN": "1",
+  "SRC_URI[md5sum]": "7b74551e63f8ee6aab6fbc86676c0d37",
+  "SRC_URI[sha256sum]": "f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369",
+  "EXTRA_OEMAKE": "'CC=${CC}' 'BIND=${CC}' 'AS=${CC} -c' 'CPP=${CPP}' \u001b\t\t'CFLAGS=-I. -DUNIX ${CFLAGS}' \u001b\t\t'CFLAGS_NOOPT=-I. -DUNIX ${CFLAGS}' \u001b\t\t'INSTALL=install' 'INSTALL_D=install -d' \u001b\t\t'BINFLAGS=0755'",
+  "BBCLASSEXTEND": "native",
+  "UPSTREAM_CHECK_REGEX": "^zip(?P<pver>(?!232).+)\u001b.tgz"
+}

@@ -1,0 +1,10 @@
+{
+  "DESCRIPTION": "A development image that builds the kernel and packages that are \u001bsensitive to kernel updates and version changes",
+  "KERNEL_DEV_UTILS": "dropbear connman",
+  "KERNEL_DEV_TOOLS": "packagegroup-core-tools-profile packagegroup-core-buildessential kernel-devsrc",
+  "KERNEL_DEV_MODULE": "kernel-modules",
+  "CORE_IMAGE_EXTRA_INSTALL": "${KERNEL_DEV_MODULE} \u001b                             ${KERNEL_DEV_UTILS} \u001b                             ${KERNEL_DEV_TOOLS} \u001b                             systemtap \u001b                            ",
+  "IMAGE_ROOTFS_EXTRA_SPACE": " + 3000000",
+  "DEFAULT_TEST_SUITES": "ping ssh df connman syslog scp date parselogs",
+  "IMAGE_FEATURES": "tools-profile"
+}

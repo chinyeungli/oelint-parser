@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Go programming language compiler (upstream binary for bootstrap)",
+  "HOMEPAGE": " http://golang.org/",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=5d4950ecb7b26d2c5e4e7b4e0dd74707",
+  "PROVIDES": "go-native",
+  "SRC_URI": "https://dl.google.com/go/go${PV}.${BUILD_GOOS}-${BUILD_GOARCH}.tar.gz;name=go_${BUILD_GOTUPLE}",
+  "UPSTREAM_CHECK_URI": "https://golang.org/dl/",
+  "UPSTREAM_CHECK_REGEX": "go(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.linux",
+  "S": "${WORKDIR}/go",
+  "inherit": "goarch native"
+}

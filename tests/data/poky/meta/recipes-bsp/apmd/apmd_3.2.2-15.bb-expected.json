@@ -1,0 +1,21 @@
+{
+  "SUMMARY": "Utilities for Advanced Power Management",
+  "DESCRIPTION": "The Advanced Power Management (APM) support provides \u001baccess to battery status information and a set of tools for managing \u001bnotebook power consumption.",
+  "HOMEPAGE": "http://apenwarr.ca/apmd/",
+  "SECTION": "base",
+  "LICENSE": "GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \u001b                    file://apm.h;beginline=6;endline=18;md5=7d4acc1250910a89f84ce3cc6557c4c2",
+  "DEPENDS": "libtool-cross",
+  "SRC_URI": "http://snapshot.debian.org/archive/debian/20160728T043443Z/pool/main/a/${BPN}/${BPN}_3.2.2.orig.tar.gz;name=tarball \u001b           file://legacy.patch \u001b           file://libtool.patch \u001b           file://unlinux.patch \u001b           file://wexitcode.patch \u001b           file://linkage.patch \u001b           file://init \u001b           file://default \u001b           file://apmd_proxy \u001b           file://apmd_proxy.conf \u001b           file://apmd.service",
+  "UPSTREAM_CHECK_URI": "${DEBIAN_MIRROR}/main/a/apmd/",
+  "UPSTREAM_CHECK_REGEX": "(?P<pver>((\u001bd+\u001b.*)+)-((\u001bd+\u001b.*)+))\u001b.(diff|debian\u001b.tar)\u001b.(gz|xz)",
+  "S": "${WORKDIR}/apmd-3.2.2.orig",
+  "inherit": "update-rc.d systemd",
+  "INITSCRIPT_NAME": "apmd",
+  "INITSCRIPT_PARAMS": "defaults",
+  "SYSTEMD_SERVICE_${PN}": "apmd.service",
+  "SYSTEMD_AUTO_ENABLE": "disable",
+  "EXTRA_OEMAKE": "-e MAKEFLAGS=",
+  "PACKAGES": "libapm apm",
+  "FILES": "${libdir}/libapm${SOLIBS}\n${bindir}/apm*"
+}

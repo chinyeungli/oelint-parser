@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "pkgconf provides compiler and linker configuration for development frameworks.",
+  "DESCRIPTION": "pkgconf is a program which helps to configure compiler and linker \u001bflags for development frameworks. It is similar to pkg-config from \u001bfreedesktop.org, providing additional functionality while also maintaining \u001bcompatibility.",
+  "HOMEPAGE": "http://pkgconf.org",
+  "BUGTRACKER": "https://github.com/pkgconf/pkgconf/issues",
+  "SECTION": "devel",
+  "PROVIDES": "pkgconfig",
+  "RPROVIDES_${PN}": "pkgconfig\npkgconfig(pkg-config)",
+  "LICENSE": "pkgconf",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=2214222ec1a820bd6cc75167a56925e0",
+  "SRC_URI": "\u001b    https://distfiles.dereferenced.org/pkgconf/pkgconf-${PV}.tar.xz \u001b    file://pkg-config-wrapper \u001b    file://pkg-config-native.in \u001b    file://pkg-config-esdk.in \u001b",
+  "SRC_URI[sha256sum]": "b846aea51cf696c3392a0ae58bef93e2e72f8e7073ca6ad1ed8b01c85871f9c0",
+  "inherit": "autotools",
+  "EXTRA_OECONF": "--with-pkg-config-dir='${libdir}/pkgconfig:${datadir}/pkgconfig'",
+  "FILES_${PN}-dev": "${datadir}/aclocal",
+  "FILES_${PN}": "${datadir}/aclocal",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SSTATEPOSTUNPACKFUNCS": " pkgconf_sstate_fixup_esdk"
+}

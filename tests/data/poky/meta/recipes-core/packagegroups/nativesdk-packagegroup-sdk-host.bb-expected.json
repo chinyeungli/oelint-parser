@@ -1,0 +1,7 @@
+{
+  "SUMMARY": "Host packages for the standalone SDK or external toolchain",
+  "PR": "r12",
+  "inherit": "packagegroup nativesdk",
+  "PACKAGEGROUP_DISABLE_COMPLEMENTARY": "1",
+  "RDEPENDS_${PN}": "\u001b    nativesdk-pkgconfig \u001b    nativesdk-qemu \u001b    nativesdk-qemu-helper \u001b    nativesdk-pseudo \u001b    nativesdk-unfs3 \u001b    nativesdk-opkg \u001b    nativesdk-libtool \u001b    nativesdk-autoconf \u001b    nativesdk-automake \u001b    nativesdk-shadow \u001b    nativesdk-makedevs \u001b    nativesdk-cmake \u001b    nativesdk-meson \u001b    nativesdk-wayland \u001b    nativesdk-sdk-provides-dummy \u001b    nativesdk-bison \u001b    nativesdk-flex \u001b    \n\u001b    nativesdk-pkgconfig \u001b    nativesdk-opkg \u001b    nativesdk-libtool \u001b    "
+}

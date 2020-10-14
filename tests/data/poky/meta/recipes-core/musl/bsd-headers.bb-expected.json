@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "BSD compatible headers",
+  "LICENSE": "BSD-3-Clause & BSD-2-Clause",
+  "LIC_FILES_CHKSUM": "file://sys-queue.h;beginline=1;endline=32;md5=c6352b0f03bb448600456547d334b56f",
+  "SECTION": "devel",
+  "SRC_URI": "file://sys-queue.h \u001b           file://sys-tree.h \u001b           file://sys-cdefs.h \u001b          ",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "S": "${WORKDIR}",
+  "COMPATIBLE_HOST": ".*-musl.*",
+  "RDEPENDS_${PN}-dev": "",
+  "RRECOMMENDS_${PN}-dbg": "${PN}-dev (= ${EXTENDPKGV})"
+}

@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "Connman config to setup wired interface on qemu machines",
+  "DESCRIPTION": "This is the ConnMan configuration to set up a Wired \u001bnetwork interface for a qemu machine.",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6",
+  "inherit": "systemd",
+  "SRC_URI": " file://wired.config \u001b                           file://wired-setup \u001b                           file://wired-connection.service \u001b",
+  "PR": "r2",
+  "S": "${WORKDIR}",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "FILES_${PN}": "${localstatedir}/* ${datadir}/*",
+  "SYSTEMD_SERVICE_${PN}": "wired-connection.service"
+}

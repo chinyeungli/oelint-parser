@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Utilities to access MS-DOS disks without mounting them",
+  "DESCRIPTION": "Mtools is a collection of utilities to access MS-DOS disks from GNU and Unix without mounting them.",
+  "HOMEPAGE": "http://www.gnu.org/software/mtools/",
+  "SECTION": "optional",
+  "LICENSE": "GPLv3",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504",
+  "DEPENDS": "virtual/libiconv",
+  "RDEPENDS_${PN}": "glibc-gconv-ibm850",
+  "RRECOMMENDS_${PN}": "\u001b\tglibc-gconv-ibm437 \u001b\tglibc-gconv-ibm737 \u001b\tglibc-gconv-ibm775 \u001b\tglibc-gconv-ibm851 \u001b\tglibc-gconv-ibm852 \u001b\tglibc-gconv-ibm855 \u001b\tglibc-gconv-ibm857 \u001b\tglibc-gconv-ibm860 \u001b\tglibc-gconv-ibm861 \u001b\tglibc-gconv-ibm862 \u001b\tglibc-gconv-ibm863 \u001b\tglibc-gconv-ibm865 \u001b\tglibc-gconv-ibm866 \u001b\tglibc-gconv-ibm869 \u001b\t",
+  "SRC_URI[md5sum]": "aeaf34406e9d28922b7c09a35ca5955e",
+  "SRC_URI[sha256sum]": "24f4a2da9219f98498eb1b340cd96db7ef9b684c067d1bdeb6e85efdd13b2fb9",
+  "SRC_URI": "${GNU_MIRROR}/mtools/mtools-${PV}.tar.bz2 \u001b           file://mtools-makeinfo.patch \u001b           file://no-x11.gplv3.patch \u001b           file://clang_UNUSED.patch \u001b           \n file://disable-hardcoded-configs.patch",
+  "inherit": "autotools texinfo",
+  "EXTRA_OECONF": "--without-x",
+  "BBCLASSEXTEND": "native nativesdk",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[libbsd]": "ac_cv_lib_bsd_main=yes,ac_cv_lib_bsd_main=no,libbsd"
+}

@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- synaptics touchpad input driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nlibxi mtdev libxtst libevdev\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2\nfile://64bit_time_t_support.patch",
+  "DESCRIPTION": "synaptics is an Xorg input driver for the touchpads from \u001bSynaptics Incorporated. Even though these touchpads (by default, \u001boperating in a compatibility mode emulating a standard mouse) can be \u001bhandled by the normal evdev or mouse drivers, this driver allows more \u001badvanced features of the touchpad to become available.",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so\n ${libdir}/xorg/modules/input/*.so \u001b                 ${datadir}/X11/xorg.conf.d \u001b                 ",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=55aacd3535a741824955c5eb8f061398",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI[md5sum]": "cfb79d3c975151f9bbf30b727c260cb9",
+  "SRC_URI[sha256sum]": "7af83526eff1c76e8b9e1553b34245c203d029028d8044dd9dcf71eef1001576",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

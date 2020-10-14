@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Text file viewer similar to more",
+  "DESCRIPTION": "Less is a program similar to more, i.e. a terminal \u001bbased program for viewing text files and the output from other \u001bprograms. Less offers many features beyond those that more does.",
+  "HOMEPAGE": "http://www.greenwoodsoftware.com/",
+  "SECTION": "console/utils",
+  "LICENSE": "GPLv3+ | BSD-2-Clause",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504 \u001b                    file://LICENSE;md5=ba01d0cab7f62f7f2204c7780ff6a87d \u001b                    ",
+  "DEPENDS": "ncurses",
+  "SRC_URI": "http://www.greenwoodsoftware.com/${BPN}/${BPN}-${PV}.tar.gz \u001b\t  ",
+  "SRC_URI[md5sum]": "0371a9678cb42f37b9bf9b86e8aa7903",
+  "SRC_URI[sha256sum]": "eab470c7c928132441541aa49b1352c0fc699c30f762dfaeb3bf88e6f0fd701b",
+  "UPSTREAM_CHECK_URI": "http://www.greenwoodsoftware.com/less/download.html",
+  "inherit": "autotools update-alternatives",
+  "ALTERNATIVE_${PN}": "less",
+  "ALTERNATIVE_PRIORITY": "100"
+}

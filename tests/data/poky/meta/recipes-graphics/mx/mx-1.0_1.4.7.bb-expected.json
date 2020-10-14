@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Clutter based UI widget library",
+  "LICENSE": "LGPLv2.1",
+  "inherit": "clutter autotools features_check gobject-introspection gtk-doc",
+  "REQUIRED_DISTRO_FEATURES": "opengl",
+  "DEPENDS": "intltool-native clutter-1.0 dbus-glib gdk-pixbuf",
+  "SRC_URI": "http://source.clutter-project.org/sources/mx/!!!inlineblock!!!/mx-${PV}.tar.xz\ngit://github.com/clutter-project/mx.git;branch=mx-1.4 \u001b\t   file://fix-test-includes.patch \u001b\t  ",
+  "EXTRA_OECONF": "--disable-gtk-widgets\t\t\u001b\t\t--with-dbus\t\t\t\u001b\t\t--with-winsys=none\t\t\u001b\t\t--without-clutter-imcontext\t\u001b\t\t--without-clutter-gesture\t\u001b\t\t--without-startup-notification\t\u001b\t\t--without-glade\t\t\t\u001b\t       ",
+  "FILES_${PN}": "${datadir}",
+  "SRCREV": "9b1db6b8060bd00b121a692f942404a24ae2960f",
+  "PV": "1.4.7+git${SRCPV}",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>^\u001bd+(\u001b.(?!99)\u001bd+)+)",
+  "S": "${WORKDIR}/git",
+  "LIC_FILES_CHKSUM": "file://COPYING.LIB;md5=fbc093901857fcd118f065f900982c24 \u001b                    file://mx/mx-widget.c;beginline=8;endline=20;md5=13bba3c973a72414a701e1e87b5ee879"
+}

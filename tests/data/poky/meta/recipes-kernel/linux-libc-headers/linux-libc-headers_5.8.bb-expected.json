@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "Sanitized set of kernel headers for the C library's use",
+  "SECTION": "devel",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814\nfile://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46",
+  "RECIPE_NO_UPDATE_REASON": "Recipe is updated through a separate process",
+  "MAJ_VER": "!!!inlineblock!!!",
+  "MIN_VER": "!!!inlineblock!!!",
+  "inherit": "kernel-arch pkgconfig multilib_header",
+  "KORG_ARCHIVE_COMPRESSION": "xz",
+  "SRC_URI": "${KERNELORG_MIRROR}/linux/kernel/v${HEADER_FETCH_VER}/linux-${PV}.tar.${KORG_ARCHIVE_COMPRESSION}\n\u001b    file://0001-libc-compat.h-fix-some-issues-arising-from-in6.h.patch \u001b    file://0003-remove-inclusion-of-sysinfo.h-in-kernel.h.patch \u001b    file://0001-libc-compat.h-musl-_does_-define-IFF_LOWER_UP-DORMAN.patch \u001b    file://0001-include-linux-stddef.h-in-swab.h-uapi-header.patch \u001b   \n\u001b    file://0001-scripts-Use-fixed-input-and-output-files-instead-of-.patch \u001b    file://0001-kbuild-install_headers.sh-Strip-_UAPI-from-if-define.patch \u001b",
+  "UPSTREAM_CHECK_URI": "https://www.kernel.org/",
+  "S": "${WORKDIR}/linux-${PV}",
+  "EXTRA_OEMAKE": " HOSTCC=\"${BUILD_CC}\" HOSTCPP=\"${BUILD_CPP}",
+  "BBCLASSEXTEND": "nativesdk",
+  "RDEPENDS_${PN}-dev": "",
+  "RRECOMMENDS_${PN}-dbg": "${PN}-dev (= ${EXTENDPKGV})",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "DEPENDS": "unifdef-native bison-native rsync-native",
+  "SRC_URI[md5sum]": "0e5c4c15266218ef26c50fac0016095b",
+  "SRC_URI[sha256sum]": "e7f75186aa0642114af8f19d99559937300ca27acaf7451b36d4f9b0f85cf1f5"
+}

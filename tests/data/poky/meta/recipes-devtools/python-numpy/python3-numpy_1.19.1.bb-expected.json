@@ -1,0 +1,18 @@
+{
+  "inherit": "setuptools3",
+  "SUMMARY": "A sophisticated Numeric Processing Package for Python",
+  "SECTION": "devel/python",
+  "LICENSE": "BSD-3-Clause & BSD-2-Clause & PSF & Apache-2.0 & BSD & MIT",
+  "LIC_FILES_CHKSUM": "file://LICENSE.txt;md5=643d4e90100b7abe468c4db88127b895",
+  "SRCNAME": "numpy",
+  "SRC_URI": "https://github.com/${SRCNAME}/${SRCNAME}/releases/download/v${PV}/${SRCNAME}-${PV}.tar.gz \u001b           file://0001-Don-t-search-usr-and-so-on-for-libraries-by-default-.patch \u001b           ",
+  "SRC_URI[sha256sum]": "1396e6c3d20cbfc119195303b0272e749610b7042cc498be4134f013e9a3215c",
+  "UPSTREAM_CHECK_URI": "https://github.com/numpy/numpy/releases",
+  "UPSTREAM_CHECK_REGEX": "(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.tar",
+  "DEPENDS": "python3-cython-native",
+  "S": "${WORKDIR}/numpy-${PV}",
+  "CLEANBROKEN": "1",
+  "FILES_${PN}-staticdev": "${PYTHON_SITEPACKAGES_DIR}/numpy/core/lib/*.a ${PYTHON_SITEPACKAGES_DIR}/numpy/random/lib/*.a",
+  "RDEPENDS_${PN}": "${PYTHON_PN}-unittest \u001b                  ${PYTHON_PN}-difflib \u001b                  ${PYTHON_PN}-pprint \u001b                  ${PYTHON_PN}-pickle \u001b                  ${PYTHON_PN}-shell \u001b                  ${PYTHON_PN}-nose \u001b                  ${PYTHON_PN}-doctest \u001b                  ${PYTHON_PN}-datetime \u001b                  ${PYTHON_PN}-distutils \u001b                  ${PYTHON_PN}-misc \u001b                  ${PYTHON_PN}-mmap \u001b                  ${PYTHON_PN}-netclient \u001b                  ${PYTHON_PN}-numbers \u001b                  ${PYTHON_PN}-pydoc \u001b                  ${PYTHON_PN}-pkgutil \u001b                  ${PYTHON_PN}-email \u001b                  ${PYTHON_PN}-compression \u001b                  ${PYTHON_PN}-ctypes \u001b                  ${PYTHON_PN}-threading \u001b                  ${PYTHON_PN}-multiprocessing \u001b\n",
+  "BBCLASSEXTEND": "native nativesdk"
+}

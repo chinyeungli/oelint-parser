@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "GNU Privacy Guard - encryption and signing tools (2.x)",
+  "HOMEPAGE": "http://www.gnupg.org/",
+  "LICENSE": "GPLv3 & LGPLv3",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=189af8afca6d6075ba6c9e0aa8077626 \u001b                    file://COPYING.LGPL3;md5=a2b6bf2cb38ee52619e60f30a1fc7257",
+  "DEPENDS": "npth libassuan libksba zlib bzip2 readline libgcrypt",
+  "inherit": "autotools gettext texinfo pkgconfig",
+  "UPSTREAM_CHECK_URI": "https://gnupg.org/download/index.html",
+  "SRC_URI": "${GNUPG_MIRROR}/${BPN}/${BPN}-${PV}.tar.bz2 \u001b           file://0001-Use-pkg-config-to-find-pth-instead-of-pth-config.patch \u001b           file://0002-use-pkgconfig-instead-of-npth-config.patch \u001b           file://0003-dirmngr-uses-libgpg-error.patch \u001b           file://0004-autogen.sh-fix-find-version-for-beta-checking.patch \u001b           file://0001-Woverride-init-is-not-needed-with-gcc-9.patch \u001b           \n file://0001-configure.ac-use-a-custom-value-for-the-location-of-.patch \u001b                                file://relocate.patch\n file://relocate.patch",
+  "SRC_URI[sha256sum]": "10b55e49d78b3e49f1edb58d7541ecbdad92ddaeeb885b6f486ed23d1cd1da5c",
+  "EXTRA_OECONF": "--disable-ldap \u001b\t\t--disable-ccid-driver \u001b\t\t--with-zlib=${STAGING_LIBDIR}/.. \u001b\t\t--with-bzip2=${STAGING_LIBDIR}/.. \u001b\t\t--with-readline=${STAGING_LIBDIR}/.. \u001b\t\t--enable-gpg-is-gpg2 \u001b               ",
+  "PACKAGES": "${PN}-gpg",
+  "FILES_${PN}-gpg": " \u001b\t${bindir}/gpg \u001b\t${bindir}/gpg2 \u001b\t${bindir}/gpg-agent \u001b",
+  "RDEPENDS_${PN}": "!!!inlineblock!!!",
+  "RRECOMMENDS_${PN}": "pinentry",
+  "PACKAGECONFIG": "gnutls",
+  "PACKAGECONFIG[gnutls]": "--enable-gnutls, --disable-gnutls, gnutls",
+  "PACKAGECONFIG[sqlite3]": "--enable-sqlite, --disable-sqlite, sqlite3",
+  "BBCLASSEXTEND": "native nativesdk"
+}

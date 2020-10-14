@@ -1,0 +1,21 @@
+{
+  "SUMMARY": "Library providing automatic proxy configuration management",
+  "HOMEPAGE": "https://github.com/libproxy/libproxy",
+  "BUGTRACKER": "https://github.com/libproxy/libproxy/issues",
+  "SECTION": "libs",
+  "LICENSE": "LGPLv2.1+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=4fbd65380cdd255951079008b364516c \u001b                    file://utils/proxy.c;beginline=1;endline=18;md5=55152a1006d7dafbef32baf9c30a99c0",
+  "DEPENDS": "glib-2.0",
+  "SRC_URI": "https://github.com/${BPN}/${BPN}/releases/download/${PV}/${BP}.tar.xz \u001b           file://0001-get-pac-test-Fix-build-with-clang-libc.patch \u001b          ",
+  "SRC_URI[md5sum]": "f6b1d2a1e17a99cd3debaae6d04ab152",
+  "SRC_URI[sha256sum]": "654db464120c9534654590b6683c7fa3887b3dad0ca1c4cd412af24fbfca6d4f",
+  "UPSTREAM_CHECK_URI": "https://github.com/libproxy/libproxy/releases",
+  "UPSTREAM_CHECK_REGEX": "libproxy-(?P<pver>.*)\u001b.tar",
+  "inherit": "cmake pkgconfig",
+  "PACKAGECONFIG": "gnome gnome3",
+  "PACKAGECONFIG[gnome]": "-DWITH_GNOME=yes,-DWITH_GNOME=no,gconf",
+  "PACKAGECONFIG[gnome3]": "-DWITH_GNOME3=yes,-DWITH_GNOME3=no",
+  "EXTRA_OECMAKE": " \u001b    -DWITH_KDE=no \u001b    -DWITH_MOZJS=no \u001b    -DWITH_NM=no \u001b    -DWITH_PERL=no \u001b    -DWITH_PYTHON2=no \u001b    -DWITH_PYTHON3=no \u001b    -DWITH_WEBKIT=no \u001b    -DLIB_INSTALL_DIR=${libdir} \u001b    -DLIBEXEC_INSTALL_DIR=${libexecdir} \u001b",
+  "SECURITY_PIE_CFLAGS": "-fPIE -pie",
+  "FILES_${PN}": "${libdir}/${BPN}/${PV}/modules"
+}

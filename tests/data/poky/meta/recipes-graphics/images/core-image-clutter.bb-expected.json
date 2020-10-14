@@ -1,0 +1,8 @@
+{
+  "DESCRIPTION": "An image with support for the Open GL-based toolkit Clutter, \u001bwhich enables development of rich and animated graphical user interfaces.",
+  "IMAGE_FEATURES": "splash package-management x11-base x11-sato ssh-server-dropbear",
+  "LICENSE": "MIT",
+  "IMAGE_INSTALL": "\u001b    ${CORE_IMAGE_BASE_INSTALL} \u001b    packagegroup-core-clutter-core \u001b    ",
+  "inherit": "core-image",
+  "QB_MEM": "'-m 512'"
+}

@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "X font encoding library",
+  "DESCRIPTION": "libfontenc is a library which helps font libraries \u001bportably determine and deal with different encodings of fonts.",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/libs",
+  "LICENSE": "MIT-X\nMIT",
+  "DEPENDS": "util-macros\nzlib xorgproto font-util",
+  "XORG_PN": "${BPN}",
+  "SRC_URI": "${XORG_MIRROR}/individual/lib/${XORG_PN}-${PV}.tar.bz2",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools features_check pkgconfig",
+  "EXTRA_OECONF": "--disable-specs --without-groff --without-ps2pdf --without-fop",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[xmlto]": "--with-xmlto, --without-xmlto, xmlto-native docbook-xml-dtd4-native docbook-xsl-stylesheets-native",
+  "UNKNOWN_CONFIGURE_WHITELIST": "--enable-malloc0returnsnull --disable-malloc0returnsnull \u001b                                --disable-specs --without-groff --without-ps2pdf --without-fop \u001b                                --without-xmlto --with-xmlto \u001b",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=96254c20ab81c63e65b26f0dbcd4a1c1",
+  "PE": "1",
+  "SRC_URI[md5sum]": "6447db6a689fb530c218f0f8328c3abc",
+  "SRC_URI[sha256sum]": "2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079",
+  "BBCLASSEXTEND": "native"
+}

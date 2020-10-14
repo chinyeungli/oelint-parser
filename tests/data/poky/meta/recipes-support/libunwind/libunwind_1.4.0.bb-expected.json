@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "Library for obtaining the call-chain of a program",
+  "DESCRIPTION": "a portable and efficient C programming interface (API) to determine the call-chain of a program",
+  "HOMEPAGE": "http://www.nongnu.org/libunwind",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=2d80c8ed4062b8339b715f90fa68cc9f",
+  "DEPENDS": "libatomic-ops",
+  "inherit": "autotools multilib_header",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[lzma]": "--enable-minidebuginfo,--disable-minidebuginfo,xz",
+  "PACKAGECONFIG[latexdocs]": "--enable-documentation, --disable-documentation, latex2man-native",
+  "EXTRA_OECONF": "--enable-debug-frame\n--enable-debug-frame\n--enable-debug-frame\n --disable-documentation --disable-tests --enable-static",
+  "BBCLASSEXTEND": "native",
+  "SRC_URI": "http://download.savannah.nongnu.org/releases/libunwind/libunwind-${PV}.tar.gz \u001b           file://0001-Add-AO_REQUIRE_CAS-to-fix-build-on-ARM-v6.patch \u001b           file://0002-backtrace-Use-only-with-glibc-and-uclibc.patch \u001b           file://0003-x86-Stub-out-x86_local_resume.patch \u001b           file://0004-Fix-build-on-mips-musl.patch \u001b           file://0005-ppc32-Consider-ucontext-mismatches-between-glibc-and.patch \u001b           file://0006-Fix-for-X32.patch \u001b           file://sigset_t.patch \u001b           file://0001-Fix-compilation-with-fno-common.patch \u001b           \n file://musl-header-conflict.patch",
+  "SRC_URI[md5sum]": "5114504c74ac3992ac06aa551cd55678",
+  "SRC_URI[sha256sum]": "df59c931bd4d7ebfd83ee481c943edf015138089b8e50abed8d9c57ba9338435",
+  "ARM_INSTRUCTION_SET": "arm\narm",
+  "LDFLAGS": "-Wl,-z,relro,-z,now  -fuse-ld=bfd ",
+  "SECURITY_LDFLAGS": " -lssp_nonshared"
+}

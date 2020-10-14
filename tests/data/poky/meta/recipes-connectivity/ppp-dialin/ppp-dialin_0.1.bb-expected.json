@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "Enables PPP dial-in through a serial connection",
+  "SECTION": "console/network",
+  "DEPENDS": "ppp",
+  "RDEPENDS_${PN}": "ppp",
+  "PR": "r8",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "SRC_URI": "file://host-peer \u001b           file://ppp-dialin",
+  "inherit": "allarch useradd",
+  "S": "${WORKDIR}",
+  "USERADD_PACKAGES": "${PN}",
+  "USERADD_PARAM_${PN}": "--system --home /dev/null \u001b                       --no-create-home --shell ${sbindir}/ppp-dialin \u001b                       --no-user-group --gid nogroup ppp"
+}

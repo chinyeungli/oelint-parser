@@ -1,0 +1,16 @@
+{
+  "KBRANCH": "v5.8/standard/tiny/base\nv5.8/standard/tiny/arm-versatile-926ejs",
+  "LINUX_KERNEL_TYPE": "tiny",
+  "KCONFIG_MODE": "--allnoconfig",
+  "LINUX_VERSION": "5.8.9",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46",
+  "DEPENDS": "elfutils-native\nopenssl-native util-linux-native",
+  "KMETA": "kernel-meta",
+  "KCONF_BSP_AUDIT_LEVEL": "2",
+  "SRCREV": "830cb9af40e856615b7a435a4fac57b748ba56d6\n31fafe701e2adec65d2b2a74a3e592a358915c67\nffbfe61a194537689c782b20da185e7e4daa9ef9",
+  "PV": "${LINUX_VERSION}+git${SRCPV}",
+  "SRC_URI": "git://git.yoctoproject.org/linux-yocto.git;branch=${KBRANCH};name=machine \u001b           git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.8;destsuffix=${KMETA}",
+  "COMPATIBLE_MACHINE": "qemux86|qemux86-64|qemuarm|qemuarmv5",
+  "KERNEL_FEATURES": "",
+  "KERNEL_DEVICETREE": "versatile-pb.dtb"
+}

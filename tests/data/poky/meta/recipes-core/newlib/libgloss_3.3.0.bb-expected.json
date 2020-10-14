@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "Newlib is a C library intended for use on embedded systems",
+  "HOMEPAGE": "https://sourceware.org/newlib/",
+  "DESCRIPTION": "C library intended for use on embedded systems. It is a conglomeration of several library parts, all under free software licenses that make them easily usable on embedded products.",
+  "SECTION": "libs",
+  "LICENSE": "GPLv2 & LGPLv3 & GPLv3 & LGPLv2 & BSD-2-Clause & tcl",
+  "LIC_FILES_CHKSUM": " \u001b\t\tfile://COPYING;md5=59530bdf33659b29e73d4adb9f9f6552 \u001b\t\tfile://COPYING3.LIB;md5=6a6a8e020838b23406c81b19c1d46df6 \u001b\t\tfile://COPYING3;md5=d32239bcb673463ab874e80d47fae504 \u001b\t\tfile://COPYING.LIBGLOSS;md5=54b778d585443cd7fbfa1b47cbd63a89 \u001b\t\tfile://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1 \u001b\t\tfile://COPYING.NEWLIB;md5=ac17c68751aad7a5298ce3f249121070 \u001b\t\tfile://newlib/libc/posix/COPYRIGHT;md5=103468ff1982be840fdf4ee9f8b51bbf \u001b\t\tfile://newlib/libc/sys/linux/linuxthreads/LICENSE;md5=73640207fbc79b198c7ffd4ad4d97aa0 \u001b\t\t",
+  "SRC_URI": "https://sourceware.org/pub/newlib/newlib-${PV}.tar.gz\n file://fix-rs6000-crt0.patch\n file://fix_makefile_include_arm_h.patch",
+  "SRC_URI[sha256sum]": "58dd9e3eaedf519360d92d84205c3deef0b3fc286685d1c562e245914ef72c66",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "DEPENDS": "virtual/${TARGET_PREFIX}gcc\nnewlib",
+  "S": "${WORKDIR}/newlib-${PV}",
+  "B": "${WORKDIR}/build",
+  "TARGET_CC_ARCH": " -nostdlib",
+  "EXTRA_OECONF": " \u001b                --build=${BUILD_SYS}  \u001b                --target=${TARGET_SYS} \u001b\t\t--host=${HOST_SYS} \u001b                --prefix=${prefix}  \u001b                --exec-prefix=${exec_prefix} \u001b                --bindir=${bindir} \u001b                --libdir=${libdir} \u001b                --includedir=${includedir} \u001b\t\t--enable-languages=c \u001b\t\t--with-newlib \u001b\t\t--with-gnu-as \u001b\t\t--with-gnu-ld \u001b\t\t--disable-multilib \u001b\t\t--disable-newlib-supplied-syscalls \u001b\t\t",
+  "COMPATIBLE_HOST": "null\nnull",
+  "FILESEXTRAPATHS": "${THISDIR}/libgloss:",
+  "FILES_${PN}": "${libdir}/*.ld ${libdir}/*.specs",
+  "FILES_${PN}-dev": "${libdir}/cpu-init/*",
+  "INHIBIT_PACKAGE_STRIP": "1",
+  "INHIBIT_PACKAGE_DEBUG_SPLIT": "1"
+}

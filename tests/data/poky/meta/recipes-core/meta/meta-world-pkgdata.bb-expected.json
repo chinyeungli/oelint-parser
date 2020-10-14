@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Pulls in pkgdata for world",
+  "LICENSE": "MIT",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "WORLD_PKGDATADIR": "${D}/world-pkgdata",
+  "SSTATETASKS": "do_collect_packagedata",
+  "do_collect_packagedata[sstate-inputdirs]": "${WORLD_PKGDATADIR}",
+  "do_collect_packagedata[sstate-outputdirs]": "${STAGING_DIR_HOST}/world-pkgdata",
+  "WORLD_PKGDATA_EXCLUDE": "",
+  "PACKAGES": ""
+}

@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "H.264/MPEG-4 AVC video encoder",
+  "DESCRIPTION": "A free software library and application for encoding video streams into the H.264/MPEG-4 AVC format.",
+  "HOMEPAGE": "http://www.videolan.org/developers/x264.html",
+  "LICENSE": "GPLv2",
+  "LICENSE_FLAGS": "commercial",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f",
+  "DEPENDS": "nasm-native",
+  "SRC_URI": "git://github.com/mirror/x264;branch=stable \u001b           file://don-t-default-to-cortex-a9-with-neon.patch \u001b           file://Fix-X32-build-by-disabling-asm.patch \u001b           ",
+  "UPSTREAM_CHECK_COMMITS": "1",
+  "SRCREV": "cde9a93319bea766a92e306d69059c76de970190",
+  "PV": "r3011+git${SRCPV}",
+  "S": "${WORKDIR}/git",
+  "inherit": "lib_package pkgconfig",
+  "X264_DISABLE_ASM": "\n--disable-asm\n--disable-asm\n--disable-asm\n--disable-asm\n!!!inlineblock!!!",
+  "EXTRA_OECONF": "'--prefix=${prefix} \u001b                --host=${HOST_SYS} \u001b                --libdir=${libdir} \u001b                --cross-prefix=${TARGET_PREFIX} \u001b                --sysroot=${STAGING_DIR_TARGET} \u001b                --enable-shared \u001b                --enable-static \u001b                --disable-lavf \u001b                --disable-swscale \u001b                --disable-opencl \u001b                --enable-pic \u001b                ${X264_DISABLE_ASM} \u001b               '",
+  "AS[unexport]": "1"
+}

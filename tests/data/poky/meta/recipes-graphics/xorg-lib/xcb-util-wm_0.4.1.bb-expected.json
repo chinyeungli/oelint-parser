@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "XCB: The X protocol C binding utilities",
+  "DESCRIPTION": "The xcb-util module provides a number of libraries which \u001bsit on top of libxcb, the core X protocol library, and some of the \u001bextension libraries. These experimental libraries provide convenience \u001bfunctions and interfaces which make the raw X protocol more usable. Some \u001bof the libraries also provide client-side code which is not strictly \u001bpart of the X protocol but which have traditionally been provided by \u001bXlib.",
+  "HOMEPAGE": "http://xcb.freedesktop.org/XcbUtil/",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=XCB",
+  "LICENSE": "MIT\nMIT",
+  "SECTION": "x11/libs",
+  "DEPENDS": "libxcb\ngperf-native",
+  "SRC_URI": "http://xcb.freedesktop.org/dist/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://ewmh/ewmh.c.m4;endline=27;md5=63fd80552d7dc886f4eb267610d5bb9d \u001b\t\t\t\t\tfile://ewmh/xcb_ewmh.h.m4;beginline=4;endline=30;md5=73b589f90ef90b4a43998955daad5cd8 \u001b\t\t\t\t\tfile://icccm/icccm.c;endline=28;md5=e2b3240a0c197e8977adde2a5cf18d50 \u001b\t\t\t\t\tfile://icccm/xcb_icccm.h;beginline=4;endline=31;md5=393772b7b07b9868d479d538238c1d8a \u001b\t\t\t\t\t",
+  "SRC_URI[md5sum]": "87b19a1cd7bfcb65a24e36c300e03129",
+  "SRC_URI[sha256sum]": "28bf8179640eaa89276d2b0f1ce4285103d136be6c98262b6151aaee1d3c2a3f"
+}

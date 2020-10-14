@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "Wrapper script for the Linux kernel module dependency indexer",
+  "LICENSE": "MIT",
+  "S": "${WORKDIR}",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "SSTATE_SCAN_FILES": "depmodwrapper",
+  "EXTRA_STAGING_FIXMES": "PKGDATA_DIR",
+  "DEPENDS": "kmod-native",
+  "SYSROOT_DIRS": "${bindir_crossscripts}",
+  "PACKAGES": "",
+  "inherit": "nopackages"
+}

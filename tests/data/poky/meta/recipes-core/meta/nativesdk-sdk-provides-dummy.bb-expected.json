@@ -1,0 +1,12 @@
+{
+  "DUMMYARCH": "sdk-provides-dummy-${SDKPKGSUFFIX}",
+  "DUMMYPROVIDES_PACKAGES": "\u001b    pkgconfig \u001b\n",
+  "DUMMYPROVIDES": "\u001b    /bin/sh \u001b    /bin/bash \u001b    /usr/bin/env \u001b    libGL.so()(64bit) \u001b    libGL.so \u001b\n${DUMMYPROVIDES_PACKAGES_MULTILIB}",
+  "SUMMARY": "Dummy packages which handle excluding packages from the sdk, e.g. ensuring perl is excluded from buildtools",
+  "LICENSE": "MIT",
+  "PACKAGE_ARCH": "all",
+  "inherit": "allarch\nnativesdk",
+  "ALLOW_EMPTY_${PN}": "1",
+  "PR[vardeps]": "DUMMYPROVIDES\nDUMMYPROVIDES_PACKAGES",
+  "DUMMYPROVIDES_PACKAGES_MULTILIB": "!!!inlineblock!!!"
+}

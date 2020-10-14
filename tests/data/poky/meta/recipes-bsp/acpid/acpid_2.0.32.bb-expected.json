@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "A daemon for delivering ACPI events",
+  "DESCRIPTION": "ACPID is a completely flexible, totally extensible daemon for \u001bdelivering ACPI events. It listens on netlink interface (or on the \u001bdeprecated file /proc/acpi/event), and when an event occurs, executes programs \u001bto handle the event. The programs it executes are configured through a set of \u001bconfiguration files, which can be dropped into place by packages or by the \u001badmin.",
+  "HOMEPAGE": "http://sourceforge.net/projects/acpid2",
+  "BUGTRACKER": "http://sourceforge.net/p/acpid2/tickets/?source=navbar",
+  "SECTION": "base",
+  "LICENSE": "GPLv2+",
+  "SRC_URI": "${SOURCEFORGE_MIRROR}/acpid2/acpid-${PV}.tar.xz \u001b           file://init \u001b           file://acpid.service \u001b          ",
+  "CVE_PRODUCT": "acpid2",
+  "inherit": "autotools update-rc.d systemd",
+  "INITSCRIPT_NAME": "acpid",
+  "INITSCRIPT_PARAMS": "defaults",
+  "SYSTEMD_SERVICE_${PN}": "acpid.service",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=8ca43cbc842c2336e835926c2166c28b \u001b                    file://acpid.h;endline=24;md5=324a9cf225ae69ddaad1bf9d942115b5",
+  "SRC_URI[md5sum]": "248995264b9d1cd8bdb923d5b190fd44",
+  "SRC_URI[sha256sum]": "f2d2d30b3edc3234bd82f6f7186699a6aa3c85c8d20bc4e30e9b3c68a1ed157e"
+}

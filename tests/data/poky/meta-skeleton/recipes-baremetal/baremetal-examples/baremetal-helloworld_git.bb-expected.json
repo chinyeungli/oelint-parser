@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Baremetal examples to work with the several QEMU architectures supported on OpenEmbedded",
+  "HOMEPAGE": "https://github.com/aehs29/baremetal-helloqemu",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=39346640a23c701e4f459e05f56f4449",
+  "SRCREV": "99f4fa4a3b266b42b52af302610b0f4f429ba5e3",
+  "PV": "0.1+git${SRCPV}",
+  "SRC_URI": "git://github.com/aehs29/baremetal-helloqemu.git;protocol=https;branch=master",
+  "S": "${WORKDIR}/git/",
+  "BAREMETAL_BINNAME": "hello_baremetal_${MACHINE}",
+  "IMAGE_LINK_NAME": "baremetal-helloworld-image-${MACHINE}",
+  "IMAGE_NAME_SUFFIX": "",
+  "inherit": "baremetal-image",
+  "COMPATIBLE_MACHINE": "qemuarmv5|qemuarm|qemuarm64",
+  "BAREMETAL_QEMUARCH": "\nversatile\narm\naarch64",
+  "EXTRA_OEMAKE": " QEMUARCH=${BAREMETAL_QEMUARCH} V=1",
+  "FILES_${PN}": " \u001b    ${base_libdir}/firmware/${BAREMETAL_BINNAME}.bin \u001b    ${base_libdir}/firmware/${BAREMETAL_BINNAME}.elf \u001b"
+}

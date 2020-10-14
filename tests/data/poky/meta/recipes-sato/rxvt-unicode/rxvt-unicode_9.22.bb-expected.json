@@ -1,0 +1,20 @@
+{
+  "SECTION": "x11/utils",
+  "SUMMARY": "rxvt terminal clone supporting unicode",
+  "DESCRIPTION": "rxvt-unicode is a clone of the well known \u001bterminal emulator rxvt, modified to store text in Unicode \u001b(either UCS-2 or UCS-4) and to use locale-correct input and \u001boutput. It also supports mixing multiple fonts at the \u001bsame time, including Xft fonts.",
+  "DEPENDS": "virtual/libx11 libxt libxft gdk-pixbuf libxmu",
+  "SRC_URI": "http://dist.schmorp.de/rxvt-unicode/Attic/rxvt-unicode-${PV}.tar.bz2 \u001b\t   file://xwc.patch \u001b\t   file://rxvt.desktop \u001b\t   file://rxvt.png",
+  "inherit": "autotools pkgconfig update-alternatives",
+  "PROVIDES": "virtual/x-terminal-emulator",
+  "ALTERNATIVE_${PN}": "x-terminal-emulator",
+  "ALTERNATIVE_TARGET[x-terminal-emulator]": "${bindir}/rxvt",
+  "CFLAGS": " -fpermissive",
+  "EXTRA_OECONF": "--enable-xim \u001b\t\t--enable-utmp --enable-wtmp --enable-lastlog \u001b\t\t--with-term=rxvt --enable-keepscrolling \u001b\t\t--enable-xft --with-name=rxvt --enable-frills \u001b\t\t--enable-swapscreen --enable-transparency \u001b\t\t--with-codesets=eu --enable-pointer-blank \u001b\t\t--enable-text-blink --enable-rxvt-scroll \u001b\t\t--enable-combining --disable-perl \u001b\t\t--with-x=${STAGING_DIR_HOST}${prefix}\n --disable-wtmp",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[startup]": "--enable-startup-notification,--disable-startup-notification,startup-notification,",
+  "FILES_${PN}": "${datadir}/applications/rxvt.desktop ${datadir}/pixmaps/rxvt.png",
+  "LICENSE": "GPLv3",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504 \u001b                    file://src/main.C;beginline=1;endline=31;md5=d3600d7ee1062667fcd1193fbe6485f6",
+  "SRC_URI[md5sum]": "93782dec27494eb079467dacf6e48185",
+  "SRC_URI[sha256sum]": "e94628e9bcfa0adb1115d83649f898d6edb4baced44f5d5b769c2eeb8b95addd"
+}

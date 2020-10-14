@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Modular initramfs system\ninitramfs support for easy execution of applications\ninitramfs support for mdev\ninitramfs support for udev\ninitramfs support for ext4/ext3/ext2 filesystems\ninitramfs support for locating and mounting the root partition via nfs\ninitramfs support for locating and mounting the root partition\ninitramfs dynamic debug support\ninitramfs lvm rootfs support",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "RDEPENDS_${PN}": "${VIRTUAL-RUNTIME_base-utils}",
+  "RRECOMMENDS_${PN}": "${VIRTUAL-RUNTIME_base-utils-syslog}",
+  "PR": "r4",
+  "inherit": "allarch",
+  "SRC_URI": "file://init \u001b           file://exec \u001b           file://nfsrootfs \u001b           file://rootfs \u001b           file://finish \u001b           file://mdev \u001b           file://udev \u001b           file://e2fs \u001b           file://debug \u001b           file://lvm \u001b          ",
+  "S": "${WORKDIR}",
+  "PACKAGES": "${PN}-base \u001b            initramfs-module-exec \u001b            initramfs-module-mdev \u001b            initramfs-module-udev \u001b            initramfs-module-e2fs \u001b            initramfs-module-nfsrootfs \u001b            initramfs-module-rootfs \u001b            initramfs-module-debug \u001b            initramfs-module-lvm \u001b           ",
+  "FILES_${PN}-base": "/init /init.d/99-finish /dev",
+  "RRECOMMENDS_${PN}-base": "initramfs-module-rootfs",
+  "RDEPENDS": "${PN}-base\n${PN}-base busybox-mdev\n${PN}-base udev\n${PN}-base\n${PN}-base\n${PN}-base\n${PN}-base\n${PN}-base",
+  "FILES": "/init.d/89-exec\n/init.d/01-mdev\n/init.d/01-udev\n/init.d/10-e2fs\n/init.d/85-nfsrootfs\n/init.d/90-rootfs\n/init.d/00-debug\n/init.d/09-lvm"
+}

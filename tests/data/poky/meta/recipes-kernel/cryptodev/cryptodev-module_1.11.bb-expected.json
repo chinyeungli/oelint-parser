@@ -1,0 +1,15 @@
+{
+  "HOMEPAGE": "http://cryptodev-linux.org/",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263",
+  "SRC_URI": "git://github.com/cryptodev-linux/cryptodev-linux \u001b           \nfile://0001-Disable-installing-header-file-provided-by-another-p.patch \u001b           ",
+  "SRCREV": "fabe5989a3dc9fba0cd0a40b612247cdde351c01",
+  "S": "${WORKDIR}/git",
+  "CLEANBROKEN": "1",
+  "SUMMARY": "A /dev/crypto device driver kernel module",
+  "inherit": "module",
+  "DEPENDS": "cryptodev-linux",
+  "EXTRA_OEMAKE": "'KERNEL_DIR=\"${STAGING_KERNEL_DIR}\" PREFIX=\"${D}\"'",
+  "RCONFLICTS_${PN}": "ocf-linux",
+  "RREPLACES_${PN}": "ocf-linux"
+}

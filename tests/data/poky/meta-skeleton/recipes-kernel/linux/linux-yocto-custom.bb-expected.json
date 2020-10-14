@@ -1,0 +1,9 @@
+{
+  "inherit": "kernel",
+  "SRC_URI": "git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git;protocol=git;nocheckout=1;name=machine",
+  "LINUX_VERSION": "4.2",
+  "LINUX_VERSION_EXTENSION": "-custom",
+  "SRCREV": "64291f7db5bd8150a74ad2036f1037e6a0428df2",
+  "PV": "${LINUX_VERSION}+git${SRCPV}",
+  "COMPATIBLE_MACHINE": "(^$)"
+}

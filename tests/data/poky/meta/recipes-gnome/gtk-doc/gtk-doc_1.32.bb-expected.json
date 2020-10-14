@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "Documentation generator for glib-based software",
+  "DESCRIPTION": "Gtk-doc is a set of scripts that extract specially formatted comments \u001b               from glib-based software and produce a set of html documentation files from them",
+  "HOMEPAGE": "http://www.gtk.org/gtk-doc/",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f",
+  "inherit": "gnomebase",
+  "PACKAGECONFIG": "working-scripts",
+  "PACKAGECONFIG[working-scripts]": ",,libxslt-native xmlto-native python3-six python3-pygments",
+  "PACKAGECONFIG[tests]": "--enable-tests,--disable-tests,glib-2.0",
+  "SRC_URI": "file://0001-Do-not-hardocode-paths-to-perl-python-in-scripts.patch \u001b           file://0001-Do-not-error-out-if-xsltproc-is-not-found.patch \u001b           file://conditionaltests.patch \u001b           file://no-clobber.patch \u001b           \n file://pkg-config-native.patch",
+  "BBCLASSEXTEND": "native nativesdk",
+  "FILES_${PN}": "${datadir}/sgml",
+  "FILES_${PN}-dev": "${libdir}/cmake",
+  "FILES_${PN}-doc": "",
+  "SYSROOT_PREPROCESS_FUNCS": " gtkdoc_makefiles_sysroot_preprocess"
+}

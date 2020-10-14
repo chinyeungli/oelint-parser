@@ -1,0 +1,10 @@
+{
+  "SUMMARY": "A small image just capable of allowing a device to boot.",
+  "IMAGE_INSTALL": "packagegroup-core-boot ${CORE_IMAGE_EXTRA_INSTALL}\nmtd-utils",
+  "IMAGE_LINGUAS": " ",
+  "LICENSE": "MIT",
+  "inherit": "core-image",
+  "IMAGE_ROOTFS_SIZE": "8192",
+  "IMAGE_ROOTFS_EXTRA_SPACE": " + 4096",
+  "DESCRIPTION": "Small image capable of booting a device with support for the \u001bMinimal MTD Utilities, which let the user interact with the MTD subsystem in \u001bthe kernel to perform operations on flash devices."
+}

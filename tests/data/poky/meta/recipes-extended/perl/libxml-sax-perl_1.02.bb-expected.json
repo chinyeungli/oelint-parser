@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "Perl module for using and building Perl SAX2 XML processors",
+  "HOMEPAGE": "http://search.cpan.org/dist/XML-SAX/",
+  "DESCRIPTION": "XML::SAX consists of several framework classes for using and \u001bbuilding Perl SAX2 XML parsers, filters, and drivers.  It is designed \u001b around the need to be able to \"plug in\" different SAX parsers to an \u001bapplication without requiring programmer intervention.  Those of you \u001bfamiliar with the DBI will be right at home.  Some of the designs \u001bcome from the Java JAXP specification (SAX part), only without the \u001bjavaness.",
+  "SECTION": "libs",
+  "LICENSE": "Artistic-1.0 | GPL-1.0+",
+  "DEPENDS": "libxml-namespacesupport-perl-native",
+  "RDEPENDS_${PN}": "libxml-namespacesupport-perl libxml-sax-base-perl perl-module-file-temp\nperl-module-encode perl-module-perlio",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=65c4cd8f39c24c7135ed70dacbcb09e3",
+  "SRC_URI": "http://search.cpan.org/CPAN/authors/id/G/GR/GRANTM/XML-SAX-${PV}.tar.gz",
+  "SRC_URI[md5sum]": "b62e3754523695c7f5bbcafa3676a38d",
+  "SRC_URI[sha256sum]": "4506c387043aa6a77b455f00f57409f3720aa7e553495ab2535263b4ed1ea12a",
+  "S": "${WORKDIR}/XML-SAX-${PV}",
+  "inherit": "cpan ptest-perl",
+  "RDEPENDS_${PN}-ptest": " \u001b    perl-module-base  \u001b    perl-module-encode-byte \u001b    perl-module-encode-unicode \u001b    perl-module-fatal \u001b    perl-module-test \u001b",
+  "BBCLASSEXTEND": "native nativesdk"
+}

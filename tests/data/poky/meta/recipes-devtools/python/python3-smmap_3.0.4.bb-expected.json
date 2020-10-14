@@ -1,0 +1,13 @@
+{
+  "inherit": "setuptools3\npypi",
+  "SUMMARY": "Python implementation of a sliding window memory map manager",
+  "DESCRIPTION": "A pure Python implementation of a sliding memory map to \u001bhelp unifying memory mapped access on 32 and 64 bit systems and to help \u001bmanaging resources more efficiently.",
+  "HOMEPAGE": "http://github.com/gitpython-developers/GitPython",
+  "SECTION": "devel/python",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://PKG-INFO;beginline=8;endline=8;md5=e910b35b0ef4e1f665b9a75d6afb7709",
+  "PYPI_PACKAGE": "smmap",
+  "SRC_URI[sha256sum]": "9c98bbd1f9786d22f14b3d4126894d56befb835ec90cef151af566c7e19b5d24",
+  "RDEPENDS_${PN}": "${PYTHON_PN}-codecs \u001b                   ${PYTHON_PN}-mmap \u001b",
+  "BBCLASSEXTEND": "native nativesdk"
+}

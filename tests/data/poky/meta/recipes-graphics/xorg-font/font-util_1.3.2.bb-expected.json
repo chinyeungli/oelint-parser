@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "X.Org font package creation/installation utilities",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/fonts",
+  "LICENSE": "MIT-X\nBSD & MIT",
+  "DEPENDS": " encodings font-alias font-util-native\nencodings util-macros\nutil-macros-native",
+  "RDEPENDS_${PN}": "encodings font-util font-alias\nmkfontdir mkfontscale encodings\n",
+  "XORG_PN": "${BPN}",
+  "SRC_URI": "${XORG_MIRROR}/individual/font/${XORG_PN}-${PV}.tar.bz2",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "EXTRA_OEMAKE": "FCCACHE=/bin/true UTIL_DIR=${STAGING_DIR_TARGET}\u001b$\u001b(MAPFILES_PATH\u001b)",
+  "FILES_${PN}": " ${libdir}/X11/fonts ${datadir}",
+  "PACKAGE_WRITE_DEPS": "mkfontdir-native mkfontscale-native",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=5df208ec65eb84ce5bb8d82d8f3b9675 \u001b                    file://ucs2any.c;endline=28;md5=8357dc567fc628bd12696f15b2a33bcb \u001b                    file://bdftruncate.c;endline=26;md5=4f82ffc101a1b165eae9c6998abff937 \u001b                    file://map-ISO8859-1;beginline=9;endline=23;md5=1cecb984063248f29ffe5c46f5c04f34",
+  "BBCLASSEXTEND": "native",
+  "SRC_URI[md5sum]": "3d6adb76fdd072db8c8fae41b40855e8",
+  "SRC_URI[sha256sum]": "3ad880444123ac06a7238546fa38a2a6ad7f7e0cc3614de7e103863616522282",
+  "SYSROOT_DIRS_BLACKLIST": "${datadir}/fonts"
+}

@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "XRender: X Rendering Extension library",
+  "DESCRIPTION": "The X Rendering Extension (Render) introduces digital \u001bimage composition as the foundation of a new rendering model within the \u001bX Window System. Rendering geometric figures is accomplished by \u001bclient-side tessellation into either triangles or trapezoids.  Text is \u001bdrawn by loading glyphs into the server and rendering sets of them.",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/libs",
+  "LICENSE": "MIT-X\nMIT-style",
+  "DEPENDS": "util-macros\nvirtual/libx11 xorgproto",
+  "XORG_PN": "${BPN}\nlibXrender",
+  "SRC_URI": "${XORG_MIRROR}/individual/lib/${XORG_PN}-${PV}.tar.bz2",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools features_check pkgconfig",
+  "EXTRA_OECONF": "--disable-specs --without-groff --without-ps2pdf --without-fop",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[xmlto]": "--with-xmlto, --without-xmlto, xmlto-native docbook-xml-dtd4-native docbook-xsl-stylesheets-native",
+  "UNKNOWN_CONFIGURE_WHITELIST": "--enable-malloc0returnsnull --disable-malloc0returnsnull \u001b                                --disable-specs --without-groff --without-ps2pdf --without-fop \u001b                                --without-xmlto --with-xmlto \u001b",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d8bc71986d3b9b3639f6dfd6fac8f196",
+  "PE": "1",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SRC_URI[md5sum]": "802179a76bded0b658f4e9ec5e1830a4",
+  "SRC_URI[sha256sum]": "c06d5979f86e64cabbde57c223938db0b939dff49fdb5a793a1d3d0396650949"
+}

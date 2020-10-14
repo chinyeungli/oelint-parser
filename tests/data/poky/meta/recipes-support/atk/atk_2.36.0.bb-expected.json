@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Accessibility toolkit for GNOME",
+  "HOMEPAGE": "http://live.gnome.org/GAP/",
+  "BUGTRACKER": "https://bugzilla.gnome.org/",
+  "SECTION": "x11/libs",
+  "LICENSE": "GPLv2+ & LGPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=3bf50002aefd002f49e7bb854063f7e7 \u001b                    file://atk/atkutil.c;endline=18;md5=6fd31cd2fdc9b30f619ca8d819bc12d3 \u001b                    file://atk/atk.h;endline=18;md5=fcd7710187e0eae485e356c30d1b0c3b",
+  "DEPENDS": "gettext-native glib-2.0",
+  "GNOMEBASEBUILDCLASS": "meson",
+  "inherit": "gnomebase gtk-doc gettext upstream-version-is-even gobject-introspection",
+  "BBCLASSEXTEND": "native nativesdk"
+}

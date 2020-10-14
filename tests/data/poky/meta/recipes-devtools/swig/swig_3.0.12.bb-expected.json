@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "SWIG - Simplified Wrapper and Interface Generator",
+  "DESCRIPTION": "SWIG is a compiler that makes it easy to integrate C and C++ \u001bcode with other languages including Perl, Tcl, Ruby, Python, Java, Guile, \u001bMzscheme, Chicken, OCaml, Pike, and C#.",
+  "HOMEPAGE": "http://swig.sourceforge.net/",
+  "LICENSE": "BSD & GPLv3",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=e7807a6282784a7dde4c846626b08fc6 \u001b                    file://LICENSE-GPL;md5=d32239bcb673463ab874e80d47fae504 \u001b                    file://LICENSE-UNIVERSITIES;md5=8ce9dcc8f7c994de4a408b205c72ba08",
+  "SECTION": "devel",
+  "DEPENDS": "libpcre bison-native",
+  "SRC_URI": "${SOURCEFORGE_MIRROR}/${BPN}/${BPN}-${PV}.tar.gz\nfile://0001-Use-proc-self-exe-for-swig-swiglib-on-non-Win32-plat.patch \u001b            file://0001-configure-use-pkg-config-for-pcre-detection.patch \u001b            file://0001-Add-Node-7.x-aka-V8-5.2-support.patch \u001b            file://swig-3.0.12-Coverity-fix-issue-reported-for-SWIG_Python_FixMetho.patch \u001b            file://Python-Fix-new-GCC8-warnings-in-generated-code.patch \u001b            file://0001-Fix-generated-code-for-constant-expressions-containi.patch \u001b           ",
+  "inherit": "autotools python3native pkgconfig",
+  "EXTRA_OECONF": " \u001b    --with-python3=${PYTHON} \u001b    --without-allegrocl \u001b    --without-android \u001b    --without-boost \u001b    --without-chicken \u001b    --without-clisp \u001b    --without-csharp \u001b    --without-d \u001b    --without-gcj \u001b    --without-go \u001b    --without-guile \u001b    --without-java \u001b    --without-lua \u001b    --without-mzscheme \u001b    --without-ocaml \u001b    --without-octave \u001b    --without-perl5 \u001b    --without-pike \u001b    --without-php \u001b    --without-r \u001b    --without-ruby \u001b    --without-tcl \u001b",
+  "EXTRA_AUTORECONF": "-I Tools/config",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SRC_URI[md5sum]": "82133dfa7bba75ff9ad98a7046be687c",
+  "SRC_URI[sha256sum]": "7cf9f447ae7ed1c51722efc45e7f14418d15d7a1e143ac9f09a668999f4fc94d"
+}

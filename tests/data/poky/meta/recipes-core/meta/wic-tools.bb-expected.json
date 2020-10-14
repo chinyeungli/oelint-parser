@@ -1,0 +1,8 @@
+{
+  "SUMMARY": "A meta recipe to build native tools used by wic.",
+  "LICENSE": "MIT",
+  "DEPENDS": "\u001b           parted-native syslinux-native gptfdisk-native dosfstools-native \u001b           mtools-native bmap-tools-native grub-native cdrtools-native \u001b           btrfs-tools-native squashfs-tools-native pseudo-native \u001b           e2fsprogs-native util-linux-native tar-native\u001b           \n syslinux grub-efi systemd-boot\n syslinux grub-efi systemd-boot\n syslinux grub-efi",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "inherit": "nopackages",
+  "RM_WORK_EXCLUDE": "${PN}"
+}

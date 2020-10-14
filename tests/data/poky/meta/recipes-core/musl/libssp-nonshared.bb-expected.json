@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "Minimal libssp_nonshared.a must needed for ssp to work with gcc on musl",
+  "LICENSE": "GPL-3.0-with-GCC-exception",
+  "LIC_FILES_CHKSUM": "file://ssp-local.c;beginline=1;endline=32;md5=c06d391208c0cfcbc541a6728ed65cc4",
+  "SECTION": "libs",
+  "SRC_URI": "file://ssp-local.c",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "DEPENDS": "virtual/${TARGET_PREFIX}binutils \u001b           virtual/${TARGET_PREFIX}gcc \u001b",
+  "S": "${WORKDIR}",
+  "COMPATIBLE_HOST": ".*-musl.*",
+  "RDEPENDS_${PN}-staticdev": "",
+  "RDEPENDS_${PN}-dev": "",
+  "RRECOMMENDS_${PN}-dbg": "${PN}-staticdev (= ${EXTENDPKGV})"
+}

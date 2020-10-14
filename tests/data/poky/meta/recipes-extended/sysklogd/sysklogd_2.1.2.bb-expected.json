@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "System Log Daemons",
+  "DESCRIPTION": "The sysklogd package implements system log daemons: syslogd",
+  "HOMEPAGE": "http://www.infodrom.org/projects/sysklogd/",
+  "SECTION": "base",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=5b4be4b2549338526758ef479c040943 \u001b                    file://src/syslogd.c;beginline=2;endline=15;md5=a880fecbc04503f071c494a9c0dd4f97 \u001b                   ",
+  "inherit": "update-rc.d update-alternatives systemd autotools",
+  "SRC_URI": "git://github.com/troglobit/sysklogd.git;nobranch=1 \u001b           file://sysklogd \u001b           file://0001-Makefile.am-fixup-issue-17.patch \u001b           ",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OECONF": "--with-systemd=${systemd_system_unitdir} --without-logger",
+  "SYSTEMD_PACKAGES": "${PN}",
+  "SYSTEMD_SERVICE_${PN}": "syslogd.service",
+  "SYSTEMD_AUTO_ENABLE": "enable",
+  "INITSCRIPT_NAME": "syslog",
+  "CONFFILES_${PN}": "${sysconfdir}/syslog.conf",
+  "RCONFLICTS_${PN}": "rsyslog busybox-syslog syslog-ng",
+  "FILES_${PN}": "${exec_prefix}/lib/tmpfiles.d/sysklogd.conf",
+  "ALTERNATIVE_PRIORITY": "100",
+  "ALTERNATIVE_${PN}-doc": "syslogd.8",
+  "SRCREV": "6d6010add698370fc7d9828f0aaa18613dd2397f"
+}

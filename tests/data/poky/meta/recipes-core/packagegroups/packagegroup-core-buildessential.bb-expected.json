@@ -1,0 +1,5 @@
+{
+  "SUMMARY": "Essential build dependencies",
+  "inherit": "packagegroup",
+  "RDEPENDS": "\u001b    autoconf \u001b    automake \u001b    binutils \u001b    binutils-symlinks \u001b    cpp \u001b    cpp-symlinks \u001b    gcc \u001b    gcc-symlinks \u001b    g++ \u001b    g++-symlinks \u001b    gettext \u001b    make \u001b    libstdc++ \u001b    libstdc++-dev \u001b    libtool \u001b    pkgconfig \u001b    "
+}

@@ -1,0 +1,21 @@
+{
+  "SUMMARY": "A System and service manager",
+  "HOMEPAGE": "http://www.freedesktop.org/wiki/Software/systemd",
+  "DESCRIPTION": "systemd is a system and service manager for Linux, compatible with \u001bSysV and LSB init scripts. systemd provides aggressive parallelization \u001bcapabilities, uses socket and D-Bus activation for starting services, \u001boffers on-demand starting of daemons, keeps track of processes using \u001bLinux cgroups, supports snapshotting and restoring of the system \u001bstate, maintains mount and automount points and implements an \u001belaborate transactional dependency-based service control logic. It can \u001bwork as a drop-in replacement for sysvinit.",
+  "LICENSE": "GPLv2 & LGPLv2.1",
+  "LIC_FILES_CHKSUM": "file://LICENSE.GPL2;md5=751419260aa954499f7abaabaa882bbe \u001b                    file://LICENSE.LGPL2.1;md5=4fbd65380cdd255951079008b364516c",
+  "SRCREV": "2ee1c57c4ff4fd3349cf03c2e89fbd18ca0b3a4a",
+  "SRCBRANCH": "v246-stable",
+  "SRC_URI": "git://github.com/systemd/systemd-stable.git;protocol=git;branch=${SRCBRANCH}",
+  "S": "${WORKDIR}/git",
+  "FILESEXTRAPATHS": "${FILE_DIRNAME}/systemd:",
+  "DEPENDS": "intltool-native libcap util-linux gnu-efi gperf-native",
+  "inherit": "meson pkgconfig gettext\ndeploy",
+  "LDFLAGS": "!!!inlineblock!!! ",
+  "do_write_config[vardeps]": "CC OBJCOPY",
+  "EXTRA_OEMESON": "-Defi=true \u001b                  -Dgnu-efi=true \u001b                  -Defi-includedir=${STAGING_INCDIR}/efi \u001b                  -Defi-libdir=${STAGING_LIBDIR} \u001b                  -Defi-ld=!!!inlineblock!!! \u001b                  -Dman=false \u001b                  --cross-file ${WORKDIR}/meson-${PN}.cross \u001b                  ",
+  "FILES_${PN}": "${EFI_FILES_PATH}/${SYSTEMD_BOOT_IMAGE}",
+  "RDEPENDS_${PN}": "virtual/systemd-bootconf",
+  "TUNE_CCARGS": "-mfpmath=sse",
+  "COMPATIBLE_HOST": "(x86_64.*|i.86.*)-linux\nnull"
+}

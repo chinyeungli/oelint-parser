@@ -1,0 +1,11 @@
+{
+  "SUMMARY": "NFS package groups",
+  "PR": "r2",
+  "inherit": "packagegroup",
+  "PROVIDES": "${PACKAGES}",
+  "PACKAGES": "${PN}-server ${PN}-client",
+  "SUMMARY_${PN}-client": "NFS client",
+  "RDEPENDS_${PN}-client": "nfs-utils-client",
+  "SUMMARY_${PN}-server": "NFS server",
+  "RDEPENDS_${PN}-server": "\u001b    nfs-utils \u001b    nfs-utils-client \u001b    "
+}

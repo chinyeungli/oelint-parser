@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- keyboard input driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so\n ${libdir}/xorg/modules/input/*.so \u001b                 ${datadir}/X11/xorg.conf.d \u001b                 ",
+  "DESCRIPTION": "keyboard is an Xorg input driver for keyboards. The \u001bdriver supports the standard OS-provided keyboard interface.  The driver \u001bfunctions as a keyboard input device, and may be used as the X server's \u001bcore keyboard.",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=ea2099d24ac9e316a6d4b9f20b3d4e10",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI[md5sum]": "a3a3f0dd32361dcdbd406e894dafe090",
+  "SRC_URI[sha256sum]": "f7c900f21752683402992b288d5a2826de7a6c0c0abac2aadd7e8a409e170388",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

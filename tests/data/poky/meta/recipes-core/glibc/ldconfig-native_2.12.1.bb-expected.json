@@ -1,0 +1,10 @@
+{
+  "SUMMARY": "A standalone native ldconfig build",
+  "LICENSE": "GPLv2+",
+  "LIC_FILES_CHKSUM": "file://${S}/ldconfig.c;endline=17;md5=1d15f20937c055cb5de2329a4c054399",
+  "SRC_URI": "file://ldconfig-native-2.12.1.tar.bz2 \u001b           file://ldconfig.patch \u001b           file://ldconfig_aux-cache_path_fix.patch \u001b           file://32and64bit.patch \u001b           file://endian-ness_handling.patch \u001b           file://flag_fix.patch \u001b           file://endianess-header.patch \u001b           file://ldconfig-default-to-all-multilib-dirs.patch \u001b           file://endian-ness_handling_fix.patch \u001b           file://add-64-bit-flag-for-ELF64-entries.patch \u001b",
+  "PR": "r2",
+  "FILESEXTRAPATHS": "${FILE_DIRNAME}/${P}:",
+  "inherit": "native",
+  "S": "${WORKDIR}/${PN}-${PV}"
+}

@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "Framework for defining and tracking users, login sessions, and seats",
+  "HOMEPAGE": "http://www.freedesktop.org/wiki/Software/ConsoleKit",
+  "BUGTRACKER": "https://bugs.freedesktop.org/buglist.cgi?query_format=specific&product=ConsoleKit",
+  "LICENSE": "GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=59530bdf33659b29e73d4adb9f9f6552 \u001b                    file://src/main.c;endline=21;md5=0a994e09769780220163255d8f9071c3",
+  "DEPENDS": "glib-2.0 glib-2.0-native dbus dbus-glib virtual/libx11",
+  "RDEPENDS_${PN}": "base-files",
+  "inherit": "autotools pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "http://www.freedesktop.org/software/ConsoleKit/dist/ConsoleKit-${PV}.tar.xz \u001b           file://sepbuildfix.patch \u001b           file://add-polkit-configure-argument.patch \u001b",
+  "SRC_URI[md5sum]": "611792b4d616253a5bdec9175f8b7678",
+  "SRC_URI[sha256sum]": "b41d17e06f80059589fbeefe96ad07bcc564c49e65516da1caf975146475565c",
+  "S": "${WORKDIR}/ConsoleKit-${PV}",
+  "PACKAGECONFIG": "!!!inlineblock!!!",
+  "PACKAGECONFIG[pam]": "--enable-pam-module --with-pam-module-dir=${base_libdir}/security,--disable-pam-module,libpam",
+  "PACKAGECONFIG[polkit]": "--with-polkit,--without-polkit,polkit",
+  "PACKAGECONFIG[systemd]": "--with-systemdsystemunitdir=${systemd_unitdir}/system/,--with-systemdsystemunitdir=",
+  "FILES_${PN}": "${exec_prefix}/lib/ConsoleKit \u001b                ${libdir}/ConsoleKit  ${systemd_unitdir} ${base_libdir} \u001b                ${datadir}/dbus-1 ${datadir}/PolicyKit ${datadir}/polkit*",
+  "PACKAGES": "pam-plugin-ck-connector",
+  "FILES": "${base_libdir}/security/*.so",
+  "RDEPENDS": "${PN}"
+}

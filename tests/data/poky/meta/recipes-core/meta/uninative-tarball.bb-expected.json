@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "libc and patchelf tarball for use with uninative.bbclass",
+  "LICENSE": "MIT",
+  "TOOLCHAIN_TARGET_TASK": "",
+  "TOOLCHAIN_HOST_TASK": "\u001b    nativesdk-glibc \u001b    nativesdk-glibc-gconv-ibm850 \u001b    nativesdk-glibc-gconv-iso8859-1 \u001b    nativesdk-glibc-gconv-utf-16 \u001b    nativesdk-glibc-gconv-cp1252 \u001b    nativesdk-glibc-gconv-euc-jp \u001b    nativesdk-glibc-gconv-libjis \u001b    nativesdk-patchelf \u001b    nativesdk-libxcrypt \u001b    nativesdk-libxcrypt-compat \u001b    nativesdk-libnss-nis \u001b    nativesdk-sdk-provides-dummy \u001b    ",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "MULTIMACH_TARGET_SYS": "${SDK_ARCH}-nativesdk${SDK_VENDOR}-${SDK_OS}",
+  "PACKAGE_ARCH": "${SDK_ARCH}_${SDK_OS}",
+  "PACKAGE_ARCHS": "",
+  "TARGET_ARCH": "none",
+  "TARGET_OS": "none",
+  "TOOLCHAIN_OUTPUTNAME": "${SDK_ARCH}-nativesdk-libc",
+  "RDEPENDS": "${TOOLCHAIN_HOST_TASK}",
+  "EXCLUDE_FROM_WORLD": "1",
+  "inherit": "meta\npopulate_sdk\nnopackages",
+  "do_populate_sdk[stamp-extra-info]": "${PACKAGE_ARCH}",
+  "SDK_DEPENDS": "patchelf-native",
+  "SDK_PACKAGING_FUNC": "",
+  "REAL_MULTIMACH_TARGET_SYS": "none"
+}

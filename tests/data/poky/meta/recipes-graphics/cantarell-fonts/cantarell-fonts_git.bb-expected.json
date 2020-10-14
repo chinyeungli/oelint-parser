@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "Cantarell, a Humanist sans-serif font family",
+  "DESCRIPTION": "The Cantarell font typeface is designed as a \u001b               contemporary Humanist sans serif, and was developed for \u001b               on-screen reading; in particular, reading web pages on an \u001b               HTC Dream mobile phone.",
+  "HOMEPAGE": "https://gitlab.gnome.org/GNOME/cantarell-fonts/",
+  "SECTION": "fonts",
+  "LICENSE": "OFL-1.1",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=df91e3ffcab8cfb972a66bf11255188d",
+  "PV": "0.0.25",
+  "SRCREV": "e28a9096da43984212b5b4002b949bcb8c7527f9",
+  "SRC_URI": "git://gitlab.gnome.org/GNOME/cantarell-fonts.git;protocol=https;branch=reconstruction-0.0.25",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>(?!0\u001b.13)(?!0\u001b.10\u001b.1)\u001bd+\u001b.\u001bd+(\u001b.\u001bd+)+)",
+  "S": "${WORKDIR}/git",
+  "inherit": "autotools allarch fontcache pkgconfig",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[fontforge]": "--enable-source-rebuild=yes,--enable-source-rebuild=no,fontforge-native",
+  "FILES_${PN}": "${datadir}/fonts ${datadir}/fontconfig"
+}

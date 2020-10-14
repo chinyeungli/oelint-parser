@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Asynchronous I/O library",
+  "DESCRIPTION": "Asynchronous input/output library that uses the kernels native interface",
+  "HOMEPAGE": "http://lse.sourceforge.net/io/aio.html",
+  "LICENSE": "LGPLv2.1+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d8045f3b8f929c1cb29a1e3fd737b499",
+  "SRC_URI": "git://pagure.io/libaio.git;protocol=https \u001b           file://00_arches.patch \u001b           file://destdir.patch \u001b           file://libaio_fix_for_mips_syscalls.patch \u001b           file://system-linkage.patch \u001b           ",
+  "SRCREV": "f66be22ab0a59a39858900ab72a8c6a6e8b0b7ec",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OEMAKE": "prefix=${prefix} includedir=${includedir} libdir=${libdir}",
+  "BBCLASSEXTEND": "native nativesdk"
+}

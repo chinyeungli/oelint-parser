@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "GNU awk text processing utility",
+  "DESCRIPTION": "The GNU version of awk, a text processing utility. \u001bAwk interprets a special-purpose programming language to do \u001bquick and easy text pattern matching and reformatting jobs.",
+  "HOMEPAGE": "https://www.gnu.org/software/gawk/",
+  "BUGTRACKER": "bug-gawk@gnu.org",
+  "SECTION": "console/utils",
+  "LICENSE": "GPLv3",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504",
+  "PACKAGECONFIG": "readline",
+  "PACKAGECONFIG[readline]": "--with-readline,--without-readline,readline",
+  "PACKAGECONFIG[mpfr]": "--with-mpfr,--without-mpfr, mpfr",
+  "SRC_URI": "${GNU_MIRROR}/gawk/gawk-${PV}.tar.gz \u001b           file://run-ptest \u001b",
+  "SRC_URI[md5sum]": "f719bc9966df28e67fc6ebc405e7ea03",
+  "SRC_URI[sha256sum]": "03a0360edcd84bec156fe211bbc4fc8c78790973ce4e8b990a11d778d40b1a26",
+  "inherit": "autotools gettext texinfo update-alternatives\nptest",
+  "FILES_${PN}": "${datadir}/awk",
+  "FILES_${PN}-dev": "${libdir}/${BPN}/*.la",
+  "ALTERNATIVE_${PN}": "awk",
+  "ALTERNATIVE_TARGET[awk]": "${bindir}/gawk",
+  "ALTERNATIVE_PRIORITY": "100",
+  "RDEPENDS_${PN}-ptest": "make",
+  "BBCLASSEXTEND": "native nativesdk"
+}

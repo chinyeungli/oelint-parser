@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "Target Communication Framework for the Eclipse IDE",
+  "HOMEPAGE": "http://wiki.eclipse.org/TCF",
+  "BUGTRACKER": "https://bugs.eclipse.org/bugs/",
+  "LICENSE": "EPL-1.0 | EDL-1.0",
+  "LIC_FILES_CHKSUM": "file://edl-v10.html;md5=522a390a83dc186513f0500543ad3679",
+  "SRCREV": "a022ef2f1acfd9209a1bf792dda14ae4b0d1b60f",
+  "PV": "1.7.0+git${SRCPV}",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>(\u001bd+(\u001b.\u001bd+)+))",
+  "SRC_URI": "git://git.eclipse.org/gitroot/tcf/org.eclipse.tcf.agent \u001b           file://fix_ranlib.patch \u001b           file://ldflags.patch \u001b           file://tcf-agent.init \u001b           file://tcf-agent.service \u001b          ",
+  "DEPENDS": "util-linux openssl",
+  "RDEPENDS_${PN}": "bash",
+  "S": "${WORKDIR}/git/agent",
+  "inherit": "update-rc.d systemd",
+  "SYSTEMD_SERVICE_${PN}": "tcf-agent.service",
+  "INITSCRIPT_NAME": "tcf-agent",
+  "INITSCRIPT_PARAMS": "start 99 3 5 . stop 20 0 1 2 6 .",
+  "MAKE_ARCH": "`echo ${TARGET_ARCH} | sed s,i.86,i686, | sed s,aarch64.*,a64, | sed s,armeb,arm,`",
+  "MAKE_OS": "`echo ${TARGET_OS} | sed s,^linux.*,GNU/Linux,`",
+  "EXTRA_OEMAKE": "MACHINE=${MAKE_ARCH} OPSYS=${MAKE_OS} 'CC=${CC}' 'AR=${AR}'",
+  "LCL_STOP_SERVICES": "-DSERVICE_RunControl=0 -DSERVICE_Breakpoints=0 \u001b    -DSERVICE_Memory=0 -DSERVICE_Registers=0 -DSERVICE_MemoryMap=0 \u001b    -DSERVICE_StackTrace=0 -DSERVICE_Expressions=0",
+  "CFLAGS": " ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}\n ${LCL_STOP_SERVICES}"
+}

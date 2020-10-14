@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Library for getting/setting POSIX.1e capabilities",
+  "HOMEPAGE": "http://sites.google.com/site/fullycapable/",
+  "LICENSE": "BSD | GPLv2",
+  "LIC_FILES_CHKSUM": "file://License;md5=3f84fd6f29d453a56514cb7e4ead25f1",
+  "DEPENDS": "hostperl-runtime-native gperf-native",
+  "SRC_URI": "${KERNELORG_MIRROR}/linux/libs/security/linux-privs/${BPN}2/${BPN}-${PV}.tar.xz \u001b           file://0001-ensure-the-XATTR_NAME_CAPS-is-defined-when-it-is-use.patch \u001b           file://0002-tests-do-not-run-target-executables.patch \u001b           file://0001-tests-do-not-statically-link-a-test.patch \u001b           ",
+  "SRC_URI[sha256sum]": "512a0e5fc4c1e06d472a20da26aa96a9b9bf2a26b23f094f77f1b8da56cc427f",
+  "UPSTREAM_CHECK_URI": "https://www.kernel.org/pub/linux/libs/security/linux-privs/${BPN}2/",
+  "inherit": "lib_package",
+  "PACKAGECONFIG": "!!!inlineblock!!!\n",
+  "PACKAGECONFIG[pam]": "PAM_CAP=yes,PAM_CAP=no,libpam",
+  "EXTRA_OEMAKE": " \u001b  INDENT=  \u001b  lib='${baselib}' \u001b  RAISE_SETFCAP=no \u001b  DYNAMIC=yes \u001b  BUILD_GPERF=yes \u001b\n SYSTEM_HEADERS=${STAGING_INCDIR}",
+  "CFLAGS": "-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64",
+  "FILES_${PN}-dev": "${base_libdir}/*.so",
+  "FILES_${PN}": "${base_libdir}/security/*.so",
+  "BBCLASSEXTEND": "native nativesdk"
+}

@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Testing tools/applications",
+  "PR": "r2",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "KEXECTOOLS": "kexec\n\n\n\n",
+  "GSTEXAMPLES": "gst-examples\n",
+  "X11GLTOOLS": "\u001b    mesa-demos \u001b    ",
+  "3GTOOLS": "\u001b    ofono-tests \u001b    ",
+  "X11TOOLS": "\u001b    ${GSTEXAMPLES} \u001b    x11perf \u001b    xrestop \u001b    xwininfo \u001b    xprop \u001b    ",
+  "RDEPENDS_${PN}": "\u001b    blktool \u001b    ${KEXECTOOLS} \u001b    alsa-utils-amixer \u001b    alsa-utils-aplay \u001b    ltp \u001b    connman-tools \u001b    connman-tests \u001b    connman-client \u001b    ${X11TOOLS} \u001b    ${X11GLTOOLS} \u001b    ${3GTOOLS} \u001b    "
+}

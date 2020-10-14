@@ -1,0 +1,13 @@
+{
+  "DUMMYARCH": "buildtools-dummy-${SDKPKGSUFFIX}",
+  "DUMMYPROVIDES_PACKAGES": "\u001b    nativesdk-perl \u001b    nativesdk-libxml-parser-perl \u001b    nativesdk-perl-module-bytes \u001b    nativesdk-perl-module-carp \u001b    nativesdk-perl-module-constant \u001b    nativesdk-perl-module-data-dumper \u001b    nativesdk-perl-module-errno \u001b    nativesdk-perl-module-exporter \u001b    nativesdk-perl-module-file-basename \u001b    nativesdk-perl-module-file-compare \u001b    nativesdk-perl-module-file-copy \u001b    nativesdk-perl-module-file-find \u001b    nativesdk-perl-module-file-glob \u001b    nativesdk-perl-module-file-path \u001b    nativesdk-perl-module-file-spec \u001b    nativesdk-perl-module-file-stat \u001b    nativesdk-perl-module-getopt-long \u001b    nativesdk-perl-module-io-file \u001b    nativesdk-perl-module-overloading \u001b    nativesdk-perl-module-posix \u001b    nativesdk-perl-module-thread-queue \u001b    nativesdk-perl-module-threads \u001b    nativesdk-perl-module-warnings \u001b\n",
+  "DUMMYPROVIDES": "\u001b    /usr/bin/perl \u001b    \n${DUMMYPROVIDES_PACKAGES_MULTILIB}",
+  "PR": "r2",
+  "SUMMARY": "Dummy packages which handle excluding packages from the sdk, e.g. ensuring perl is excluded from buildtools",
+  "LICENSE": "MIT",
+  "PACKAGE_ARCH": "all",
+  "inherit": "allarch\nnativesdk",
+  "ALLOW_EMPTY_${PN}": "1",
+  "PR[vardeps]": "DUMMYPROVIDES\nDUMMYPROVIDES_PACKAGES",
+  "DUMMYPROVIDES_PACKAGES_MULTILIB": "!!!inlineblock!!!"
+}

@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Tool for managing software RAID under Linux",
+  "HOMEPAGE": "http://www.kernel.org/pub/linux/utils/raid/mdadm/",
+  "LICENSE": "GPLv2 & GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b                    file://mdmon.c;beginline=4;endline=18;md5=af7d8444d9c4d3e5c7caac0d9d34039d \u001b                    file://mdadm.h;beglinlne=4;endline=22;md5=462bc9936ac0d3da110191a3f9994161",
+  "SRC_URI": "${KERNELORG_MIRROR}/linux/utils/raid/mdadm/${BPN}-${PV}.tar.xz \u001b           file://run-ptest \u001b           file://mdadm-3.3.2_x32_abi_time_t.patch \u001b           file://mdadm-fix-ptest-build-errors.patch \u001b           file://0001-mdadm.h-Undefine-dprintf-before-redefining.patch \u001b           file://0001-Fix-the-path-of-corosync-and-dlm-header-files-check.patch \u001b           file://0001-Use-CC-to-check-for-implicit-fallthrough-warning-sup.patch \u001b           file://0001-Compute-abs-diff-in-a-standard-compliant-way.patch \u001b           file://0001-fix-gcc-8-format-truncation-warning.patch \u001b           file://debian-no-Werror.patch \u001b           file://0001-Revert-tests-wait-for-complete-rebuild-in-integrity-.patch \u001b           file://mdadm.init \u001b           file://0001-mdadm-add-option-y-for-use-syslog-to-recive-event-re.patch \u001b           file://include_sysmacros.patch \u001b           file://0001-mdadm-skip-test-11spare-migration.patch \u001b           ",
+  "SRC_URI[md5sum]": "51bf3651bd73a06c413a2f964f299598",
+  "SRC_URI[sha256sum]": "ab7688842908d3583a704d491956f31324c3a5fc9f6a04653cb75d19f1934f4a",
+  "inherit": "autotools-brokensep ptest systemd",
+  "SYSTEMD_SERVICE_${PN}": "mdmonitor.service",
+  "SYSTEMD_AUTO_ENABLE": "disable",
+  "CFLAGS": " -Wno-error=address-of-packed-member\n' -D__SANE_USERSPACE_TYPES__'\n' -D__SANE_USERSPACE_TYPES__'\n' -D__SANE_USERSPACE_TYPES__'",
+  "EXTRA_OEMAKE": "'CHECK_RUN_DIR=0 CXFLAGS=\"${CFLAGS}\" SYSTEMD_DIR=${systemd_unitdir}/system \u001b                BINDIR=\"${base_sbindir}\" UDEVDIR=\"${nonarch_base_libdir}/udev\"'",
+  "DEBUG_OPTIMIZATION": " -Wno-error",
+  "RDEPENDS_${PN}-ptest": "bash e2fsprogs-mke2fs",
+  "RRECOMMENDS_${PN}-ptest": " \u001b    coreutils \u001b    util-linux \u001b    kernel-module-loop \u001b    kernel-module-linear \u001b    kernel-module-raid0 \u001b    kernel-module-raid1 \u001b    kernel-module-raid10 \u001b    kernel-module-raid456 \u001b",
+  "FILES_${PN}": "${systemd_unitdir}/*"
+}

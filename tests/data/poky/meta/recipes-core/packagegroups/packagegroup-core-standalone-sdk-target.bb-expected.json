@@ -1,0 +1,8 @@
+{
+  "SUMMARY": "Target packages for the standalone SDK",
+  "PR": "r8",
+  "PACKAGE_ARCH": "${TUNE_PKGARCH}",
+  "inherit": "packagegroup",
+  "RDEPENDS_${PN}": "\u001b    libgcc \u001b    libgcc-dev \u001b    libatomic \u001b    libatomic-dev \u001b    libstdc++ \u001b    libstdc++-dev \u001b    ${LIBC_DEPENDENCIES} \u001b    ",
+  "RRECOMMENDS_${PN}": "\u001b    libssp \u001b    libssp-dev \u001b    "
+}

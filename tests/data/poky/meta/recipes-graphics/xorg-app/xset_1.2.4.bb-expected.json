@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "X application\nUtility for setting various user preference options of the display",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X\nMIT",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxext libxmu libxau",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2\nfile://disable-xkb.patch",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "xset is a utility that is used to set various user \u001bpreference options of the display.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=bea81cc9827cdf1af0e12c2b8228cf8d",
+  "PE": "1",
+  "SRC_URI[md5sum]": "70ea7bc7bacf1a124b1692605883f620",
+  "SRC_URI[sha256sum]": "e4fd95280df52a88e9b0abc1fee11dcf0f34fc24041b9f45a247e52df941c957",
+  "CFLAGS": "-D_GNU_SOURCE",
+  "EXTRA_OECONF": "--disable-xkb --without-fontcache"
+}

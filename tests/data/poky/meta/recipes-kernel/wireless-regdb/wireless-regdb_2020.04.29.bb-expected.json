@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Wireless Central Regulatory Domain Database",
+  "HOMEPAGE": "http://wireless.kernel.org/en/developers/Regulatory/CRDA",
+  "SECTION": "net",
+  "LICENSE": "ISC",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=07c4f6dea3845b02a18dc00c8c87699c",
+  "SRC_URI": "https://www.kernel.org/pub/software/network/${BPN}/${BP}.tar.xz",
+  "SRC_URI[sha256sum]": "89fd031aed5977c219a71501e144375a10e7c90d1005d5d086ea7972886a2c7a",
+  "inherit": "bin_package allarch",
+  "PACKAGES": "${PN}-static ${PN}",
+  "RCONFLICTS_${PN}": "${PN}-static",
+  "FILES_${PN}-static": " \u001b    ${nonarch_base_libdir}/firmware/regulatory.db \u001b    ${nonarch_base_libdir}/firmware/regulatory.db.p7s \u001b",
+  "RSUGGESTS_${PN}": "crda",
+  "BBCLASSEXTEND": "native"
+}

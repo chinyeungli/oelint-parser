@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "Helper tool used when compiling",
+  "DESCRIPTION": "pkg-config is a helper tool used when compiling applications and libraries. It helps determined \u001bthe correct compiler/link options.  It is also language-agnostic.",
+  "HOMEPAGE": "http://pkg-config.freedesktop.org/wiki/",
+  "BUGTRACKER": "http://bugs.freedesktop.org/buglist.cgi?product=pkg-config",
+  "SECTION": "console/utils",
+  "LICENSE": "GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263",
+  "SRCREV": "edf8e6f0ea77ede073f07bff0d2ae1fc7a38103b",
+  "PV": "0.29.2+git${SRCPV}",
+  "SRC_URI": "git://anongit.freedesktop.org/pkg-config \u001b           file://pkg-config-esdk.in \u001b           file://pkg-config-native.in \u001b           file://fix-glib-configure-libtool-usage.patch \u001b           file://0001-glib-gettext.m4-Update-AM_GLIB_GNU_GETTEXT-to-match-.patch \u001b           ",
+  "S": "${WORKDIR}/git",
+  "inherit": "autotools",
+  "EXTRA_OECONF": "--disable-indirect-deps",
+  "PACKAGECONFIG": "glib\n\n",
+  "PACKAGECONFIG[glib]": "--without-internal-glib,--with-internal-glib,glib-2.0 pkgconfig-native",
+  "acpaths": "-I .",
+  "BBCLASSEXTEND": "native nativesdk",
+  "FILES_${PN}-dev": "",
+  "FILES_${PN}": "${datadir}/aclocal/pkg.m4",
+  "RPROVIDES_${PN}": "pkgconfig(pkg-config)",
+  "SSTATEPOSTUNPACKFUNCS": " pkgconfig_sstate_fixup_esdk"
+}

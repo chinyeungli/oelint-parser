@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Minimal boot requirements",
+  "DESCRIPTION": "The minimal set of packages required to boot the system",
+  "PR": "r17",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "VIRTUAL-RUNTIME": "udev\nkeymaps",
+  "EFI_PROVIDER": "grub-efi",
+  "SYSVINIT_SCRIPTS": "${VIRTUAL-RUNTIME_base-utils-hwclock} \u001b                    modutils-initscripts \u001b                    init-ifupdown \u001b                    ${VIRTUAL-RUNTIME_initscripts} \u001b                   ",
+  "RDEPENDS_${PN}": "\u001b    base-files \u001b    base-passwd \u001b    ${VIRTUAL-RUNTIME_base-utils} \u001b    ${SYSVINIT_SCRIPTS} \u001b    ${VIRTUAL-RUNTIME_keymaps} \u001b    ${EFI_PROVIDER} kernel \u001b    netbase \u001b    ${VIRTUAL-RUNTIME_login_manager} \u001b    ${VIRTUAL-RUNTIME_init_manager} \u001b    ${VIRTUAL-RUNTIME_dev_manager} \u001b    ${VIRTUAL-RUNTIME_update-alternatives} \u001b    ${MACHINE_ESSENTIAL_EXTRA_RDEPENDS}",
+  "RRECOMMENDS_${PN}": "\u001b    ${VIRTUAL-RUNTIME_base-utils-syslog} \u001b    ${MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS}"
+}

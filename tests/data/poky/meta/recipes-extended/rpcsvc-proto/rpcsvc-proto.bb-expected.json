@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "rpcsvc protocol definitions from glibc",
+  "DESCRIPTION": "This package contains rpcsvc proto.x files from glibc, which are\u001bmissing in libtirpc. Additional it contains rpcgen, which is needed\u001bto create header files and sources from protocol files.\u001bThis package is only needed, if glibc is installed without the\u001bdeprecated sunrpc functionality and libtirpc should replace it.",
+  "HOMEPAGE": "https://github.com/thkukuk/rpcsvc-proto",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=0daaf958d5531ab86169ec6e275e1517",
+  "SECTION": "libs",
+  "DEPENDS": "rpcsvc-proto-native",
+  "PV": "1.4.2",
+  "SRCREV": "6f54e54455c073d08a56ea627c6cd2355a40eb53",
+  "SRC_URI": "git://github.com/thkukuk/${BPN} \u001b           file://0001-Use-cross-compiled-rpcgen.patch \u001b          ",
+  "S": "${WORKDIR}/git",
+  "inherit": "autotools gettext",
+  "EXTRA_OEMAKE": " -C rpcgen",
+  "BBCLASSEXTEND": "native nativesdk"
+}

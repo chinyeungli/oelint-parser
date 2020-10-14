@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Fortran Hello World",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "DEPENDS": "libgfortran",
+  "SRC_URI": "file://hello.f95",
+  "SECURITY_CFLAGS": "",
+  "SECURITY_LDFLAGS": ""
+}

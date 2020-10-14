@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "GNU multiprecision arithmetic library",
+  "DESCRIPTION": "GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating point numbers",
+  "HOMEPAGE": "http://gmplib.org/",
+  "SECTION": "devel",
+  "inherit": "autotools texinfo multilib_header",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[readline]": "--with-readline=yes,--with-readline=no,readline",
+  "ARM_INSTRUCTION_SET": "arm\narm",
+  "LICENSE": "GPLv2+ | LGPLv3+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d32239bcb673463ab874e80d47fae504 \u001b                   file://COPYING.LESSERv3;md5=6a6a8e020838b23406c81b19c1d46df6 \u001b                   file://COPYINGv2;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b",
+  "REVISION": "",
+  "SRC_URI": "https://gmplib.org/download/${BPN}/${BP}${REVISION}.tar.bz2 \u001b           file://use-includedir.patch \u001b           file://0001-Append-the-user-provided-flags-to-the-auto-detected-.patch \u001b           file://0001-confiure.ac-Believe-the-cflags-from-environment.patch \u001b           ",
+  "SRC_URI[md5sum]": "c24161e0dd44cae78cd5f67193492a21",
+  "SRC_URI[sha256sum]": "f51c99cb114deb21a60075ffb494c1a210eb9d7cb729ed042ddb7de9534451ea",
+  "acpaths": "",
+  "EXTRA_OECONF": " --enable-cxx=detect\n --disable-assembly",
+  "PACKAGES": "libgmpxx",
+  "FILES": "${libdir}/libgmpxx${SOLIBS}",
+  "SSTATE_SCAN_FILES": "gmp.h",
+  "MIPS_INSTRUCTION_SET": "mips",
+  "BBCLASSEXTEND": "native nativesdk"
+}

@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "XRandR: X Resize, Rotate and Reflect extension library",
+  "DESCRIPTION": "The X Resize, Rotate and Reflect Extension, called RandR \u001bfor short, brings the ability to resize, rotate and reflect the root \u001bwindow of a screen. It is based on the X Resize and Rotate Extension as \u001bspecified in the Proceedings of the 2001 Usenix Technical Conference \u001b[RANDR].",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/libs",
+  "LICENSE": "MIT-X\nMIT-style",
+  "DEPENDS": "util-macros\nvirtual/libx11 xorgproto libxrender libxext",
+  "XORG_PN": "${BPN}\nlibXrandr",
+  "SRC_URI": "${XORG_MIRROR}/individual/lib/${XORG_PN}-${PV}.tar.bz2",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools features_check pkgconfig",
+  "EXTRA_OECONF": "--disable-specs --without-groff --without-ps2pdf --without-fop",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[xmlto]": "--with-xmlto, --without-xmlto, xmlto-native docbook-xml-dtd4-native docbook-xsl-stylesheets-native",
+  "UNKNOWN_CONFIGURE_WHITELIST": "--enable-malloc0returnsnull --disable-malloc0returnsnull \u001b                                --disable-specs --without-groff --without-ps2pdf --without-fop \u001b                                --without-xmlto --with-xmlto \u001b",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=c9d1a2118a6cd5727521db8e7a2fee69",
+  "PE": "1",
+  "BBCLASSEXTEND": "native nativesdk",
+  "SRC_URI[md5sum]": "18f3b20d522f45e4dadd34afb5bea048",
+  "SRC_URI[sha256sum]": "8aea0ebe403d62330bb741ed595b53741acf45033d3bda1792f1d4cc3daee023"
+}

@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "Linux NFC daemon",
+  "DESCRIPTION": "A daemon for the Linux Near Field Communication stack",
+  "HOMEPAGE": "http://01.org/linux-nfc",
+  "LICENSE": "GPLv2",
+  "DEPENDS": "dbus glib-2.0 libnl",
+  "SRC_URI": "${KERNELORG_MIRROR}/linux/network/nfc/${BP}.tar.xz \u001b           file://neard.in \u001b           file://Makefile.am-fix-parallel-issue.patch \u001b           file://Makefile.am-do-not-ship-version.h.patch \u001b           file://0001-Add-header-dependency-to-nciattach.o.patch \u001b          ",
+  "SRC_URI[md5sum]": "5c691fb7872856dc0d909c298bc8cb41",
+  "SRC_URI[sha256sum]": "eae3b11c541a988ec11ca94b7deab01080cd5b58cfef3ced6ceac9b6e6e65b36",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=12f884d2ae1ff87c09e5b7ccc2c4ca7e \u001b file://src/near.h;beginline=1;endline=20;md5=358e4deefef251a4761e1ffacc965d13 \u001b ",
+  "inherit": "autotools pkgconfig systemd update-rc.d",
+  "PACKAGECONFIG": "!!!inlineblock!!!",
+  "PACKAGECONFIG[systemd]": "--enable-systemd --with-systemdsystemunitdir=${systemd_unitdir}/system/ --with-systemduserunitdir=${systemd_unitdir}/user/,--disable-systemd",
+  "EXTRA_OECONF": "--enable-tools",
+  "RDEPENDS_${PN}": "dbus",
+  "RRECOMMENDS_${PN}": "\u001b                     bluez5 \u001b                     wpa-supplicant \u001b                    ",
+  "INITSCRIPT_NAME": "neard",
+  "INITSCRIPT_PARAMS": "defaults 64",
+  "SYSTEMD_SERVICE_${PN}": "neard.service"
+}

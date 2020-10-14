@@ -1,0 +1,16 @@
+{
+  "DESCRIPTION": "Tiny image capable of booting a device. The kernel includes \u001bthe Minimal RAM-based Initial Root Filesystem (initramfs), which finds the \u001bfirst 'init' program more efficiently. core-image-tiny-initramfs doesn't \u001bactually generate an image but rather generates boot and rootfs artifacts \u001bthat can subsequently be picked up by external image generation tools such as wic.",
+  "VIRTUAL-RUNTIME": "busybox-mdev",
+  "PACKAGE_INSTALL": "initramfs-live-boot-tiny packagegroup-core-boot dropbear ${VIRTUAL-RUNTIME_base-utils} ${VIRTUAL-RUNTIME_dev_manager} base-passwd ${ROOTFS_BOOTSTRAP_INSTALL}",
+  "IMAGE_FEATURES": "",
+  "IMAGE_NAME_SUFFIX": "",
+  "IMAGE_LINGUAS": "",
+  "LICENSE": "MIT",
+  "IMAGE_FSTYPES": "${INITRAMFS_FSTYPES}",
+  "inherit": "core-image",
+  "IMAGE_ROOTFS_SIZE": "8192",
+  "IMAGE_ROOTFS_EXTRA_SPACE": "0",
+  "COMPATIBLE_HOST": "(i.86|x86_64).*-linux",
+  "IMAGE_PREPROCESS_COMMAND": "tinyinitrd;",
+  "QB_KERNEL_CMDLINE_APPEND": "debugshell=3 init=/bin/busybox sh init"
+}

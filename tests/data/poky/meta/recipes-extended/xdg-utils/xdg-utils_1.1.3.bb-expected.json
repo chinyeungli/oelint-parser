@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Basic desktop integration functions",
+  "HOMEPAGE": "https://www.freedesktop.org/wiki/Software/xdg-utils/",
+  "DESCRIPTION": "The xdg-utils package is a set of simple scripts that provide basic \u001bdesktop integration functions for any Free Desktop, such as Linux. \u001bThey are intended to provide a set of defacto standards. \u001bThe following scripts are provided at this time: \u001bxdg-desktop-icon \u001bxdg-desktop-menu \u001bxdg-email \u001bxdg-icon-resource \u001bxdg-mime \u001bxdg-open \u001bxdg-screensaver \u001bxdg-terminal \u001b",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=a5367a90934098d6b05af3b746405014",
+  "SRC_URI": "https://portland.freedesktop.org/download/${BPN}-${PV}.tar.gz \u001b           file://0001-Reinstate-xdg-terminal.patch \u001b           file://0001-Don-t-build-the-in-script-manual.patch \u001b          ",
+  "SRC_URI[md5sum]": "902042508b626027a3709d105f0b63ff",
+  "SRC_URI[sha256sum]": "d798b08af8a8e2063ddde6c9fa3398ca81484f27dec642c5627ffcaa0d4051d9",
+  "UPSTREAM_CHECK_REGEX": "xdg-utils-(?P<pver>((\u001bd+[\u001b.\u001b-_]*)+)((rc|alpha|beta)\u001bd+)?)\u001b.(tar\u001b.gz|tgz)",
+  "inherit": "autotools-brokensep features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "DEPENDS": "xmlto-native libxslt-native",
+  "RDEPENDS_${PN}": "xprop"
+}

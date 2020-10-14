@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Rebuilds the package index",
+  "LICENSE": "MIT",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "PACKAGES": "",
+  "inherit": "nopackages",
+  "do_package_index[depends]": "${PACKAGEINDEXDEPS}",
+  "EXCLUDE_FROM_WORLD": "1"
+}

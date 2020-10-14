@@ -1,0 +1,8 @@
+{
+  "DESCRIPTION": "Image with Sato, a mobile environment and visual style for \u001bmobile devices. The image supports X11 with a Sato theme, Pimlico \u001bapplications, and contains terminal, editor, and file manager.\nImage with Sato for development work. It includes everything \u001bwithin core-image-sato plus a native toolchain, application development and \u001btesting libraries, profiling and debug symbols.",
+  "IMAGE_FEATURES": "splash package-management x11-base x11-sato ssh-server-dropbear hwcodecs\ndev-pkgs",
+  "LICENSE": "MIT",
+  "inherit": "core-image",
+  "TOOLCHAIN_HOST_TASK": " nativesdk-intltool nativesdk-glib-2.0\n nativesdk-intltool nativesdk-glib-2.0",
+  "QB_MEM": "'-m 512'\n-m 256"
+}

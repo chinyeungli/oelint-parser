@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Provides a bridge between gconf and xsettings",
+  "HOMEPAGE": "http://svn.o-hand.com/view/matchbox/trunk/settings-daemon/",
+  "BUGTRACKER": "http://bugzilla.yoctoproject.org/",
+  "LICENSE": "MIT-style",
+  "LIC_FILES_CHKSUM": "file://xsettings-manager.h;endline=22;md5=7cfac9d2d4dc3694cc7eb605cf32a69b \u001b                    file://xsettings-common.h;endline=22;md5=7cfac9d2d4dc3694cc7eb605cf32a69b",
+  "DEPENDS": "gconf glib-2.0 gtk+3",
+  "SECTION": "x11",
+  "SRCREV": "b2e5da502f8c5ff75e9e6da771372ef8e40fd9a2",
+  "SRC_URI": "git://git.yoctoproject.org/xsettings-daemon \u001b           file://addsoundkeys.patch \u001b           file://70settings-daemon.sh \u001b           ",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>(\u001bd+(\u001b.\u001bd+)+))",
+  "S": "${WORKDIR}/git",
+  "inherit": "autotools pkgconfig gconf features_check",
+  "FILES_${PN}": "${bindir}/* ${sysconfdir}",
+  "REQUIRED_DISTRO_FEATURES": "x11"
+}

@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "GLIBC (GNU C Library)\nmtrace utility provided by glibc",
+  "DESCRIPTION": "The GNU C Library is used as the system C library in most systems with the Linux kernel.\nmtrace utility provided by glibc",
+  "HOMEPAGE": "http://www.gnu.org/software/libc/libc.html",
+  "SECTION": "libs",
+  "LICENSE": "GPLv2 & LGPLv2.1",
+  "LIC_FILES_CHKSUM": "file://LICENSES;md5=1541fd8f5e8f1579512bf05f533371ba \u001b      file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b      file://posix/rxspencer/COPYRIGHT;md5=dc5485bb394a13b2332ec1c785f5d83a \u001b      file://COPYING.LIB;md5=4fbd65380cdd255951079008b364516c\nfile://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6 \u001b                     file://${COMMON_LICENSE_DIR}/LGPL-2.1;md5=1a6d268fd218675ffea8be556788b780",
+  "CVE_PRODUCT": "glibc\n",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "RDEPENDS_${PN}": "perl",
+  "ARM_INSTRUCTION_SET": "arm\narm\narm",
+  "RPROVIDES_${PN}": "libc-mtrace",
+  "SRC": "${COMPONENTS_DIR}/${PACKAGE_ARCH}/glibc-stash-locale/scripts",
+  "COMPATIBLE_HOST": "null",
+  "PV": "2.32",
+  "do_install[depends]": "virtual/${MLPREFIX}libc:do_stash_locale"
+}

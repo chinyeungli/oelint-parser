@@ -1,0 +1,23 @@
+{
+  "SUMMARY": "Go programming language compiler",
+  "DESCRIPTION": " The Go programming language is an open source project to make \u001b programmers more productive. Go is expressive, concise, clean, and\u001b efficient. Its concurrency mechanisms make it easy to write programs\u001b that get the most out of multicore and networked machines, while its\u001b novel type system enables flexible and modular program construction.\u001b Go compiles quickly to machine code yet has the convenience of\u001b garbage collection and the power of run-time reflection. It's a\u001b fast, statically typed, compiled language that feels like a\u001b dynamically typed, interpreted language.",
+  "HOMEPAGE": " http://golang.org/",
+  "LICENSE": "BSD-3-Clause",
+  "inherit": "goarch\nnative",
+  "SRC_URI": "http://golang.org/dl/go${PV}.src.tar.gz;name=main\n https://dl.google.com/go/go1.4-bootstrap-20171003.tar.gz;name=bootstrap;subdir=go1.4\n\u001b    file://0001-allow-CC-and-CXX-to-have-multiple-words.patch \u001b    file://0002-cmd-go-make-content-based-hash-generation-less-pedan.patch \u001b    file://0003-allow-GOTOOLDIR-to-be-overridden-in-the-environment.patch \u001b    file://0004-ld-add-soname-to-shareable-objects.patch \u001b    file://0005-make.bash-override-CC-when-building-dist-and-go_boot.patch \u001b    file://0006-cmd-dist-separate-host-and-target-builds.patch \u001b    file://0007-cmd-go-make-GOROOT-precious-by-default.patch \u001b    file://0008-use-GOBUILDMODE-to-set-buildmode.patch \u001b",
+  "S": "${WORKDIR}/go",
+  "B": "${S}",
+  "UPSTREAM_CHECK_REGEX": "(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.src\u001b.tar",
+  "INHIBIT_PACKAGE_DEBUG_SPLIT": "1",
+  "SSTATE_SCAN_CMD": "true",
+  "GOTMPDIR[vardepvalue]": "",
+  "CC": "!!!inlineblock!!!",
+  "GOMAKEARGS": "--no-banner",
+  "GO_BASEVERSION": "1.15",
+  "GO_MINOR": ".2",
+  "PV": "${GO_MINOR}",
+  "FILESEXTRAPATHS": "${FILE_DIRNAME}/go-${GO_BASEVERSION}:",
+  "do_compile[dirs]": "${GOTMPDIR} ${B}/bin",
+  "do_compile[cleandirs]": "${GOTMPDIR} ${B}/bin",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=5d4950ecb7b26d2c5e4e7b4e0dd74707"
+}

@@ -1,0 +1,5 @@
+about_resource: .
+name: poky
+homepage_url: https://git.yoctoproject.org/cgit.cgi/poky/
+vcs_url: git://git.yoctoproject.org/poky
+notes: this is a trimmed checkout of Poky to test parse .bb files

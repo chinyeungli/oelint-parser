@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "Library providing simplified C and Python API to libsolv",
+  "LICENSE": "LGPLv2.1",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=4fbd65380cdd255951079008b364516c",
+  "SRC_URI": "git://github.com/rpm-software-management/libdnf;branch=dnf-4-master \u001b           file://0001-FindGtkDoc.cmake-drop-the-requirement-for-GTKDOC_SCA.patch \u001b           file://0004-Set-libsolv-variables-with-pkg-config-cmake-s-own-mo.patch \u001b           file://0001-Get-parameters-for-both-libsolv-and-libsolvext-libdn.patch \u001b           file://0001-Add-WITH_TESTS-option.patch \u001b           file://0001-Look-fo-sphinx-only-if-documentation-is-actually-ena.patch \u001b           file://enable_test_data_dir_set.patch \u001b           ",
+  "SRCREV": "46a28d0cf09277fffc11392e5e362a2eda0d53a8",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>\u001bd+(\u001b.\u001bd+)+)",
+  "S": "${WORKDIR}/git",
+  "DEPENDS": "glib-2.0 libsolv libcheck librepo rpm gtk-doc libmodulemd json-c swig-native",
+  "inherit": "gtk-doc gobject-introspection cmake pkgconfig distutils3-base",
+  "EXTRA_OECMAKE": " -DPYTHON_INSTALL_DIR=${PYTHON_SITEPACKAGES_DIR} -DWITH_MAN=OFF -DPYTHON_DESIRED=3 \u001b                  -DWITH_GIR=ON \u001b                  -DWITH_TESTS=OFF \u001b                  -DWITH_ZCHUNK=OFF \u001b                  -DWITH_HTML=OFF \u001b                \n -DWITH_GIR=OFF\n -DWITH_GIR=OFF",
+  "BBCLASSEXTEND": "native nativesdk",
+  "PNBLACKLIST[libdnf]": "!!!inlineblock!!!"
+}

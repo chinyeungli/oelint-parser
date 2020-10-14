@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "A library for bits of crypto UI and parsing etc",
+  "DESCRIPTION": "GCR is a library for displaying certificates, and crypto UI, \u001baccessing key stores. It also provides the viewer for crypto files on the \u001bGNOME desktop.",
+  "HOMEPAGE": "https://gitlab.gnome.org/GNOME/gcr",
+  "BUGTRACKER": "https://gitlab.gnome.org/GNOME/gcr/issues",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=55ca817ccb7d5b5b66355690e9abc605",
+  "DEPENDS": "gtk+3 p11-kit glib-2.0 libgcrypt gnupg-native \u001b           libxslt-native",
+  "GNOMEBASEBUILDCLASS": "meson",
+  "GTKDOC_MESON_OPTION": "gtk_doc",
+  "inherit": "gnomebase gtk-icon-cache gtk-doc features_check upstream-version-is-even vala gobject-introspection gettext mime mime-xdg",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": " file://0001-meson.build-correctly-set-internal-vapi-dependencies.patch\n file://0001-meson-Make-sure-gcr-oids.h-is-built.patch",
+  "FILES_${PN}": " \u001b    ${datadir}/dbus-1 \u001b    ${datadir}/gcr-3 \u001b",
+  "ARM_INSTRUCTION_SET": "arm\narm\narm"
+}

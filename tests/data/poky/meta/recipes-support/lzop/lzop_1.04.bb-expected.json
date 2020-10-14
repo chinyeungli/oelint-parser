@@ -1,0 +1,12 @@
+{
+  "SUMMARY": "Real-time file compressor",
+  "DESCRIPTION": "lzop is a compression utility which is designed to be a companion to gzip. \u001bn\u001bIt is based on the LZO data compression library and its main advantages over \u001bn\u001bgzip are much higher compression and decompression speed at the cost of some \u001bn\u001bcompression ratio. The lzop compression utility was designed with the goals \u001bn\u001bof reliability, speed, portability and with reasonable drop-in compatibility \u001bn\u001bto gzip.",
+  "DEPENDS": "lzo",
+  "LICENSE": "GPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b                    file://src/lzop.c;beginline=5;endline=21;md5=23d767de7754eb24b9e900b025cf7fc8",
+  "SRC_URI": "http://www.lzop.org/download/${BP}.tar.gz \u001b           file://acinclude.m4 \u001b          ",
+  "SRC_URI[md5sum]": "271eb10fde77a0a96b9cbf745e719ddf",
+  "SRC_URI[sha256sum]": "7e72b62a8a60aff5200a047eea0773a8fb205caf7acbe1774d95147f305a2f41",
+  "inherit": "autotools",
+  "BBCLASSEXTEND": "native nativesdk"
+}

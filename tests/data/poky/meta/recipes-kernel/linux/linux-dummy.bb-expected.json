@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "Dummy Linux kernel",
+  "DESCRIPTION": "Dummy Linux kernel, to be selected as the preferred \u001bprovider for virtual/kernel to satisfy dependencies for situations \u001bwhere you wish to build the kernel externally from the build system.\nKernel modules meta package\nKernel vmlinux meta package",
+  "SECTION": "kernel",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://${WORKDIR}/COPYING.GPL;md5=751419260aa954499f7abaabaa882bbe",
+  "PROVIDES": "virtual/kernel",
+  "PACKAGES_DYNAMIC": "^kernel-module-.*\n^kernel-image-.*\n^kernel-firmware-.*",
+  "PACKAGES": "kernel-modules kernel-vmlinux",
+  "FILES": "\n",
+  "ALLOW_EMPTY": "1\n1",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "PR": "r1",
+  "SRC_URI": "file://COPYING.GPL",
+  "S": "${WORKDIR}"
+}

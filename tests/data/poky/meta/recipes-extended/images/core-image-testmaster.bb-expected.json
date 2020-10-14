@@ -1,0 +1,7 @@
+{
+  "DESCRIPTION": "A master image to be deployed on a target useful for testing other images",
+  "IMAGE_FEATURES": "ssh-server-openssh package-management",
+  "inherit": "core-image",
+  "IMAGE_INSTALL": "\u001b    bash coreutils util-linux tar gzip bzip2 kmod \u001b    python3-modules python3-misc \u001b    e2fsprogs e2fsprogs-mke2fs parted \u001b    ",
+  "INITRD_IMAGE": "core-image-testmaster-initramfs"
+}

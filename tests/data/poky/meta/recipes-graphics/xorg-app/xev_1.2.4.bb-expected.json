@@ -1,0 +1,16 @@
+{
+  "SUMMARY": "X application\nX Event Viewer",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X\nMIT",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxrandr xorgproto",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2\nfile://diet-x11.patch",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "Xev creates a window and then asks the X server to send it events \u001bwhenever anything happens to the window (such as it being moved, resized, \u001btyped in, clicked in, etc.). You can also attach it to an existing window.",
+  "LIC_FILES_CHKSUM": "file://xev.c;beginline=1;endline=33;md5=577c99421f1803b891d2c79097ae4682",
+  "PE": "1",
+  "SRC_URI[sha256sum]": "d700e08bfe751ed2dbf802baa204b056d0e49348b6eb3c6f9cb035d8ae4885e2"
+}

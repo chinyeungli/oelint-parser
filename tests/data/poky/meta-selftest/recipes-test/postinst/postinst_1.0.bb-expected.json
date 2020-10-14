@@ -1,0 +1,13 @@
+{
+  "SUMMARY": "Packages to exercise postinstall functions",
+  "LICENSE": "MIT",
+  "inherit": "allarch",
+  "PACKAGES": "${PN}-rootfs ${PN}-delayed-a ${PN}-delayed-b ${PN}-rootfs-failing",
+  "ALLOW_EMPTY_${PN}-rootfs": "1",
+  "ALLOW_EMPTY_${PN}-delayed-a": "1",
+  "ALLOW_EMPTY_${PN}-delayed-b": "1",
+  "ALLOW_EMPTY_${PN}-rootfs-failing": "1",
+  "RDEPENDS_${PN}-delayed-a": "${PN}-rootfs",
+  "RDEPENDS_${PN}-delayed-b": "${PN}-delayed-a",
+  "TESTDIR": "${sysconfdir}/postinst-test"
+}

@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "An image containing the build system itself",
+  "DESCRIPTION": "An image containing the build system that you can boot and run using either VirtualBox, VMware Player or VMware Workstation.",
+  "HOMEPAGE": "http://www.yoctoproject.org/documentation/build-appliance",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "IMAGE_INSTALL": "packagegroup-core-boot packagegroup-core-ssh-openssh packagegroup-self-hosted \u001b                 kernel-dev kernel-devsrc connman connman-plugin-ethernet dhcpcd \u001b                 tzdata python3-pip perl-misc",
+  "IMAGE_FEATURES": "x11-base package-management splash",
+  "QB_MEM": "'-m 512'",
+  "IMAGE_ROOTFS_EXTRA_SPACE": "41943040",
+  "APPEND": "rootfstype=ext4 quiet",
+  "DEPENDS": "zip-native python3-pip-native",
+  "IMAGE_FSTYPES": "wic.vmdk",
+  "inherit": "core-image module-base setuptools3",
+  "SRCREV": "20586411649fcad6f0459ce74a581374ab564737",
+  "SRC_URI": "git://git.yoctoproject.org/poky \u001b           file://Yocto_Build_Appliance.vmx \u001b           file://Yocto_Build_Appliance.vmxf \u001b           file://README_VirtualBox_Guest_Additions.txt \u001b           file://README_VirtualBox_Toaster.txt \u001b          ",
+  "RECIPE_NO_UPDATE_REASON": "Recipe is recursive and handled as part of the release process",
+  "BA_INCLUDE_SOURCES": "0",
+  "IMAGE_PREPROCESS_COMMAND": "do_populate_poky_src; "
+}

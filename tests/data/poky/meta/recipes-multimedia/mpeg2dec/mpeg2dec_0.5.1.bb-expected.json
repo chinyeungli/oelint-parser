@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "Library and test program for decoding MPEG-2 and MPEG-1 video streams",
+  "HOMEPAGE": "http://libmpeg2.sourceforge.net/",
+  "SECTION": "libs",
+  "LICENSE": "GPLv2+",
+  "LICENSE_FLAGS": "commercial",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f \u001b                    file://include/mpeg2.h;beginline=1;endline=22;md5=7766f4fcb58f0f8413c49a746f2ab89b",
+  "SRC_URI": "http://libmpeg2.sourceforge.net/files/libmpeg2-${PV}.tar.gz \u001b           file://altivec_h_needed.patch \u001b           file://0001-check-for-available-arm-optimizations.patch \u001b           file://0002-Set-visibility-of-global-symbols-used-in-ARM-specifi.patch \u001b           file://61_global-symbol-test.patch \u001b           file://0001-Import-revision-1206-from-upstream-to-fix-PIE-build.patch \u001b           ",
+  "S": "${WORKDIR}/libmpeg2-${PV}",
+  "SRC_URI[md5sum]": "0f92c7454e58379b4a5a378485bbd8ef",
+  "SRC_URI[sha256sum]": "dee22e893cb5fc2b2b6ebd60b88478ab8556cb3b93f9a0d7ce8f3b61851871d4",
+  "UPSTREAM_CHECK_URI": "http://libmpeg2.sourceforge.net/downloads.html",
+  "inherit": "autotools pkgconfig",
+  "EXTRA_OECONF": "--enable-shared --disable-sdl",
+  "PACKAGECONFIG": "!!!inlineblock!!!",
+  "PACKAGECONFIG[x11]": "--with-x,--without-x,virtual/libx11 libxext libxv",
+  "PACKAGES": "mpeg2dec-dbg mpeg2dec mpeg2dec-doc libmpeg2 libmpeg2-dev libmpeg2convert libmpeg2convert-dev libmpeg2-staticdev libmpeg2convert-staticdev",
+  "FILES_${PN}": "${bindir}/*",
+  "FILES": "${libdir}/libmpeg2.so.*\n${libdir}/libmpeg2convert.so.*\n${libdir}/libmpeg2.so \u001b                      ${libdir}/libmpeg2.la \u001b                      ${libdir}/libmpeg2arch.la \u001b                      ${libdir}/pkgconfig/libmpeg2.pc \u001b                      ${includedir}/mpeg2dec/mpeg2.h\n${libdir}/libmpeg2.a\n${libdir}/libmpeg2convert.so \u001b                             ${libdir}/libmpeg2convert.la \u001b                             ${libdir}/libmpeg2convertarch.la \u001b                             ${libdir}/pkgconfig/libmpeg2convert.pc \u001b                             ${includedir}/mpeg2dec/mpeg2convert.h\n${libdir}/libmpeg2convert.a"
+}

@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "Profiling tools",
+  "PR": "r3",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup",
+  "PROFILE_TOOLS_X": "\n\n",
+  "PROFILE_TOOLS_SYSTEMD": "systemd-analyze",
+  "RRECOMMENDS_${PN}": "\u001b    ${PERF} \u001b    blktrace \u001b    ${PROFILE_TOOLS_X} \u001b    ${PROFILE_TOOLS_SYSTEMD} \u001b    ",
+  "PROFILETOOLS": "\u001b    powertop \u001b    ",
+  "PERF": "perf\n\nperf",
+  "SYSTEMTAP": "systemtap\n\n\n",
+  "LTTNGTOOLS": "lttng-tools\n\n",
+  "BABELTRACE": "babeltrace",
+  "BABELTRACE2": "babeltrace2",
+  "VALGRIND": "valgrind\n\n\n\n\n\n\n\n\n\n\n!!!inlineblock!!!\n\n",
+  "RDEPENDS_${PN}": "\u001b    ${PROFILETOOLS} \u001b    ${LTTNGTOOLS} \u001b    ${BABELTRACE} \u001b    ${BABELTRACE2} \u001b    ${SYSTEMTAP} \u001b    ${VALGRIND} \u001b    "
+}

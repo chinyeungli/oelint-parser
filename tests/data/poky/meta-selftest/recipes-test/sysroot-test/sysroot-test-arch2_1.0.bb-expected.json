@@ -1,0 +1,8 @@
+{
+  "LICENSE": "CLOSED",
+  "PROVIDES": "virtual/sysroot-test",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "TESTSTRING": "2",
+  "EXCLUDE_FROM_WORLD": "1"
+}

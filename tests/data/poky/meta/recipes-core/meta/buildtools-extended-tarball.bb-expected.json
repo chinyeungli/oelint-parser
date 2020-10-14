@@ -1,0 +1,8 @@
+{
+  "DESCRIPTION": "SDK type target for building a standalone tarball containing build-essentials, python3, chrpath, \u001b               make, git and tar. The tarball can be used to run bitbake builds on systems which don't meet the \u001b               usual version requirements and have ancient compilers.",
+  "SUMMARY": "Standalone tarball for running builds on systems with inadequate software and ancient compilers",
+  "LICENSE": "MIT",
+  "TOOLCHAIN_HOST_TASK": "\u001b    nativesdk-automake \u001b    nativesdk-autoconf \u001b    nativesdk-binutils \u001b    nativesdk-binutils-symlinks \u001b    nativesdk-cpp \u001b    nativesdk-cpp-symlinks \u001b    nativesdk-gcc \u001b    nativesdk-gcc-symlinks \u001b    nativesdk-g++ \u001b    nativesdk-g++-symlinks \u001b    nativesdk-gettext \u001b    nativesdk-libatomic \u001b    nativesdk-libgcc \u001b    nativesdk-libgomp-dev \u001b    nativesdk-libstdc++ \u001b    nativesdk-libstdc++-dev \u001b    nativesdk-libstdc++-staticdev \u001b    nativesdk-libtool \u001b    nativesdk-pkgconfig \u001b    nativesdk-glibc-utils \u001b    nativesdk-libxcrypt-dev \u001b    ",
+  "TOOLCHAIN_OUTPUTNAME": "${SDK_ARCH}-buildtools-extended-nativesdk-standalone-${DISTRO_VERSION}",
+  "SDK_TITLE": "Extended Build tools"
+}

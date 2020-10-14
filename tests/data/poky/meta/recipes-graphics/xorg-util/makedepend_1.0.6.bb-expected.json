@@ -1,0 +1,18 @@
+{
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/utils",
+  "LICENSE": "MIT-X",
+  "XORG_PN": "${BPN}",
+  "SRC_URI": "${XORG_MIRROR}/individual/util/${XORG_PN}-${PV}.tar.gz",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools pkgconfig",
+  "SUMMARY": "create dependencies in makefiles",
+  "DESCRIPTION": "The makedepend program reads each sourcefile in sequence \u001band parses it like a C-preprocessor, processing \u001ball #include, #define,  #undef, #ifdef, #ifndef, #endif, #if, #elif \u001band #else directives so that it can correctly tell which #include, \u001bdirectives would be used in a compilation. Any #include, directives \u001bcan reference files having other #include directives, and parsing will \u001boccur in these files as well.",
+  "DEPENDS": "xorgproto util-macros",
+  "PE": "1",
+  "BBCLASSEXTEND": "native",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=43a6eda34b48ee821b3b66f4f753ce4f",
+  "SRC_URI[md5sum]": "8a583055c84914060c35b6c2f963fc07",
+  "SRC_URI[sha256sum]": "845f6708fc850bf53f5b1d0fb4352c4feab3949f140b26f71b22faba354c3365"
+}

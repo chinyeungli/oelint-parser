@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "Software Construction tool (make/autotools replacement)",
+  "SECTION": "devel/python",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${WORKDIR}/LICENSE-python3-scons-${PV};md5=e14e1b33428df24a40a782ae142785d0",
+  "SRC_URI": "https://raw.githubusercontent.com/SCons/scons/${PV}/LICENSE;downloadfilename=LICENSE-python3-scons-${PV};name=license",
+  "SRC_URI[md5sum]": "f9c4ad06dcf1427be95472eaf380c81a",
+  "SRC_URI[sha256sum]": "8aaa483c303efeb678e6f7c776c8444a482f8ddc3ad891f8b6cdd35264da9a1f",
+  "S": "${WORKDIR}/scons-${PV}",
+  "UPSTREAM_CHECK_URI": "http://scons.org/pages/download.html",
+  "UPSTREAM_CHECK_REGEX": "(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.tar",
+  "inherit": "pypi setuptools3",
+  "RDEPENDS_${PN}": "\u001b  python3-core \u001b  python3-fcntl \u001b  python3-io \u001b  python3-json \u001b  python3-shell \u001b  python3-pickle \u001b  python3-pprint \u001b  "
+}

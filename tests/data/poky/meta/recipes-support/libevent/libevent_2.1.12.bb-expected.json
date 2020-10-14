@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "An asynchronous event notification library",
+  "HOMEPAGE": "http://libevent.org/",
+  "BUGTRACKER": "https://github.com/libevent/libevent/issues",
+  "SECTION": "libs",
+  "LICENSE": "BSD & MIT",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=17f20574c0b154d12236d5fbe964f549",
+  "SRC_URI": "https://github.com/libevent/libevent/releases/download/release-${PV}-stable/${BP}-stable.tar.gz \u001b           file://Makefile-missing-test-dir.patch \u001b           file://run-ptest \u001b           file://0001-test-regress_dns.c-patch-out-tests-that-require-a-wo.patch \u001b           ",
+  "SRC_URI[sha256sum]": "92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb",
+  "UPSTREAM_CHECK_URI": "http://libevent.org/",
+  "S": "${WORKDIR}/${BPN}-${PV}-stable",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[openssl]": "--enable-openssl,--disable-openssl,openssl",
+  "inherit": "autotools\nptest multilib_header",
+  "LEAD_SONAME": "libevent-2.1.so",
+  "DEPENDS": "zlib",
+  "PACKAGES_DYNAMIC": "^${PN}-.*$",
+  "PACKAGESPLITFUNCS": "split_libevent_libs ",
+  "BBCLASSEXTEND": "native nativesdk"
+}

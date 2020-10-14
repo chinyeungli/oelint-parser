@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Package manager forked from Yum, using libsolv as a dependency resolver",
+  "DESCRIPTION": "Software package manager that installs, updates, and removes \u001bpackages on RPM-based Linux distributions. It automatically computes \u001bdependencies and determines the actions required to install packages.",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b                    file://PACKAGE-LICENSING;md5=4a0548e303dbc77f067335b4d688e745 \u001b                    ",
+  "SRC_URI": "git://github.com/rpm-software-management/dnf.git \u001b           file://0001-Corretly-install-tmpfiles.d-configuration.patch \u001b           file://0001-Do-not-hardcode-etc-and-systemd-unit-directories.patch \u001b           file://0005-Do-not-prepend-installroot-to-logdir.patch \u001b           file://0029-Do-not-set-PYTHON_INSTALL_DIR-by-running-python.patch \u001b           file://0030-Run-python-scripts-using-env.patch \u001b           file://0001-set-python-path-for-completion_helper.patch \u001b           file://0001-dnf-write-the-log-lock-to-root.patch \u001b           ",
+  "SRCREV": "126d861812f827285960592359615ed7cb195aac",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>\u001bd+(\u001b.\u001bd+)+)",
+  "S": "${WORKDIR}/git",
+  "inherit": "cmake gettext bash-completion distutils3-base systemd",
+  "DEPENDS": "libdnf librepo libcomps python3-iniparse",
+  "EXTRA_OECMAKE": " -DWITH_MAN=0 -DPYTHON_INSTALL_DIR=${PYTHON_SITEPACKAGES_DIR} -DPYTHON_DESIRED=3",
+  "BBCLASSEXTEND": "native nativesdk",
+  "RDEPENDS_${PN}": " \u001b  python3-core \u001b  python3-codecs \u001b  python3-netclient \u001b  python3-email \u001b  python3-threading \u001b  python3-distutils \u001b  python3-logging \u001b  python3-fcntl \u001b  librepo \u001b  python3-shell \u001b  libcomps \u001b  libdnf \u001b  python3-sqlite3 \u001b  python3-compression \u001b  python3-rpm \u001b  python3-iniparse \u001b  python3-json \u001b  python3-curses \u001b  python3-misc \u001b  python3-gpg \u001b  \n",
+  "RRECOMMENDS_${PN}": "gnupg",
+  "SYSTEMD_SERVICE_${PN}": "dnf-makecache.service dnf-makecache.timer \u001b                         dnf-automatic.service dnf-automatic.timer \u001b                         dnf-automatic-download.service dnf-automatic-download.timer \u001b                         dnf-automatic-install.service dnf-automatic-install.timer \u001b                         dnf-automatic-notifyonly.service dnf-automatic-notifyonly.timer \u001b",
+  "SYSTEMD_AUTO_ENABLE": "disable",
+  "PNBLACKLIST[dnf]": "!!!inlineblock!!!"
+}

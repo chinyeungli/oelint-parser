@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "Enhances systemd compatilibity with existing SysVinit scripts",
+  "HOMEPAGE": "http://www.freedesktop.org/wiki/Software/systemd",
+  "LICENSE": "MIT",
+  "PR": "r29",
+  "PACKAGE_WRITE_DEPS": "systemd-systemctl-native",
+  "S": "${WORKDIR}",
+  "inherit": "features_check",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "ALLOW_EMPTY_${PN}": "1",
+  "REQUIRED_DISTRO_FEATURES": "systemd",
+  "SYSTEMD_DISABLED_SYSV_SERVICES": " \u001b  busybox-udhcpc \u001b  hwclock \u001b  networking \u001b  nfsserver \u001b  nfscommon \u001b  syslog.busybox \u001b",
+  "RDEPENDS_${PN}": "systemd"
+}

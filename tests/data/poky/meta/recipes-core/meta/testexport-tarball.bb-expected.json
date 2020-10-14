@@ -1,0 +1,23 @@
+{
+  "DESCRIPTION": "SDK type target for standalone tarball containing packages defined by TEST_EXPORT_TOOLS. The \u001b               tarball can be used to run missing programs on testing systems which don't have such tools.\u001b               This recipe is almost the same as buildtools-tarball",
+  "SUMMARY": "Standalone tarball for test systems with missing software",
+  "LICENSE": "MIT",
+  "TEST_EXPORT_SDK_PACKAGES": "",
+  "TOOLCHAIN_TARGET_TASK": "",
+  "TOOLCHAIN_HOST_TASK": "${TEST_EXPORT_SDK_PACKAGES} nativesdk-sdk-provides-dummy",
+  "MULTIMACH_TARGET_SYS": "${SDK_ARCH}-nativesdk${SDK_VENDOR}-${SDK_OS}",
+  "PACKAGE_ARCH": "${SDK_ARCH}_${SDK_OS}",
+  "PACKAGE_ARCHS": "",
+  "TARGET_ARCH": "none",
+  "TARGET_OS": "none",
+  "SDK_PACKAGE_ARCHS": "testexport-tools-${SDKPKGSUFFIX}",
+  "TOOLCHAIN_OUTPUTNAME": "${TEST_EXPORT_SDK_NAME}",
+  "SDK_TITLE": "Testexport tools",
+  "RDEPENDS": "${TOOLCHAIN_HOST_TASK}",
+  "EXCLUDE_FROM_WORLD": "1",
+  "inherit": "meta\npopulate_sdk\ntoolchain-scripts-base\nnopackages",
+  "do_populate_sdk[stamp-extra-info]": "${PACKAGE_ARCH}",
+  "REAL_MULTIMACH_TARGET_SYS": "none",
+  "TOOLCHAIN_NEED_CONFIGSITE_CACHE": "",
+  "INHIBIT_DEFAULT_DEPS": "1"
+}

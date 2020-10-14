@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "X driver\nGeneric input driver for the X.Org server based on libinput",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nlibinput\nxorgproto",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=5e6b20ea2ef94a998145f0ea3f788ee0",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so\n${datadir}/X11/xorg.conf.d\n ${libdir}/xorg/modules/input/*.so \u001b                 ${datadir}/X11/xorg.conf.d \u001b                 ",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "SRC_URI[md5sum]": "11dcfa2cc39f790731a9545fcdeea717",
+  "SRC_URI[sha256sum]": "f9c7f9fd41ae14061e0e9c3bd45fa170e5e21027a2bc5810034e1e748db996c0",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

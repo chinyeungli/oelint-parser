@@ -1,0 +1,10 @@
+{
+  "SUMMARY": "X11 display server",
+  "PR": "r40",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "XSERVER": "xserver-xorg xf86-video-fbdev",
+  "XSERVERCODECS": "",
+  "RDEPENDS_${PN}": "\u001b    ${XSERVER} \u001b    ${XSERVERCODECS} \u001b    "
+}

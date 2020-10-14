@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "XCB: The X protocol C binding utilities",
+  "DESCRIPTION": "The xcb-util module provides a number of libraries which \u001bsit on top of libxcb, the core X protocol library, and some of the \u001bextension libraries. These experimental libraries provide convenience \u001bfunctions and interfaces which make the raw X protocol more usable. Some \u001bof the libraries also provide client-side code which is not strictly \u001bpart of the X protocol but which have traditionally been provided by \u001bXlib.",
+  "HOMEPAGE": "http://xcb.freedesktop.org/XcbUtil/",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=XCB",
+  "LICENSE": "MIT\nMIT",
+  "SECTION": "x11/libs",
+  "DEPENDS": "libxcb\ngperf-native\nxcb-util",
+  "SRC_URI": "http://xcb.freedesktop.org/dist/${BPN}-${PV}.tar.bz2\nfile://clang.patch \u001b",
+  "inherit": "autotools pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://image/xcb_image.c;endline=24;md5=eafdf965cfb89955fdedf75054223fb4 \u001b                    file://image/xcb_image.h;beginline=4;endline=27;md5=48cd25ae55e7de525fe1e1a3a7672e1c",
+  "SRC_URI[md5sum]": "08fe8ffecc8d4e37c0ade7906b3f4c87",
+  "SRC_URI[sha256sum]": "2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc"
+}

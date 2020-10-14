@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- Generic Vesa video driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nvirtual/libx11 xorgproto libpciaccess\nxorgproto",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=a1f0610ebdc6f314a9fa5102a8c5c1b0",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2\n \u001b    file://0001-Refuse-to-run-on-UEFI-machines.patch \u001b    ",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so",
+  "DESCRIPTION": "vesa is an Xorg driver for generic VESA video cards. It \u001bcan drive most VESA-compatible video cards, but only makes use of the \u001bbasic standard VESA core that is common to these cards. The driver \u001bsupports depths 8, 15 16 and 24.",
+  "XORGBUILDCLASS": "autotools",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "COMPATIBLE_HOST": "'(i.86|x86_64).*-linux'",
+  "RRECOMMENDS_${PN}": "xserver-xorg-module-libint10",
+  "SRC_URI[md5sum]": "8134201beaf6f77150c7809c3cc802e6",
+  "SRC_URI[sha256sum]": "bf443c94d7bf6cd4e248f8a3147f4647be04dc4c80250d9405006263bbdee38c",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

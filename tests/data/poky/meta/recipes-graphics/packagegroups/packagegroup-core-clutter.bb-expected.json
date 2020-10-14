@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Clutter package groups",
+  "PR": "r6",
+  "inherit": "packagegroup features_check",
+  "REQUIRED_DISTRO_FEATURES": "opengl",
+  "PACKAGES": "\u001b    ${PN}-core \u001b    ",
+  "SUMMARY_${PN}-core": "Clutter graphics library",
+  "RDEPENDS_${PN}-core": "\u001b    clutter-1.0 \u001b    clutter-gst-3.0 \u001b    clutter-gtk-1.0 \u001b    "
+}

@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "X application\nDisplay information utility for X",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\nlibxtst libxext libxxf86vm libxi libxrender libxinerama libdmx libxau libxcomposite",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2\nfile://disable-xkb.patch",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "Xdpyinfo is a utility for displaying information about an \u001bX server. It is used to examine the capabilities of a server, the \u001bpredefined values for various parameters used in communicating between \u001bclients and the server, and the different types of screens and visuals \u001bthat are available.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=f3d09e6b9e203a1af489e16c708f4fb3",
+  "PE": "1",
+  "SRC_URI[md5sum]": "8809037bd48599af55dad81c508b6b39",
+  "SRC_URI[sha256sum]": "30238ed915619e06ceb41721e5f747d67320555cc38d459e954839c189ccaf51",
+  "EXTRA_OECONF": "--disable-xkb"
+}

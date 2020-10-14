@@ -1,0 +1,21 @@
+{
+  "SUMMARY": "Xv: X Video extension library",
+  "DESCRIPTION": "libXv provides an X Window System client interface to the \u001bX Video extension to the X protocol. The X Video extension allows for \u001baccelerated drawing of videos.  Hardware adaptors are exposed to \u001bclients, which may draw in a number of colourspaces, including YUV.",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org/enter_bug.cgi?product=xorg",
+  "SECTION": "x11/libs",
+  "LICENSE": "MIT-X\nMIT-style",
+  "DEPENDS": "util-macros\nlibxext xorgproto",
+  "XORG_PN": "${BPN}\nlibXv",
+  "SRC_URI": "${XORG_MIRROR}/individual/lib/${XORG_PN}-${PV}.tar.bz2",
+  "S": "${WORKDIR}/${XORG_PN}-${PV}",
+  "inherit": "autotools features_check pkgconfig",
+  "EXTRA_OECONF": "--disable-specs --without-groff --without-ps2pdf --without-fop",
+  "PACKAGECONFIG": "",
+  "PACKAGECONFIG[xmlto]": "--with-xmlto, --without-xmlto, xmlto-native docbook-xml-dtd4-native docbook-xsl-stylesheets-native",
+  "UNKNOWN_CONFIGURE_WHITELIST": "--enable-malloc0returnsnull --disable-malloc0returnsnull \u001b                                --disable-specs --without-groff --without-ps2pdf --without-fop \u001b                                --without-xmlto --with-xmlto \u001b",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=827da9afab1f727f2a66574629e0f39c",
+  "SRC_URI[md5sum]": "210b6ef30dda2256d54763136faa37b9",
+  "SRC_URI[sha256sum]": "d26c13eac99ac4504c532e8e76a1c8e4bd526471eb8a0a4ff2a88db60cb0b088"
+}

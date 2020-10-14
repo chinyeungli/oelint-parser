@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "Cross locale generation tool for glibc",
+  "HOMEPAGE": "http://www.gnu.org/software/libc/libc.html",
+  "SECTION": "libs",
+  "LICENSE": "LGPL-2.1",
+  "LIC_FILES_CHKSUM": "file://LICENSES;md5=1541fd8f5e8f1579512bf05f533371ba \u001b      file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263 \u001b      file://posix/rxspencer/COPYRIGHT;md5=dc5485bb394a13b2332ec1c785f5d83a \u001b      file://COPYING.LIB;md5=4fbd65380cdd255951079008b364516c",
+  "SRCBRANCH": "release/2.32/master",
+  "PV": "2.32",
+  "SRCREV": "3de512be7ea6053255afed6154db9ee31d4e557a\nbd644c9e6f3e20c5504da1488448173c69c56c28",
+  "GLIBC_GIT_URI": "git://sourceware.org/git/glibc.git",
+  "UPSTREAM_CHECK_GITTAGREGEX": "(?P<pver>\u001bd+\u001b.\u001bd+(\u001b.(?!90)\u001bd+)*)",
+  "AUTOTOOLS_SCRIPT_PATH": "${S}/localedef",
+  "inherit": "native\nautotools",
+  "FILESEXTRAPATHS": "${FILE_DIRNAME}/${PN}:${FILE_DIRNAME}/glibc:",
+  "SRC_URI": "${GLIBC_GIT_URI};branch=${SRCBRANCH};name=glibc \u001b           git://github.com/kraj/localedef;branch=master;name=localedef;destsuffix=git/localedef \u001b           \u001b           file://0001-localedef-Add-hardlink-resolver-from-util-linux.patch \u001b           file://0002-localedef-fix-ups-hardlink-to-make-it-compile.patch \u001b           \u001b           file://0016-timezone-re-written-tzselect-as-posix-sh.patch \u001b           file://0017-Remove-bash-dependency-for-nscd-init-script.patch \u001b           file://0018-eglibc-Cross-building-and-testing-instructions.patch \u001b           file://0019-eglibc-Help-bootstrap-cross-toolchain.patch \u001b           file://0020-eglibc-Resolve-__fpscr_values-on-SH4.patch \u001b           file://0021-eglibc-Forward-port-cross-locale-generation-support.patch \u001b           file://0022-Define-DUMMY_LOCALE_T-if-not-defined.patch \u001b           file://0023-localedef-add-to-archive-uses-a-hard-coded-locale-pa.patch \u001b",
+  "SRCREV_FORMAT": "glibc_localedef",
+  "S": "${WORKDIR}/git",
+  "EXTRA_OECONF": "--with-glibc=${S}",
+  "CFLAGS": "-fgnu89-inline -std=gnu99 -DIS_IN\u001b(x\u001b)='0'"
+}

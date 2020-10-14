@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Library for embedding a Clutter canvas in a GTK+ application",
+  "HOMEPAGE": "http://www.clutter-project.org/",
+  "LICENSE": "LGPLv2+",
+  "CLUTTERBASEBUILDCLASS": "meson",
+  "inherit": "clutter features_check upstream-version-is-even gobject-introspection gtk-doc",
+  "REQUIRED_DISTRO_FEATURES": "opengl",
+  "ANY_OF_DISTRO_FEATURES": "${GTK3DISTROFEATURES}",
+  "DEPENDS": "clutter-1.0 gtk+3",
+  "PACKAGES": "${PN}-examples",
+  "GTKDOC_MESON_OPTION": "enable_docs",
+  "GIR_MESON_OPTION": "'enable_gi'",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=7fbc338309ac38fefcd64b04bb903e34",
+  "SRC_URI": " file://0001-Add-a-config-variable-for-enabling-disabling-introsp.patch"
+}

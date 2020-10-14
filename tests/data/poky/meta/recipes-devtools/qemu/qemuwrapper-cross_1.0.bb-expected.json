@@ -1,0 +1,11 @@
+{
+  "SUMMARY": "QEMU wrapper script",
+  "HOMEPAGE": "http://qemu.org",
+  "LICENSE": "MIT",
+  "S": "${WORKDIR}",
+  "DEPENDS": "qemu-native",
+  "inherit": "qemu",
+  "SYSROOT_DIRS": "${bindir_crossscripts}",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "BBCLASSEXTEND": "nativesdk"
+}

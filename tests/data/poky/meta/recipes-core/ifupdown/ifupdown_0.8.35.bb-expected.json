@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "ifupdown: basic ifup and ifdown used by initscripts",
+  "DESCRIPTION": "High level tools to configure network interfaces \u001bThis package provides the tools ifup and ifdown which may be used to \u001bconfigure (or, respectively, deconfigure) network interfaces, based on \u001bthe file /etc/network/interfaces.",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f",
+  "SRC_URI": "git://salsa.debian.org/debian/ifupdown.git;protocol=https \u001b           file://defn2-c-man-don-t-rely-on-dpkg-architecture-to-set-a.patch \u001b           file://99_network \u001b           file://0001-Define-FNM_EXTMATCH-for-musl.patch \u001b           file://0001-Makefile-do-not-use-dpkg-for-determining-OS-type.patch \u001b           file://run-ptest \u001b           file://tweak-ptest-script.patch \u001b           ",
+  "SRCREV": "4af76318cfc57f8e4a44d357104188666213bd4b",
+  "S": "${WORKDIR}/git",
+  "inherit": "ptest update-alternatives",
+  "ALTERNATIVE_PRIORITY": "100",
+  "ALTERNATIVE_${PN}": "ifup ifdown",
+  "ALTERNATIVE_LINK_NAME[ifup]": "${base_sbindir}/ifup",
+  "ALTERNATIVE_LINK_NAME[ifdown]": "${base_sbindir}/ifdown"
+}

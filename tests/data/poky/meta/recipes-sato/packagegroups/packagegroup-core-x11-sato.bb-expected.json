@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Sato desktop",
+  "PR": "r33",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "inherit": "packagegroup features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "PACKAGES": "${PN} ${PN}-base ${PN}-apps ${PN}-games",
+  "RDEPENDS_${PN}": "\u001b    ${PN}-base \u001b    ${PN}-apps \u001b    ${PN}-games \u001b    ",
+  "NETWORK_MANAGER": "connman-gnome",
+  "SUMMARY_${PN}-base": "Sato desktop - base packages",
+  "RDEPENDS_${PN}-base": "\u001b    matchbox-desktop \u001b    matchbox-session-sato \u001b    matchbox-keyboard \u001b    matchbox-keyboard-applet \u001b    matchbox-keyboard-im \u001b    matchbox-config-gtk \u001b    xcursor-transparent-theme \u001b    adwaita-icon-theme \u001b    settings-daemon \u001b    shutdown-desktop \u001b    ${NETWORK_MANAGER} \u001b    !!!inlineblock!!! \u001b    pulseaudio-server pulseaudio-client-conf-sato pulseaudio-misc \u001b    ",
+  "FILEMANAGER": "pcmanfm",
+  "WEB": "",
+  "GSTEXAMPLES": "gst-examples\n",
+  "SUMMARY_${PN}-apps": "Sato desktop - applications",
+  "RDEPENDS_${PN}-apps": "\u001b    l3afpad \u001b    matchbox-terminal \u001b    sato-screenshot \u001b    ${FILEMANAGER} \u001b    ${GSTEXAMPLES} \u001b    ${WEB} \u001b    ",
+  "SUMMARY_${PN}-games": "Sato desktop - games",
+  "RDEPENDS_${PN}-games": "\u001b    puzzles \u001b    "
+}

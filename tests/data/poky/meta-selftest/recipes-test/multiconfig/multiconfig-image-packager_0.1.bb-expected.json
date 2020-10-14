@@ -1,0 +1,9 @@
+{
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "MCMACHINE": "qemux86-64\nqemux86",
+  "MCIMGTYPE": "ext4\ncpio.gz",
+  "MC_DEPLOY_DIR_IMAGE": "${TOPDIR}/tmp-mc-${MCNAME}/deploy/images/${MCMACHINE}",
+  "do_install[mcdepends]": "mc::${MCNAME}:core-image-minimal:do_image_complete mc::${MCNAME}:virtual/kernel:do_deploy",
+  "BBCLASSEXTEND": "mcextend:tiny mcextend:musl"
+}

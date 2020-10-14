@@ -1,0 +1,14 @@
+{
+  "SUMMARY": "A C program to run all installed ptests",
+  "DESCRIPTION": "The ptest-runner2 package installs a ptest-runner \u001bprogram which loops through all installed ptest test suites and \u001bruns them in sequence.",
+  "HOMEPAGE": "http://git.yoctoproject.org/cgit/cgit.cgi/ptest-runner2/about/",
+  "LICENSE": "GPLv2",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=751419260aa954499f7abaabaa882bbe",
+  "SRCREV": "834670317bd3f6e427e1ac461c07ada6b8936dfd",
+  "PV": "+git${SRCPV}",
+  "SRC_URI": "git://git.yoctoproject.org/ptest-runner2 \u001b",
+  "UPSTREAM_VERSION_UNKNOWN": "1",
+  "S": "${WORKDIR}/git",
+  "FILES_${PN}": "${bindir}/ptest-runner",
+  "EXTRA_OEMAKE": "-e MAKEFLAGS= CFLAGS=\"${CFLAGS} -DDEFAULT_DIRECTORY=\u001b\u001b\u001b\"${libdir}\u001b\u001b\u001b"
+}

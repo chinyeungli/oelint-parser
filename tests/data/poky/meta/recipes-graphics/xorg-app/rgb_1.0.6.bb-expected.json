@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "X application\nX11 color name database",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X",
+  "DEPENDS": "util-macros-native virtual/libx11\n xorgproto util-macros",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/\n${datadir}/X11",
+  "DESCRIPTION": "This package includes both the list mapping X color names \u001bto RGB values (rgb.txt) and, if configured to use a database for color \u001blookup, the rgb program to convert the text file into the binary database \u001bformat.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=ef598adbe241bd0b0b9113831f6e249a",
+  "PE": "1",
+  "SRC_URI[md5sum]": "eab5bbd7642e5c784429307ec210d198",
+  "SRC_URI[sha256sum]": "bbca7c6aa59939b9f6a0fb9fff15dfd62176420ffd4ae30c8d92a6a125fbe6b0"
+}

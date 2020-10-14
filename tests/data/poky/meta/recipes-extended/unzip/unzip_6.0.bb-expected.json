@@ -1,0 +1,22 @@
+{
+  "SUMMARY": "Utilities for extracting and viewing files in .zip archives",
+  "HOMEPAGE": "http://www.info-zip.org",
+  "SECTION": "console/utils",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=94caec5a51ef55ef711ee4e8b1c69e29",
+  "PE": "1",
+  "PR": "r5",
+  "SRC_URI": "${SOURCEFORGE_MIRROR}/infozip/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz \u001b\tfile://avoid-strip.patch \u001b\tfile://define-ldflags.patch \u001b\tfile://06-unzip60-alt-iconv-utf8_CVE-2015-1315.patch \u001b\tfile://cve-2014-9636.patch \u001b\tfile://09-cve-2014-8139-crc-overflow.patch \u001b\tfile://10-cve-2014-8140-test-compr-eb.patch \u001b\tfile://11-cve-2014-8141-getzip64data.patch \u001b\tfile://CVE-2015-7696.patch \u001b\tfile://CVE-2015-7697.patch \u001b\tfile://fix-security-format.patch \u001b\tfile://18-cve-2014-9913-unzip-buffer-overflow.patch \u001b\tfile://19-cve-2016-9844-zipinfo-buffer-overflow.patch \u001b\tfile://symlink.patch \u001b\tfile://0001-unzip-fix-CVE-2018-1000035.patch \u001b\tfile://CVE-2018-18384.patch \u001b\tfile://CVE-2019-13232_p1.patch \u001b\tfile://CVE-2019-13232_p2.patch \u001b\tfile://CVE-2019-13232_p3.patch \u001b",
+  "UPSTREAM_VERSION_UNKNOWN": "1",
+  "SRC_URI[md5sum]": "62b490407489521db863b523a7f86375",
+  "SRC_URI[sha256sum]": "036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37",
+  "UPSTREAM_CHECK_REGEX": "unzip(?P<pver>(?!552).+)\u001b.tgz",
+  "S": "${WORKDIR}/unzip60",
+  "EXTRA_OEMAKE": "-e MAKEFLAGS= STRIP=true LF2='' \u001b                'CF_NOOPT=-I. -Ibzip2 -DUNIX ${CFLAGS}'",
+  "LD": "${CC}",
+  "inherit": "update-alternatives",
+  "ALTERNATIVE_PRIORITY": "100",
+  "ALTERNATIVE_${PN}": "unzip",
+  "ALTERNATIVE_LINK_NAME[unzip]": "${bindir}/unzip",
+  "BBCLASSEXTEND": "native nativesdk"
+}

@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- cirrus display driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nlibpciaccess\nxorgproto",
+  "DESCRIPTION": "cirrus is an Xorg driver for Cirrus Logic VGA adapters. These \u001bdevices are not so common in the wild anymore, but QEMU can emulate one, so \u001bthe driver is still useful.",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=6ddc7ca860dc5fd014e7f160ea699295",
+  "XORGBUILDCLASS": "autotools",
+  "SRC_URI[md5sum]": "7d7dfd4cdc42aa8b6e923510fa00ad2b",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "SRC_URI[sha256sum]": "edc87b20a55259126b5239b5c1ef913419eab7ded0ed12ae9ae989460d7351ab",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

@@ -1,0 +1,18 @@
+{
+  "SUMMARY": "Library for file management",
+  "HOMEPAGE": "http://pcmanfm.sourceforge.net/",
+  "LICENSE": "GPLv2+ & LGPLv2+",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=4641e94ec96f98fabc56ff9cc48be14b \u001b                    file://src/fm.h;beginline=8;endline=21;md5=ef1f84da64b3c01cca447212f7ef6007 \u001b                    file://src/base/fm-config.h;beginline=10;endline=23;md5=ef1f84da64b3c01cca447212f7ef6007 \u001b                    file://src/fm-gtk.h;beginline=6;endline=19;md5=646baa4955c04fe768f2ca27b92ac8dd",
+  "SECTION": "x11/libs",
+  "DEPENDS": "glib-2.0 glib-2.0-native pango gtk+3 menu-cache intltool-native libexif libfm-extra",
+  "SRC_URI": "${SOURCEFORGE_MIRROR}/pcmanfm/libfm-${PV}.tar.xz \u001b           file://0001-Correctly-check-the-stamp-file-that-indicates-if-we-.patch \u001b           file://0001-Do-not-add-library-path-to-avoid-host-contamination.patch \u001b           ",
+  "SRC_URI[md5sum]": "c15ecd2c9317e2c385cd3f046d0b61ba",
+  "SRC_URI[sha256sum]": "96b1244bde41ca0eef0332cfb5c67bb16725dfd102128f3e6f74fadc13a1cfe4",
+  "inherit": "autotools pkgconfig gtk-doc gettext features_check mime mime-xdg",
+  "ANY_OF_DISTRO_FEATURES": "${GTK3DISTROFEATURES}",
+  "EXTRA_OECONF": "--with-gtk=3",
+  "do_configure[dirs]": "${S}/m4",
+  "PACKAGES": "libfm-gtk\n${PN}-mime",
+  "FILES": " \u001b    ${libdir}/libfm-gtk*so.* \u001b    ${libdir}/libfm/modules/gtk* \u001b    ${bindir}/libfm-pref-apps \u001b    ${bindir}/lxshortcut \u001b    ${datadir}/applications/libfm-pref-apps.desktop \u001b    ${datadir}/applications/lxshortcut.desktop \u001b    ${datadir}/libfm/images/folder.png \u001b    ${datadir}/libfm/images/unknown.png \u001b    ${datadir}/libfm/ui/*.ui \u001b",
+  "FILES_${PN}-mime": "${datadir}/mime/"
+}

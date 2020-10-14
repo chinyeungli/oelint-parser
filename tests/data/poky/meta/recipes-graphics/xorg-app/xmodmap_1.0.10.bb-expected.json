@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "X application\nUtility for modifying keymaps and pointer button mappings in X",
+  "HOMEPAGE": "http://www.x.org/",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/apps",
+  "LICENSE": "MIT-X\nMIT",
+  "DEPENDS": "util-macros-native virtual/libx11",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SRC_URI": "${XORG_MIRROR}/individual/app/${BPN}-${PV}.tar.bz2",
+  "inherit": "autotools pkgconfig features_check",
+  "FILES_${PN}": " ${libdir}/X11/${BPN} ${datadir}/X11/app-defaults/",
+  "DESCRIPTION": "The xmodmap program is used to edit and display the \u001bkeyboard modifier map and keymap table that are used by client \u001bapplications to convert event keycodes into keysyms. It is usually run \u001bfrom the user's session startup script to configure the keyboard \u001baccording to personal tastes.",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=272c17e96370e1e74773fa22d9989621",
+  "PE": "1",
+  "SRC_URI[md5sum]": "51f1d30a525e9903280ffeea2744b1f6",
+  "SRC_URI[sha256sum]": "473f0941d7439d501bb895ff358832b936ec34c749b9704c37a15e11c318487c"
+}

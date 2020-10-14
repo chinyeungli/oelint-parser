@@ -1,0 +1,9 @@
+{
+  "SUMMARY": "Systemd system configuration",
+  "DESCRIPTION": "Systemd may require slightly different configuration for \u001bdifferent machines.  For example, qemu machines require a longer \u001bDefaultTimeoutStartSec setting.",
+  "LICENSE": "MIT",
+  "LIC_FILES_CHKSUM": "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420",
+  "SRC_URI": "\u001b    file://journald.conf \u001b    file://logind.conf \u001b    file://system.conf \u001b    file://system.conf-qemuall \u001b    file://wired.network \u001b",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "FILES_${PN}": "\u001b    ${systemd_unitdir}/journald.conf.d/ \u001b    ${systemd_unitdir}/logind.conf.d/ \u001b    ${systemd_unitdir}/system.conf.d/ \u001b    ${systemd_unitdir}/network/ \u001b"
+}

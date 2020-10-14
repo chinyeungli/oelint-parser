@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Makes public keys of the signing keys available",
+  "LICENSE": "MIT",
+  "inherit": "allarch deploy",
+  "EXCLUDE_FROM_WORLD": "1",
+  "INHIBIT_DEFAULT_DEPS": "1",
+  "SYSROOT_DIRS": "${sysconfdir}/pki",
+  "PACKAGES": "${PN}-ipk ${PN}-rpm ${PN}-packagefeed",
+  "FILES_${PN}-rpm": "${sysconfdir}/pki/rpm-gpg",
+  "FILES_${PN}-ipk": "${sysconfdir}/pki/ipk-gpg",
+  "FILES_${PN}-packagefeed": "${sysconfdir}/pki/packagefeed-gpg",
+  "do_get_public_keys[depends]": "gnupg-native:do_populate_sysroot",
+  "do_deploy[sstate-outputdirs]": "${DEPLOY_DIR_RPM}",
+  "do_deploy[stamp-extra-info]": ""
+}

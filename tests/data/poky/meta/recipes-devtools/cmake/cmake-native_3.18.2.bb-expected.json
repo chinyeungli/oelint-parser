@@ -1,0 +1,19 @@
+{
+  "SUMMARY": "Cross-platform, open-source make system",
+  "DESCRIPTION": "CMake is used to control the software compilation process \u001busing simple platform and compiler independent configuration files. CMake \u001bgenerates native makefiles and workspaces that can be used in the compiler \u001benvironment of your choice.",
+  "HOMEPAGE": "http://www.cmake.org/",
+  "BUGTRACKER": "http://public.kitware.com/Bug/my_view_page.php",
+  "SECTION": "console/utils",
+  "LICENSE": "BSD-3-Clause",
+  "LIC_FILES_CHKSUM": "file://Copyright.txt;md5=c721f56fce89ba2eadc2fdd8ba1f4d83 \u001b                    file://Source/cmake.h;beginline=1;endline=3;md5=4494dee184212fc89c469c3acd555a14 \u001b                    ",
+  "CMAKE_MAJOR_VERSION": "!!!inlineblock!!!",
+  "SRC_URI": "https://cmake.org/files/v${CMAKE_MAJOR_VERSION}/cmake-${PV}.tar.gz \u001b           file://0002-cmake-Prevent-the-detection-of-Qt5.patch \u001b           file://0003-cmake-support-OpenEmbedded-Qt4-tool-binary-names.patch \u001b           file://0004-Fail-silently-if-system-Qt-installation-is-broken.patch \u001b\nfile://OEToolchainConfig.cmake \u001b            file://environment.d-cmake.sh \u001b            file://0001-CMakeDetermineSystem-use-oe-environment-vars-to-load.patch \u001b            file://0005-Disable-use-of-ext2fs-ext2_fs.h-by-cmake-s-internal-.patch \u001b            ",
+  "SRC_URI[sha256sum]": "5d4e40fc775d3d828c72e5c45906b4d9b59003c9433ff1b36a1cb552bbd51d7e",
+  "UPSTREAM_CHECK_REGEX": "cmake-(?P<pver>\u001bd+(\u001b.\u001bd+)+)\u001b.tar",
+  "CVE_CHECK_WHITELIST": "CVE-2016-10642",
+  "inherit": "native",
+  "DEPENDS": "bzip2-replacement-native xz-native zlib-native curl-native ncurses-native",
+  "B": "${WORKDIR}/build",
+  "CMAKE_EXTRACONF": "\u001b    -DCMAKE_LIBRARY_PATH=${STAGING_LIBDIR_NATIVE} \u001b    -DBUILD_CursesDialog=1 \u001b    -DCMAKE_USE_SYSTEM_LIBRARIES=1 \u001b    -DCMAKE_USE_SYSTEM_LIBRARY_JSONCPP=0 \u001b    -DCMAKE_USE_SYSTEM_LIBRARY_LIBARCHIVE=0 \u001b    -DCMAKE_USE_SYSTEM_LIBRARY_LIBUV=0 \u001b    -DCMAKE_USE_SYSTEM_LIBRARY_LIBRHASH=0 \u001b    -DCMAKE_USE_SYSTEM_LIBRARY_EXPAT=0 \u001b    -DENABLE_ACL=0 -DHAVE_ACL_LIBACL_H=0 \u001b    -DHAVE_SYS_ACL_H=0 \u001b",
+  "SYSROOT_DIRS_NATIVE": "${datadir}/cmake ${base_prefix}/environment-setup.d"
+}

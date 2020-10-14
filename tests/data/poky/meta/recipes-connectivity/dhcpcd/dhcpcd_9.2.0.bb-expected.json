@@ -1,0 +1,20 @@
+{
+  "SECTION": "console/network",
+  "SUMMARY": "dhcpcd - a DHCP client",
+  "DESCRIPTION": "dhcpcd runs on your machine and silently configures your \u001b               computer to work on the attached networks without trouble \u001b               and mostly without configuration.",
+  "HOMEPAGE": "http://roy.marples.name/projects/dhcpcd/",
+  "LICENSE": "BSD-2-Clause",
+  "LIC_FILES_CHKSUM": "file://LICENSE;md5=9674cc803c5d71306941e6e8b5c002f2",
+  "UPSTREAM_CHECK_URI": "https://roy.marples.name/downloads/dhcpcd/",
+  "SRC_URI": "https://roy.marples.name/downloads/${BPN}/${BPN}-${PV}.tar.xz \u001b           file://0001-remove-INCLUDEDIR-to-prevent-build-issues.patch \u001b           file://dhcpcd.service \u001b           file://dhcpcd@.service \u001b           ",
+  "SRC_URI[sha256sum]": "fcb2d19672d445bbfd38678fdee4f556ef967a3ea6bd81092d10545df2cb9666",
+  "inherit": "pkgconfig autotools-brokensep systemd useradd",
+  "SYSTEMD_SERVICE_${PN}": "dhcpcd.service",
+  "PACKAGECONFIG": "udev !!!inlineblock!!!",
+  "PACKAGECONFIG[udev]": "--with-udev,--without-udev,udev,udev",
+  "PACKAGECONFIG[ipv6]": "--enable-ipv6,--disable-ipv6",
+  "EXTRA_OECONF": "--enable-ipv4 \u001b                --dbdir=${localstatedir}/lib/${BPN} \u001b                --runstatedir=/run \u001b               ",
+  "USERADD_PACKAGES": "${PN}",
+  "USERADD_PARAM_${PN}": "--system -d ${localstatedir}/lib/${BPN} -M -s /bin/false -U dhcpcd",
+  "FILES_${PN}-dbg": "${libdir}/dhcpcd/dev/.debug"
+}

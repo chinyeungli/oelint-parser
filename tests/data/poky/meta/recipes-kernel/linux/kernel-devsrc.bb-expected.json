@@ -1,0 +1,15 @@
+{
+  "SUMMARY": "Linux kernel Development Source",
+  "DESCRIPTION": "Development source linux kernel. When built, this recipe packages the \u001bsource of the preferred virtual/kernel provider and makes it available for full kernel \u001bdevelopment or external module builds",
+  "SECTION": "kernel",
+  "LICENSE": "GPLv2",
+  "inherit": "linux-kernel-base\nmodule-base",
+  "do_install[depends]": "virtual/kernel:do_shared_workdir\nvirtual/kernel:do_install",
+  "S": "${STAGING_KERNEL_DIR}",
+  "B": "${STAGING_KERNEL_BUILDDIR}",
+  "PACKAGE_ARCH": "${MACHINE_ARCH}",
+  "KERNEL_BUILD_ROOT": "${nonarch_base_libdir}/modules/",
+  "FILES_${PN}": "${KERNEL_BUILD_ROOT} ${KERNEL_SRC_PATH}",
+  "FILES_${PN}-dbg": "${KERNEL_BUILD_ROOT}*/build/scripts/*/.debug/*",
+  "RDEPENDS_${PN}": "bc python3 flex bison ${TCLIBC}-utils\nopenssl-dev util-linux\nelfutils\ngcc-plugins libmpc-dev"
+}

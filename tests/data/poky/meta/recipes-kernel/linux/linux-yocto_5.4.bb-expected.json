@@ -1,0 +1,15 @@
+{
+  "KBRANCH": "v5.4/standard/base\nv5.4/standard/arm-versatile-926ejs\nv5.4/standard/qemuarm64\nv5.4/standard/mti-malta32\nv5.4/standard/qemuppc\nv5.4/standard/base\nv5.4/standard/base\nv5.4/standard/base\nv5.4/standard/mti-malta64",
+  "SRCREV": "894e63d3256613faa39931a6ae505cfd196df067\n406008bf3232dfc9e63b6e7bf745ca883c45041e\naa13fdb2c5f8c4e4e432bfee6df9c8f76ec8ac70\n406008bf3232dfc9e63b6e7bf745ca883c45041e\n406008bf3232dfc9e63b6e7bf745ca883c45041e\n406008bf3232dfc9e63b6e7bf745ca883c45041e\n406008bf3232dfc9e63b6e7bf745ca883c45041e\n4fb21d604fc54db63221ea28ab90622c29d74202\n406008bf3232dfc9e63b6e7bf745ca883c45041e\n0d860e075788a92601dff3eb9b615ee41e465040",
+  "SRC_URI": "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=${KBRANCH}; \u001b           git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.4;destsuffix=${KMETA}",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814",
+  "LINUX_VERSION": "5.4.65",
+  "DEPENDS": "elfutils-native\nopenssl-native util-linux-native",
+  "PV": "${LINUX_VERSION}+git${SRCPV}",
+  "KMETA": "kernel-meta",
+  "KCONF_BSP_AUDIT_LEVEL": "1",
+  "KERNEL_DEVICETREE": "versatile-pb.dtb",
+  "COMPATIBLE_MACHINE": "qemuarm|qemuarmv5|qemuarm64|qemux86|qemuppc|qemumips|qemumips64|qemux86-64|qemuriscv64",
+  "KERNEL_EXTRA_FEATURES": "features/netfilter/netfilter.scc",
+  "KERNEL_FEATURES": " ${KERNEL_EXTRA_FEATURES}\n cfg/virtio.scc features/drm-bochs/drm-bochs.scc\n cfg/sound.scc cfg/paravirt_kvm.scc\n cfg/sound.scc cfg/paravirt_kvm.scc\n  cfg/x32.scc\n  features/scsi/scsi-debug.scc"
+}

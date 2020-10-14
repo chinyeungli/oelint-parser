@@ -1,0 +1,20 @@
+{
+  "SUMMARY": "X driver\nX.Org X server -- fbdev display driver",
+  "HOMEPAGE": "http://www.x.org",
+  "BUGTRACKER": "https://bugs.freedesktop.org",
+  "SECTION": "x11/drivers",
+  "LICENSE": "MIT-X",
+  "PE": "2",
+  "DEPENDS": "virtual/xserver xorgproto util-macros\nxorgproto",
+  "DESCRIPTION": "fbdev is an Xorg driver for framebuffer devices. This is a non-accelerated driver.",
+  "SRC_URI": "${XORG_MIRROR}/individual/driver/${BPN}-${PV}.tar.bz2",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=d8cbd99fff773f92e844948f74ef0df8",
+  "FILES_${PN}": " ${libdir}/xorg/modules/drivers/*.so",
+  "SRC_URI[md5sum]": "f07475655376be5a124d8187aacd87b6",
+  "XORGBUILDCLASS": "autotools",
+  "SRC_URI[sha256sum]": "dcc3d85f378022180e437a9ec00a59b6cb7680ff79c40394d695060af2374699",
+  "inherit": "${XORGBUILDCLASS} pkgconfig features_check",
+  "REQUIRED_DISTRO_FEATURES": "x11",
+  "SECURITY_LDFLAGS": "${SECURITY_X_LDFLAGS}",
+  "PACKAGEFUNCS": "add_xorg_abi_depends"
+}

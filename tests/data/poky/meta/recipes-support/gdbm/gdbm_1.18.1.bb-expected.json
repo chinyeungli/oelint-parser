@@ -1,0 +1,17 @@
+{
+  "SUMMARY": "Key/value database library with extensible hashing",
+  "HOMEPAGE": "http://www.gnu.org/software/gdbm/",
+  "SECTION": "libs",
+  "LICENSE": "GPLv3",
+  "LIC_FILES_CHKSUM": "file://COPYING;md5=241da1b9fe42e642cbb2c24d5e0c4d24",
+  "SRC_URI": "${GNU_MIRROR}/gdbm/gdbm-${PV}.tar.gz \u001b           file://run-ptest \u001b           file://ptest.patch \u001b           file://gdbm-fix-link-failure-against-gcc-10.patch \u001b          ",
+  "SRC_URI[md5sum]": "988dc82182121c7570e0cb8b4fcd5415",
+  "SRC_URI[sha256sum]": "86e613527e5dba544e73208f42b78b7c022d4fa5a6d5498bf18c8d6f745b91dc",
+  "inherit": "autotools gettext texinfo lib_package ptest",
+  "EXTRA_OECONF": "--enable-libgdbm-compat --without-readline",
+  "CACHED_CONFIGUREVARS": "ac_cv_lib_ndbm_main=no ac_cv_lib_dbm_main=no",
+  "BBCLASSEXTEND": "native nativesdk",
+  "RDEPENDS_${PN}-ptest": "diffutils ${PN}-bin",
+  "PACKAGES": "${PN}-compat \u001b            ",
+  "FILES_${PN}-compat": "${libdir}/libgdbm_compat${SOLIBS} \u001b                     "
+}

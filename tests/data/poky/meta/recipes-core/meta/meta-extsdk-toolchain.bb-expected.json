@@ -1,0 +1,10 @@
+{
+  "SUMMARY": "Extensible SDK toolchain meta-recipe",
+  "DESCRIPTION": "Meta-recipe for ensuring the build directory contains all appropriate toolchain packages for using an IDE",
+  "LICENSE": "MIT",
+  "DEPENDS": "virtual/libc gdb-cross-${TARGET_ARCH} qemu-native qemu-helper-native unfs3-native",
+  "LOCKED_SIGS_INDIR": "${WORKDIR}/locked-sigs",
+  "SSTATETASKS": "do_locked_sigs",
+  "do_locked_sigs[sstate-inputdirs]": "${LOCKED_SIGS_INDIR}",
+  "do_locked_sigs[sstate-outputdirs]": "${STAGING_DIR}/${PACKAGE_ARCH}/${PN}/locked-sigs"
+}
